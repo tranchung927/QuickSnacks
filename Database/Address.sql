@@ -18,16 +18,16 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `QuickSnacks`
+-- Database: `quick_snacks`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Address`
+-- Table structure for table `address`
 --
 
-CREATE TABLE `Address` (
+CREATE TABLE `address` (
   `id` int(11) NOT NULL,
   `name` varchar(255) DEFAULT NULL,
   `latitude` decimal(8,6) DEFAULT NULL,
@@ -43,21 +43,21 @@ CREATE TABLE `Address` (
 --
 
 --
--- Indexes for table `Address`
+-- Indexes for table `address`
 --
-ALTER TABLE `Address`
+ALTER TABLE `address`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `FK_CityAddress` (`city_id`),
-  ADD KEY `FK_DistrictAddress` (`district_id`);
+  ADD KEY `fk_city_address` (`city_id`),
+  ADD KEY `fk_district_address` (`district_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `Address`
+-- AUTO_INCREMENT for table `address`
 --
-ALTER TABLE `Address`
+ALTER TABLE `address`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
@@ -65,11 +65,11 @@ ALTER TABLE `Address`
 --
 
 --
--- Constraints for table `Address`
+-- Constraints for table `address`
 --
-ALTER TABLE `Address`
-  ADD CONSTRAINT `FK_CityAddress` FOREIGN KEY (`city_id`) REFERENCES `City` (`id`),
-  ADD CONSTRAINT `FK_DistrictAddress` FOREIGN KEY (`district_id`) REFERENCES `District` (`id`);
+ALTER TABLE `address`
+  ADD CONSTRAINT `fk_city_address` FOREIGN KEY (`city_id`) REFERENCES `city` (`id`),
+  ADD CONSTRAINT `fk_district_address` FOREIGN KEY (`district_id`) REFERENCES `district` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -18,25 +18,25 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `QuickSnacks`
+-- Database: `quick_snacks`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `City`
+-- Table structure for table `city`
 --
 
-CREATE TABLE `City` (
+CREATE TABLE `city` (
   `id` int(11) NOT NULL,
   `name` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `City`
+-- Dumping data for table `city`
 --
 
-INSERT INTO `City` (`id`, `name`) VALUES
+INSERT INTO `city` (`id`, `name`) VALUES
 (1, 'Hà Nội'),
 (2, 'Hà Giang'),
 (4, 'Cao Bằng'),
@@ -106,9 +106,9 @@ INSERT INTO `City` (`id`, `name`) VALUES
 --
 
 --
--- Indexes for table `City`
+-- Indexes for table `city`
 --
-ALTER TABLE `City`
+ALTER TABLE `city`
   ADD PRIMARY KEY (`id`);
 COMMIT;
 

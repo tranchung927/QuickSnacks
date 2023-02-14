@@ -18,26 +18,26 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `QuickSnacks`
+-- Database: `quick_snacks`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `District`
+-- Table structure for table `district`
 --
 
-CREATE TABLE `District` (
+CREATE TABLE `district` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `city_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `District`
+-- Dumping data for table `district`
 --
 
-INSERT INTO `District` (`id`, `name`, `city_id`) VALUES
+INSERT INTO `district` (`id`, `name`, `city_id`) VALUES
 (1, 'Ba Đình', 1),
 (2, 'Hoàn Kiếm', 1),
 (3, 'Tây Hồ', 1),
@@ -741,21 +741,21 @@ INSERT INTO `District` (`id`, `name`, `city_id`) VALUES
 --
 
 --
--- Indexes for table `District`
+-- Indexes for table `district`
 --
-ALTER TABLE `District`
+ALTER TABLE `district`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `PK_CityDistrict` (`city_id`);
+  ADD KEY `fk_city_district` (`city_id`);
 
 --
 -- Constraints for dumped tables
 --
 
 --
--- Constraints for table `District`
+-- Constraints for table `district`
 --
-ALTER TABLE `District`
-  ADD CONSTRAINT `PK_CityDistrict` FOREIGN KEY (`city_id`) REFERENCES `City` (`id`);
+ALTER TABLE `district`
+  ADD CONSTRAINT `fk_city_district` FOREIGN KEY (`city_id`) REFERENCES `city` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

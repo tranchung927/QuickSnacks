@@ -18,16 +18,16 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `QuickSnacks`
+-- Database: `quick_snacks`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Location`
+-- Table structure for table `location`
 --
 
-CREATE TABLE `Location` (
+CREATE TABLE `location` (
   `id` int(11) NOT NULL,
   `name` varchar(255) DEFAULT NULL,
   `address_id` int(11) DEFAULT NULL,
@@ -40,20 +40,20 @@ CREATE TABLE `Location` (
 --
 
 --
--- Indexes for table `Location`
+-- Indexes for table `location`
 --
-ALTER TABLE `Location`
+ALTER TABLE `location`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `FK_AddressLocation` (`address_id`);
+  ADD KEY `fk_address_location` (`address_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `Location`
+-- AUTO_INCREMENT for table `location`
 --
-ALTER TABLE `Location`
+ALTER TABLE `location`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
@@ -61,10 +61,10 @@ ALTER TABLE `Location`
 --
 
 --
--- Constraints for table `Location`
+-- Constraints for table `location`
 --
-ALTER TABLE `Location`
-  ADD CONSTRAINT `FK_AddressLocation` FOREIGN KEY (`address_id`) REFERENCES `Address` (`id`);
+ALTER TABLE `location`
+  ADD CONSTRAINT `fk_address_location` FOREIGN KEY (`address_id`) REFERENCES `address` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
