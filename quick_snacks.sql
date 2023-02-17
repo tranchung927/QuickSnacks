@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Feb 13, 2023 at 02:56 PM
+-- Generation Time: Feb 15, 2023 at 09:19 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -20,6 +20,154 @@ SET time_zone = "+00:00";
 --
 -- Database: `quick_snacks`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `account`
+--
+
+CREATE TABLE `account` (
+  `id` int(11) NOT NULL,
+  `first_name` varchar(100) NOT NULL,
+  `last_name` varchar(100) NOT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `phone` varchar(50) DEFAULT NULL,
+  `avatar` varchar(255) DEFAULT NULL,
+  `address_id` int(11) DEFAULT NULL,
+  `flag` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `address`
+--
+
+CREATE TABLE `address` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `latitude` decimal(8,6) DEFAULT NULL,
+  `longitude` decimal(9,6) DEFAULT NULL,
+  `city_id` int(11) DEFAULT NULL,
+  `district_id` int(11) DEFAULT NULL,
+  `address` varchar(255) DEFAULT NULL,
+  `flag` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `banner`
+--
+
+CREATE TABLE `banner` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `image` varchar(255) DEFAULT NULL,
+  `product_id` int(11) DEFAULT NULL,
+  `category_id` int(11) DEFAULT NULL,
+  `flag` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `category`
+--
+
+CREATE TABLE `category` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `code` varchar(255) DEFAULT NULL,
+  `description` varchar(1000) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  `parent_id` int(11) DEFAULT NULL,
+  `created_date` datetime DEFAULT NULL,
+  `modified_date` datetime DEFAULT NULL,
+  `flag` int(11) DEFAULT NULL,
+  `image` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `city`
+--
+
+CREATE TABLE `city` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `city`
+--
+
+INSERT INTO `city` (`id`, `name`) VALUES
+(1, 'Hà Nội'),
+(2, 'Hà Giang'),
+(4, 'Cao Bằng'),
+(6, 'Bắc Kạn'),
+(8, 'Tuyên Quang'),
+(10, 'Lào Cai'),
+(11, 'Điện Biên'),
+(12, 'Lai Châu'),
+(14, 'Sơn La'),
+(15, 'Yên Bái'),
+(17, 'Hòa Bình'),
+(19, 'Thái Nguyên'),
+(20, 'Lạng Sơn'),
+(22, 'Quảng Ninh'),
+(24, 'Bắc Giang'),
+(25, 'Phú Thọ'),
+(26, 'Vĩnh Phúc'),
+(27, 'Bắc Ninh'),
+(30, 'Hải Dương'),
+(31, 'Hải Phòng'),
+(33, 'Hưng Yên'),
+(34, 'Thái Bình'),
+(35, 'Hà Nam'),
+(36, 'Nam Định'),
+(37, 'Ninh Bình'),
+(38, 'Thanh Hóa'),
+(40, 'Nghệ An'),
+(42, 'Hà Tĩnh'),
+(44, 'Quảng Bình'),
+(45, 'Quảng Trị'),
+(46, 'Thừa Thiên Huế'),
+(48, 'Đà Nẵng'),
+(49, 'Quảng Nam'),
+(51, 'Quảng Ngãi'),
+(52, 'Bình Định'),
+(54, 'Phú Yên'),
+(56, 'Khánh Hòa'),
+(58, 'Ninh Thuận'),
+(60, 'Bình Thuận'),
+(62, 'Kon Tum'),
+(64, 'Gia Lai'),
+(66, 'Đắk Lắk'),
+(67, 'Đắk Nông'),
+(68, 'Lâm Đồng'),
+(70, 'Bình Phước'),
+(72, 'Tây Ninh'),
+(74, 'Bình Dương'),
+(75, 'Đồng Nai'),
+(77, 'Bà Rịa - Vũng Tàu'),
+(79, 'Hồ Chí Minh'),
+(80, 'Long An'),
+(82, 'Tiền Giang'),
+(83, 'Bến Tre'),
+(84, 'Trà Vinh'),
+(86, 'Vĩnh Long'),
+(87, 'Đồng Tháp'),
+(89, 'An Giang'),
+(91, 'Kiên Giang'),
+(92, 'Cần Thơ'),
+(93, 'Hậu Giang'),
+(94, 'Sóc Trăng'),
+(95, 'Bạc Liêu'),
+(96, 'Cà Mau');
 
 -- --------------------------------------------------------
 
@@ -736,9 +884,140 @@ INSERT INTO `district` (`id`, `name`, `city_id`) VALUES
 (972, 'Phú Tân', 96),
 (973, 'Ngọc Hiển', 96);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `image`
+--
+
+CREATE TABLE `image` (
+  `id` int(11) NOT NULL,
+  `path` varchar(255) DEFAULT NULL,
+  `description` varchar(1000) DEFAULT NULL,
+  `created_date` datetime DEFAULT NULL,
+  `modified_date` datetime DEFAULT NULL,
+  `flag` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `location`
+--
+
+CREATE TABLE `location` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `address_id` int(11) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  `flag` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `order`
+--
+
+CREATE TABLE `order` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `code` varchar(255) NOT NULL,
+  `status` varchar(50) NOT NULL,
+  `note` varchar(1000) DEFAULT NULL,
+  `account_id` int(11) DEFAULT NULL,
+  `location_id` int(11) DEFAULT NULL,
+  `address_id` int(11) DEFAULT NULL,
+  `created_date` datetime DEFAULT NULL,
+  `modified_date` datetime DEFAULT NULL,
+  `flag` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `order_item`
+--
+
+CREATE TABLE `order_item` (
+  `id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `order_id` int(11) NOT NULL,
+  `quantity` int(11) DEFAULT NULL,
+  `orginal_price` int(11) DEFAULT NULL,
+  `price` int(11) DEFAULT NULL,
+  `created_date` datetime DEFAULT NULL,
+  `modified_date` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `product`
+--
+
+CREATE TABLE `product` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `description` varchar(1000) DEFAULT NULL,
+  `price` float DEFAULT NULL,
+  `status` varchar(50) DEFAULT NULL,
+  `calorie` float DEFAULT NULL,
+  `estimate_time` int(11) DEFAULT NULL,
+  `category_id` int(11) DEFAULT NULL,
+  `created_date` datetime DEFAULT NULL,
+  `modified_date` datetime DEFAULT NULL,
+  `flag` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `product_image`
+--
+
+CREATE TABLE `product_image` (
+  `id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `image_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `account`
+--
+ALTER TABLE `account`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_address_account` (`address_id`);
+
+--
+-- Indexes for table `address`
+--
+ALTER TABLE `address`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_city_address` (`city_id`),
+  ADD KEY `fk_district_address` (`district_id`);
+
+--
+-- Indexes for table `banner`
+--
+ALTER TABLE `banner`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `category`
+--
+ALTER TABLE `category`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `city`
+--
+ALTER TABLE `city`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `district`
@@ -748,14 +1027,170 @@ ALTER TABLE `district`
   ADD KEY `fk_city_district` (`city_id`);
 
 --
+-- Indexes for table `image`
+--
+ALTER TABLE `image`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `location`
+--
+ALTER TABLE `location`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_address_location` (`address_id`);
+
+--
+-- Indexes for table `order`
+--
+ALTER TABLE `order`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_account_order` (`account_id`),
+  ADD KEY `fk_location_order` (`location_id`),
+  ADD KEY `fk_address_order` (`address_id`);
+
+--
+-- Indexes for table `order_item`
+--
+ALTER TABLE `order_item`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_product_order_item` (`product_id`),
+  ADD KEY `fk_order_order_item` (`order_id`);
+
+--
+-- Indexes for table `product`
+--
+ALTER TABLE `product`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_category_product` (`category_id`);
+
+--
+-- Indexes for table `product_image`
+--
+ALTER TABLE `product_image`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_product_product_image` (`product_id`),
+  ADD KEY `fk_image_product_image` (`image_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `account`
+--
+ALTER TABLE `account`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `address`
+--
+ALTER TABLE `address`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `banner`
+--
+ALTER TABLE `banner`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `category`
+--
+ALTER TABLE `category`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `image`
+--
+ALTER TABLE `image`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `location`
+--
+ALTER TABLE `location`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `order`
+--
+ALTER TABLE `order`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `order_item`
+--
+ALTER TABLE `order_item`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `product`
+--
+ALTER TABLE `product`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `product_image`
+--
+ALTER TABLE `product_image`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `account`
+--
+ALTER TABLE `account`
+  ADD CONSTRAINT `fk_address_account` FOREIGN KEY (`address_id`) REFERENCES `address` (`id`);
+
+--
+-- Constraints for table `address`
+--
+ALTER TABLE `address`
+  ADD CONSTRAINT `fk_city_address` FOREIGN KEY (`city_id`) REFERENCES `city` (`id`),
+  ADD CONSTRAINT `fk_district_address` FOREIGN KEY (`district_id`) REFERENCES `district` (`id`);
 
 --
 -- Constraints for table `district`
 --
 ALTER TABLE `district`
   ADD CONSTRAINT `fk_city_district` FOREIGN KEY (`city_id`) REFERENCES `city` (`id`);
+
+--
+-- Constraints for table `location`
+--
+ALTER TABLE `location`
+  ADD CONSTRAINT `fk_address_location` FOREIGN KEY (`address_id`) REFERENCES `address` (`id`);
+
+--
+-- Constraints for table `order`
+--
+ALTER TABLE `order`
+  ADD CONSTRAINT `fk_account_order` FOREIGN KEY (`account_id`) REFERENCES `account` (`id`),
+  ADD CONSTRAINT `fk_address_order` FOREIGN KEY (`address_id`) REFERENCES `address` (`id`),
+  ADD CONSTRAINT `fk_location_order` FOREIGN KEY (`location_id`) REFERENCES `location` (`id`);
+
+--
+-- Constraints for table `order_item`
+--
+ALTER TABLE `order_item`
+  ADD CONSTRAINT `fk_order_order_item` FOREIGN KEY (`order_id`) REFERENCES `order` (`id`),
+  ADD CONSTRAINT `fk_product_order_item` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`);
+
+--
+-- Constraints for table `product`
+--
+ALTER TABLE `product`
+  ADD CONSTRAINT `fk_category_product` FOREIGN KEY (`category_id`) REFERENCES `category` (`id`);
+
+--
+-- Constraints for table `product_image`
+--
+ALTER TABLE `product_image`
+  ADD CONSTRAINT `fk_image_product_image` FOREIGN KEY (`image_id`) REFERENCES `image` (`id`),
+  ADD CONSTRAINT `fk_product_product_image` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
