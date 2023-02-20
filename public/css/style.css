@@ -1,0 +1,35 @@
+*{margin:0; padding: 0}
+
+#header {
+    padding-left: 100px;
+    padding-right: 100px;
+    display: flex;
+    flex-direction: row;
+    height: 160px;
+    align-items: center;
+    float: top;
+}
+
+ul.header-menu {
+    margin-left: 24px;
+}
+
+ul.header-menu li{
+    display: inline-block;
+    margin-right: 24px;
+    position: relative;
+}
+
+ul.header-menu li a{
+    color: black;
+    text-decoration: none !important;
+    font-family: 'Roboto';
+    font-size: 22px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+#header_separator {
+    background-color: #D9D9D9;
+    height: 1px;
+}
