@@ -5,5 +5,8 @@
         <li><a href="index.php?controller=promotion">Khuyến mãi</a></li>
         <li><a href="index.php?controller=about">Giới thiệu</a></li>
     </ul>
+    <div>
+        
+    </div>
 </header>
 <div id="header_separator"></div>
