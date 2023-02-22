@@ -37,21 +37,60 @@ class HomeController extends Controller {
         'calorie' => 300,
         'estimate_time' => 20
     ));
-    
-    
+   
+   $banner = array();
+   array_push($banner,array('image'=>'./public/images/carousel_1.jpeg'),
+           array('image'=>'./public/images/carousel-2.jpeg'),
+           array('image'=>'./public/images/carousel-3.jpeg'));
+   
    $categories = array();
-   array_push($categories, array(
-       'id' => 1,
-       'name' => 'Món mới',
-   ), array(
-       'id' => 2,
-       'name' => 'Món Khai Vị',
-   ), array(
-       'id' => 3,
-       'name' => 'Món Chính',
-   ));
-  
-    $data = array('products' => $products, 'categories' => $categories);
+   array_push($categories,array(
+       'id'=>1,
+       'name'=> 'Món mới',
+       'image'=> './public/images/MON MOI.jpeg'
+    ), array(
+        'id'=>2,
+       'name'=> 'Đồ ăn nhẹ',
+       'image'=> './public/images/MON MOI.jpeg'
+    ),
+     array(
+        'id'=>3,
+       'name'=> 'Sinh tố',
+       'image'=> './public/images/MON MOI.jpeg'
+    ),
+    array(
+        'id'=>4,
+       'name'=> 'Dành cho trẻ em',
+       'image'=> './public/images/MON MOI.jpeg'
+    ),
+     array(
+        'id'=>5,
+       'name'=> 'Tốt cho sức khoẻ',
+       'image'=> './public/images/MON MOI.jpeg'
+    ),
+    );
+    
+   $productsLike = array();
+   array_push($productsLike,array(
+       'id'=>1,
+       'name'=>'1 bánh trứng',
+       'image'=>'./public/images/MON MOI 1.png',
+       'price'=>'18000đ'
+    ),
+    array(
+       'id'=>2,
+       'name'=>'1 bánh trứng',
+       'image'=>'./public/images/MON MOI 1.png',
+        'price'=>'18000đ'
+    ),
+    array(
+       'id'=>2,
+       'name'=>'1 bánh trứng',
+       'image'=>'./public/images/MON MOI 1.png',
+        'price'=>'18000đ'
+    ),     
+    );
+    $data = array('products' => $products, 'categories' => $categories,'banner'=> $banner,'productsLike' => $productsLike);
     $this->render('home', $data);
   }
 }
