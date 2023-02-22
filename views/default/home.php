@@ -1,4 +1,5 @@
 <div>
+    <?php include 'delivery_address_section.php'; ?>
     <?php echo "Số lượng sản phẩm: ".count($products); ?>
     <?php echo '<br>'; ?>
     <?php echo "Số lượng danh mục: ".count($categories); ?>

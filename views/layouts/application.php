@@ -22,7 +22,7 @@
   </head>
   
   <?php include "header.php"; ?>
-  <body>
+  <body id="main_body">
     <?= @$content ?>
       <!--
       @$content là viết tắt của echo $content, @$content vẫn là $content nhưng khi thực thi bỏ qua thông báo lỗi nếu có.
