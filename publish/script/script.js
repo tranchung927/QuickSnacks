@@ -246,3 +246,7 @@ function search(){
     }
   });
 }
+var load = document.querySelector(".load");
+load.addEventListener("click",function() {
+    return document.querySelector(".download_more").style.display = 'flex';
+});
