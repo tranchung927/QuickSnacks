@@ -9,4 +9,6 @@
     <a href='index.php?controller=product&action=showProduct&id=<?php echo $products[$i]['id'] ?>'><?php echo $products[$i]['name'] ?></a>
     <br>
     <?php } ?>
+    
+    <i class="fa-solid fa-user"></i>
 </div>
