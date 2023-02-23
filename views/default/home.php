@@ -1,4 +1,4 @@
-
+ <?php include 'delivery_address_section.php'; ?>
 <!--carousel -->
 <?php?>
     <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
@@ -64,11 +64,11 @@
                             <h5><?php echo $productsLike[$s]["name"]?></h5>
                             <h5><?php echo $productsLike[$s]["price"]?></h5>
                         </div>
-                        <div class="card-text my-2 mx-2"><?php echo $productsLike[$s]["name"]?></div>
-                        <div class="btn_button d-flex justify-content-between my-2">
-                          <button type="button" class="btn btn-outline-dark rounded-pill">Tuỳ chỉnh</button>
-                          <button type="button" class="btn btn-danger rounded-pill px-4">Thêm</button>
+                        <div class="card-text my-2 mx-2"><?php echo $productsLike[$s]["name"]?></div>       
+                        <div class="d-flex justify-content-center">
+                            <button type="button" class="btn btn-danger rounded-pill px-4">Bắt đầu đặt hàng</button>       
                         </div>
+                                        
                     </div>
                 </div>
             </div>
