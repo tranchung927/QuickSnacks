@@ -88,3 +88,105 @@ ul.header-menu li a{
   background: #cf1919;
   color: #cccccc;
 }
+
+.container-login{
+    width: 1470px;
+    height: 764px;
+    border: 0px solid red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container-login h1{
+    font-family: 'Roboto';
+    font-size: 38px;
+    font-weight: 800px;
+    margin-top: 80px;
+}
+.form-login{
+    width: 748px;
+    height: 187px;
+    border: 0px solid red;
+    margin-top: 41px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.forgot-password{
+    width: 748px;
+    height: 28px;
+    border: 0px solid blue;
+    margin-top: 51px;
+}
+.forgot-password p1{
+    font-size: 24px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+}
+.forgot-password{
+    display: flex;
+    justify-content: end;
+    font-family: 'Roboto';
+    transition:none;
+    color:black;
+    text-decoration:none;
+    font-size: 24px;
+    font-weight: 800;
+}
+.login-register{
+    width: 748px;
+    height: 146px;
+    border: 0px solid green;
+    margin-top: 53px;
+}
+.form-login .email{
+    width: 748px;
+    height: 73px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.form-login .password{
+    width: 748px;
+    height: 73px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+#login-action{
+    width: 748px;
+    height: 64px;
+    background-color: #28A745;
+    border-radius: 40px;
+    border: 0px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 28px;
+    color: #FFFFFF;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: none;
+}
+.line{
+    width: 748px;
+    height: 30px;
+    border-bottom: 1px solid rgb(88, 88, 88);
+}
+.input-login{
+    border: 0px;
+    width: 100%;
+    box-shadow: none;
+    font-size: 24px;
+}
+.button-newaccount{
+    font-family: 'Roboto';
+    font-size: 24px;
+}
+.button-newaccount a{
+    color: black;
+    font-weight: 600;
+}
