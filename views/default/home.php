@@ -33,7 +33,8 @@
                   <div class="card">
                     <img src="<?php echo $categories[$s]["image"]?>" class="card-img-top" alt="">
                     <div class="card-body p-lg-4">
-                      <p><?php echo $categories[$s]["name"]?><i class="fa-solid fa-chevron-right mx-2"></i></p>
+                         <a class="nav-link" href="#"><?php echo $categories[$s]["name"]?><i class="fa-solid fa-chevron-right mx-2"></i></a>
+
                     </div>
                   </div>
                 </div>
