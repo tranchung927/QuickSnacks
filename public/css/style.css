@@ -11,6 +11,7 @@
     flex-direction: row;
     align-items: center;
     background-color: white;
+    z-index: 1000;
 }
 
 #header a img {
@@ -28,6 +29,7 @@
     height: 1px;
     position: fixed;
     top: 100px;
+    z-index: 999;
 }
 #header-left-menu {
     margin-left: auto;
@@ -45,9 +47,8 @@ ul.header-menu li{
 ul.header-menu li a{
     color: black;
     text-decoration: none !important;
-    font-family: 'Roboto';
+    font-family: Roboto-Black;
     font-size: 20px;
-    font-weight: 700;
     text-transform: uppercase;
 }
 
@@ -99,7 +100,7 @@ ul.header-menu li a{
 }
 
 .container-login h1{
-    font-family: 'Roboto';
+    font-family: Roboto;
     font-size: 38px;
     font-weight: 700;
     margin-top: 80px;
@@ -121,14 +122,14 @@ ul.header-menu li a{
 }
 .forgot-password p1{
     font-size: 24px;
-    font-family: 'Roboto';
+    font-family: Roboto;
     font-style: normal;
     font-weight: 400;
 }
 .forgot-password{
     display: flex;
     justify-content: end;
-    font-family: 'Roboto';
+    font-family: Roboto;
     transition:none;
     color:black;
     text-decoration:none;
@@ -161,7 +162,7 @@ ul.header-menu li a{
     background-color: #28A745;
     border-radius: 40px;
     border: 0px;
-    font-family: 'Roboto';
+    font-family: Roboto;
     font-style: normal;
     font-weight: 800;
     font-size: 24px;
@@ -184,7 +185,7 @@ ul.header-menu li a{
     font-size: 24px;
 }
 .button-newaccount{
-    font-family: 'Roboto';
+    font-family: Roboto;
     font-size: 24px;
 }
 .button-newaccount a{
@@ -201,7 +202,7 @@ ul.header-menu li a{
 }
 .container-register h1{
     font-size: 38px;
-    font-family: 'Roboto';
+    font-family: Roboto;
     font-weight: 700;
     margin-top: 80px;
 }
@@ -277,4 +278,29 @@ ul.header-menu li a{
     text-decoration: none;
     color: black;
     margin-left: 5px;
+}
+@font-face {
+  font-family: Roboto;
+  src: url(../fonts/Roboto-Regular.ttf);
+}
+
+@font-face {
+  font-family: Roboto-Bold;
+  src: url(../fonts/Roboto-Bold.ttf);
+}
+
+@font-face {
+  font-family: Roboto-Italic;
+  src: url(../fonts/Roboto-Italic.ttf);
+}
+
+@font-face {
+  font-family: Roboto-Black;
+  src: url(../fonts/Roboto-Black.ttf);
+}
+
+
+@font-face {
+  font-family: Roboto-Medium;
+  src: url(../fonts/Roboto-Medium.ttf);
 }
