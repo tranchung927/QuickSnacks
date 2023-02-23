@@ -1,3 +1,4 @@
+<?php include 'delivery_address_section.php'; ?>
 
 <div class="cate">
      <?php for($i=0;$i<count($cateTitle);$i++){?>
