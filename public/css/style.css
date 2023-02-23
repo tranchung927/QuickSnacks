@@ -90,7 +90,7 @@ ul.header-menu li a{
 }
 
 .container-login{
-    width: 1470px;
+    width: 100%;
     height: 764px;
     border: 0px solid red;
     display: flex;
@@ -101,7 +101,7 @@ ul.header-menu li a{
 .container-login h1{
     font-family: 'Roboto';
     font-size: 38px;
-    font-weight: 800px;
+    font-weight: 700;
     margin-top: 80px;
 }
 .form-login{
@@ -170,6 +170,7 @@ ul.header-menu li a{
     text-align: center;
     cursor: pointer;
     box-shadow: none;
+    border: none;
 }
 .line{
     width: 748px;
@@ -189,4 +190,91 @@ ul.header-menu li a{
 .button-newaccount a{
     color: black;
     font-weight: 600;
+}
+.container-register{
+    width: 100%;
+    height: 1200px;
+    border: 0px solid red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.container-register h1{
+    font-size: 38px;
+    font-family: 'Roboto';
+    font-weight: 700;
+    margin-top: 80px;
+}
+.form-register{
+    width: 748px;
+    height: 525px;
+    display: flex;
+    flex-direction: column;
+    border: 0px solid red;
+    margin-top: 111px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.form-register .input{
+    height: 73px;
+    width: 748px;
+    height: 73px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.input-register{
+    border: 0px;
+    width: 100%;
+    box-shadow: none;
+    font-size: 24px;
+}
+.check-policy{
+    width: 781px;
+    height: 37px;
+    border: 0px solid red;
+    margin-top: 41.27px;
+    display: flex;
+}
+.check-policy p{
+    font-size: 24px;
+    margin-left: 20px;
+}
+.check-policy #check{
+    width: 36px;
+    height: 36px;
+
+}
+.check-policy a{
+    font-weight: 700;
+    border-bottom: 2px solid black;
+    text-decoration: none;
+    color: black;
+}
+.container-register button{
+    width: 748px;
+    height: 100.52px;
+    background: #E73B3B;
+    border-radius: 40px;
+    margin-top: 56px;
+    font-size: 24px;
+    font-weight: 700;
+    color: white;
+    border: none;
+}
+.have-account{
+    width: 399px;
+    height: 44px;
+    border: 0px solid red;
+    margin-top: 42px;
+    display: flex;
+    font-size: 24px;
+}
+.have-account a{
+    font-weight: 700;
+    border-bottom: 2px solid black;
+    text-decoration: none;
+    color: black;
+    margin-left: 5px;
 }
