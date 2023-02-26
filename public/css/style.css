@@ -126,6 +126,12 @@ ul.header-menu li a{
     font-style: normal;
     font-weight: 400;
 }
+/* .error-alert{
+    color: red;
+    width: 748px;
+    height:90px;
+    border: 1px solid black;
+} */
 .forgot-password{
     display: flex;
     justify-content: end;
@@ -255,7 +261,7 @@ ul.header-menu li a{
 }
 .container-register button{
     width: 748px;
-    height: 100.52px;
+    height: 64px;
     background: #E73B3B;
     border-radius: 40px;
     margin-top: 56px;

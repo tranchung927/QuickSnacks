@@ -5,7 +5,7 @@
             <div class="input">
                 <input type="text" placeholder="Họ của bạn *" name="first_name" class="input-register">
                 <div class="line"></div>
-                <p style="color:red">Vui lòng nhập họ của bạn</p>
+                <div class="error-alert" style="color:red;width: 748px;height:90px"><?php echo $errorfname;?></div>
             </div>
             <div class="input">
                 <input type="text" placeholder="Tên của bạn *" name="last_name" class="input-register">
@@ -35,7 +35,7 @@
         <button>Tạo Tài Khoản</button>
         <div class="have-account">
             <div class="text">Bạn đã có tài khoản?</div>
-            <div class="login"><a href="index.php?controller=user&action=login">Đăng nhập</a></div>
+            <div class="login"><a href="index.php?controller=user&action=login">Đăng Ký</a></div>
         </div>
     </div>
 </form>
