@@ -1,5 +1,5 @@
 <?php 
-DEFINE('INDEX_URL','http://localhost/WBH_MVC/');
+DEFINE('INDEX_URL','http://localhost/QuickSnacks/');
 
 DEFINE('DB_HOST','localhost');
 DEFINE('DB_USERNAME','root');

@@ -1,7 +1,7 @@
 <?php
 $controllers = array(
     'error' => ['notFound'],
-    'home'  => ['index'],
+    'home'  => ['index', 'signin', 'signup'],
     'cities' => ['index', 'showCity'],
     'user' => ['login', 'register']
 ); // Các controllers trong hệ thống và các action có thể gọi ra từ controller đó.
