@@ -99,37 +99,4 @@ class HomeController extends Controller {
     $data = array('products' => $products, 'category' => $category,'banner'=> $banner,'productsLike' => $productsLike);
     $this->render('home', $data);
   }
-  
-  public function showCategory() {
-       $category = array();
-   array_push($category,array(
-       'id'=>1,
-       'name'=> 'Món mới',
-       'image'=> './public/images/MON MOI.jpeg'
-    ), array(
-        'id'=>2,
-       'name'=> 'Đồ ăn nhẹ',
-       'image'=> './public/images/MON MOI.jpeg'
-    ),
-     array(
-        'id'=>3,
-       'name'=> 'Sinh tố',
-       'image'=> './public/images/MON MOI.jpeg'
-    ),
-    array(
-        'id'=>4,
-       'name'=> 'Dành cho trẻ em',
-       'image'=> './public/images/MON MOI.jpeg'
-    ),
-     array(
-        'id'=>5,
-       'name'=> 'Tốt cho sức khoẻ',
-       'image'=> './public/images/MON MOI.jpeg'
-    ),
-    );
-      $data = array('category'=> $Category);
-      $this->render('category_detail',$data);
-  }
 }
-
- 

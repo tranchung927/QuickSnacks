@@ -3,28 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Applications/XAMPP/htdocs/QuickSnacks/public/script/script.js</file>
-            <file>file:/Applications/XAMPP/htdocs/QuickSnacks/models/CityModel.php</file>
-            <file>file:/Applications/XAMPP/htdocs/QuickSnacks/.gitignore</file>
-            <file>file:/Applications/XAMPP/htdocs/QuickSnacks/quick_snacks.sql</file>
-            <file>file:/Applications/XAMPP/htdocs/QuickSnacks/controllers/CitiesController.php</file>
-            <file>file:/Applications/XAMPP/htdocs/QuickSnacks/public/images/ic_logo.svg</file>
-            <file>file:/Applications/XAMPP/htdocs/QuickSnacks/public/images/banner.png</file>
-            <file>file:/Applications/XAMPP/htdocs/QuickSnacks/index.php</file>
-            <file>file:/Applications/XAMPP/htdocs/QuickSnacks/views/default/home.php</file>
-            <file>file:/Applications/XAMPP/htdocs/QuickSnacks/views/layouts/header.php</file>
-            <file>file:/Applications/XAMPP/htdocs/QuickSnacks/public/bootstrap/js/bootstrap.js</file>
-            <file>file:/Applications/XAMPP/htdocs/QuickSnacks/routes.php</file>
-            <file>file:/Applications/XAMPP/htdocs/QuickSnacks/views/layouts/footer.php</file>
-            <file>file:/Applications/XAMPP/htdocs/QuickSnacks/views/error/404.php</file>
-            <file>file:/Applications/XAMPP/htdocs/QuickSnacks/controllers/ErrorController.php</file>
-            <file>file:/Applications/XAMPP/htdocs/QuickSnacks/controllers/HomeController.php</file>
-            <file>file:/Applications/XAMPP/htdocs/QuickSnacks/views/default/city_detail.php</file>
-            <file>file:/Applications/XAMPP/htdocs/QuickSnacks/views/layouts/application.php</file>
-            <file>file:/Applications/XAMPP/htdocs/QuickSnacks/views/default/cities.php</file>
-            <file>file:/Applications/XAMPP/htdocs/QuickSnacks/vendor/Model.php</file>
-            <file>file:/Applications/XAMPP/htdocs/QuickSnacks/vendor/Controller.php</file>
-            <file>file:/Applications/XAMPP/htdocs/QuickSnacks/public/css/style.css</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/QuickSnacks/models/CityModel.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/QuickSnacks/views/default/cities.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/QuickSnacks/controllers/CategoryController.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/QuickSnacks/routes.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/QuickSnacks/controllers/HomeController.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/QuickSnacks/controllers/ErrorController.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/QuickSnacks/views/default/home.php</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/QuickSnacks/public/css/style.css</file>
+            <file>file:/Applications/XAMPP/xamppfiles/htdocs/QuickSnacks/views/default/category.php</file>
         </group>
     </open-files>
 </project-private>

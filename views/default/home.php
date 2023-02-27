@@ -32,7 +32,7 @@
                  <div class="card">
                    <img src="<?php echo $category[$s]["image"]?>" class="card-img-top" alt="">
                    <div class="card-body p-lg-4">
-                       <a class="nav-link" href="index.php?controller=home&action=showCategory&id=<?php echo $category[$s]['id'] ?>"><?php echo $category[$s]["name"]?><i class="fa-solid fa-chevron-right mx-2"></i></a>
+                       <a class="nav-link" href="index.php?controller=category&action=showCategory&id=<?php echo $category[$s]['id'] ?>"><?php echo $category[$s]["name"]?><i class="fa-solid fa-chevron-right mx-2"></i></a>
                    </div>
                  </div>
                </div>
@@ -44,7 +44,7 @@
 
 <!-- gợi ý -->
 
-<div class="cate">
+<div class="cate" style="margin: 0 100px;">
    <div class="container-fluid">
      <div class="cate-header d-flex my-4 like">
        <h3>Có thể bạn sẽ thích món này</h3>

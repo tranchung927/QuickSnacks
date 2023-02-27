@@ -246,3 +246,8 @@ function search(){
     }
   });
 }
+
+var load = document.querySelector(".load");
+load.addEventListener("click",function() {
+    return document.querySelector(".load-content").style.display = 'flex';
+});
