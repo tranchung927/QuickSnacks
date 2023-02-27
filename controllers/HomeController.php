@@ -43,8 +43,8 @@ class HomeController extends Controller {
            array('image'=>'./public/images/carousel-2.jpeg'),
            array('image'=>'./public/images/carousel-3.jpeg'));
    
-   $categories = array();
-   array_push($categories,array(
+   $category = array();
+   array_push($category,array(
        'id'=>1,
        'name'=> 'Món mới',
        'image'=> './public/images/MON MOI.jpeg'
@@ -84,13 +84,52 @@ class HomeController extends Controller {
         'price'=>'18000đ'
     ),
     array(
-       'id'=>2,
+       'id'=>3,
        'name'=>'1 bánh trứng',
        'image'=>'./public/images/MON MOI 1.png',
         'price'=>'18000đ'
-    ),     
+    ),
+    array(
+       'id'=>4,
+       'name'=>'1 bánh trứng',
+       'image'=>'./public/images/MON MOI 1.png',
+        'price'=>'18000đ'
+    ),    
     );
-    $data = array('products' => $products, 'categories' => $categories,'banner'=> $banner,'productsLike' => $productsLike);
+    $data = array('products' => $products, 'category' => $category,'banner'=> $banner,'productsLike' => $productsLike);
     $this->render('home', $data);
   }
+  
+  public function showCategory() {
+       $category = array();
+   array_push($category,array(
+       'id'=>1,
+       'name'=> 'Món mới',
+       'image'=> './public/images/MON MOI.jpeg'
+    ), array(
+        'id'=>2,
+       'name'=> 'Đồ ăn nhẹ',
+       'image'=> './public/images/MON MOI.jpeg'
+    ),
+     array(
+        'id'=>3,
+       'name'=> 'Sinh tố',
+       'image'=> './public/images/MON MOI.jpeg'
+    ),
+    array(
+        'id'=>4,
+       'name'=> 'Dành cho trẻ em',
+       'image'=> './public/images/MON MOI.jpeg'
+    ),
+     array(
+        'id'=>5,
+       'name'=> 'Tốt cho sức khoẻ',
+       'image'=> './public/images/MON MOI.jpeg'
+    ),
+    );
+      $data = array('category'=> $Category);
+      $this->render('category_detail',$data);
+  }
 }
+
+ 

@@ -1,6 +1,6 @@
 <?php include 'delivery_address_section.php'; ?>
 
-<div class="cate">
+<div class="cate" style="margin: 0 100px;">
      <?php for($i=0;$i<count($cateTitle);$i++){?>
     <div class="container-fluid">
       <div class="cate-header d-flex my-4 like">
@@ -11,7 +11,7 @@
     <div class="container-fluid">
         <div class="row">
            <?php for($s=0;$s<count($products);$s++){?>
-            <div class="cate-item col-sm-6 col-md-4 col-xs-12 ">
+            <div class="cate-item col-sm-6 col-md-3 col-xs-12 ">
                 <div class="card">
                     <img src="<?php echo $products[$s]["image"]?>" class="card-img-top" alt="">
                     <div class="card-body p-lg-4">
@@ -31,3 +31,5 @@
     </div>
      <?php } ?>
 </div>
+
+<?php 

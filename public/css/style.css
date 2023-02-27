@@ -104,15 +104,14 @@ ul.header-menu li a{
     margin-left: 15px;
     flex-grow: 1;
 }
-.navbar{
-    margin: 0 176px;
+cate {
+    margin: 0 100px;
 }
-.cate {
-    margin: 0 176px;
+.navbar{
+    margin: 0 100px;
 }
 .cate-item {
-    margin-bottom: 24px;
-   
+    margin-bottom: 24px; 
 }
 .card-body {
     padding:3px 10px !important;   

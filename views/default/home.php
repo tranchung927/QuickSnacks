@@ -19,7 +19,7 @@
   </div>
 
 <!-- category -->
-     <div class="cate">
+     <div class="cate" style="margin: 0 100px;">
        <div class="container-fluid">
          <div class="cate-header d-flex my-4">
            <h3>Danh mục món ăn</h3>
@@ -27,13 +27,12 @@
          </div>
          <div class="container-fluid">
            <div class="row">
-               <?php for($s=0;$s<count($categories);$s++){?>
-                   <div class="cate-item col-sm-6 col-md-4 col-xs-12">
+               <?php for($s=0;$s<count($category);$s++){?>
+                   <div class="cate-item col-sm-6 col-md-3 col-xs-12">
                  <div class="card">
-                   <img src="<?php echo $categories[$s]["image"]?>" class="card-img-top" alt="">
+                   <img src="<?php echo $category[$s]["image"]?>" class="card-img-top" alt="">
                    <div class="card-body p-lg-4">
-                        <a class="nav-link" href="http://localhost/QuickSnacks/index.php?controller=menu"><?php echo $categories[$s]["name"]?><i class="fa-solid fa-chevron-right mx-2"></i></a>
-
+                       <a class="nav-link" href="index.php?controller=home&action=showCategory&id=<?php echo $category[$s]['id'] ?>"><?php echo $category[$s]["name"]?><i class="fa-solid fa-chevron-right mx-2"></i></a>
                    </div>
                  </div>
                </div>
@@ -55,7 +54,7 @@
    <div class="container-fluid">
        <div class="row">
           <?php for($s=0;$s<count($productsLike);$s++){?>
-           <div class="cate-item col-sm-6 col-md-4 col-xs-12 ">
+           <div class="cate-item col-sm-6 col-md-3 col-xs-12 ">
                <div class="card">
                    <img src="<?php echo $productsLike[$s]["image"]?>" class="card-img-top" alt="">
                    <div class="card-body p-lg-4">
@@ -67,7 +66,10 @@
                        <div class="d-flex justify-content-center">
                            <button type="button" class="btn btn-danger rounded-pill px-4">Bắt đầu đặt hàng</button>       
                        </div>
-
+<!--                        <div class="btn_button d-flex justify-content-between my-2">
+                            <button type="button" class="btn btn-outline-dark rounded-pill px-md-2">Tuỳ chỉnh</button>
+                            <button type="button" class="btn btn-danger rounded-pill px-4">Thêm</button>
+                        </div>-->
                    </div>
                </div>
            </div>

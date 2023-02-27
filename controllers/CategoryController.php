@@ -9,18 +9,28 @@ class CategoryController extends Controller {
    $products = array();
    array_push($products,array(
        'id'=>1,
+       'parentId'=>1,
        'name'=>'1 bánh trứng',
        'image'=>'./public/images/MON MOI 1.png',
        'price'=>'18000đ'
     ),
     array(
        'id'=>2,
+        'parentId'=>1,
        'name'=>'1 bánh trứng',
        'image'=>'./public/images/MON MOI 1.png',
         'price'=>'18000đ'
     ),
     array(
        'id'=>3,
+        'parentId'=>2,
+       'name'=>'1 bánh trứng',
+       'image'=>'./public/images/MON MOI 1.png',
+        'price'=>'18000đ'
+    ), 
+     array(
+       'id'=>3,
+        'parentId'=>2,
        'name'=>'1 bánh trứng',
        'image'=>'./public/images/MON MOI 1.png',
         'price'=>'18000đ'
@@ -52,12 +62,8 @@ class CategoryController extends Controller {
   
   public function showCategory() {
       require_once 'vendor/Model.php';
-      require_once 'models/categoryModel.php';
-      $data = array('category'=> (new CategoryModel)->findById($_GET['id']));
-      $this->render()
-  }
-  
- 
+      require_once 'models/CategoryModel';
+      $data = array('cateTitle'=> $cateTitle['id'],'product'=>$products);
 }
  public function showCity() {
     require_once 'vendor/Model.php';
@@ -65,3 +71,5 @@ class CategoryController extends Controller {
     $data = array('city' => (new CityModel)->find($_GET['id']));
     $this->render('city_detail', $data, 'Thành phố');
   }
+  
+}
