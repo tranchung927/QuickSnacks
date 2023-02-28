@@ -89,7 +89,26 @@ ul.header-menu li a{
   background: #cf1919;
   color: #cccccc;
 }
+.navbar-nav li a{
+    color: #000 !important;
+}
+.navbar-nav li:hover a{
+    text-decoration: underline;
 
+}
+.nav-item a{
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.nav-item .fa-solid{
+    font-size: 22px;
+}
+.icon {
+	margin-left: 24px !important;
+}
+.fa-cart-shopping {
+    margin-right: 12px;
+}
 .cate-header {
     align-items: center !important;
 }
@@ -104,44 +123,66 @@ ul.header-menu li a{
     margin-left: 15px;
     flex-grow: 1;
 }
-cate {
-    margin: 0 100px;
-}
 .navbar{
     margin: 0 100px;
 }
+.cate {
+    margin: 0 100px;
+}
 .cate-item {
-    margin-bottom: 24px; 
+    margin-bottom: 24px;
+   
 }
 .card-body {
-    padding:3px 10px !important;   
+    padding:3px 10px !important;
+    
 }
-
-.card-body>a {
+.card-body>p {
      margin: 0 !important;
      font-size: 16px;
      font-weight: 700 !important;
      text-transform: capitalize;
 }
-.card-body>a:hover {
-    text-decoration: underline;
-}
 .card {
-    box-shadow: 0px 0px 2px 2px #ccc;
+    box-shadow: 0px 0px 5px 5px #ccc;
 }
 .like hr{
     width: 68%;
     margin-left: 15px;
 }
-
+.download_more {
+    display: none;
+}
+.load{
+    width: 20%;
+}
 .card-title .card-text {
-    font-weight: 300 !important; 
+    font-weight: 300 !important;
+    
+}
+.minus {
+    color: #ccc;
+    font-size: 34px;
+}
+.plus {
+    color: #E73B3B;
+    font-size: 34px;
 }
 
-.card-body:hover .productCate {
-    text-decoration: underline;
+.product_content {
+     box-shadow: 0px 0px 2px 2px #ccc;
+     padding-top: 25px;
+     padding-bottom: 25px;
+     padding-right: 40px;
+     padding-left: 12px;
+     border-radius: 6px;
 }
-
+.quantity {
+   
+}
+.product {
+    margin: 44px 300px;
+}
 /* media query */
 @media (max-width: 1399.98px) {
     .navbar{
@@ -160,11 +201,17 @@ cate {
         width: 54%;
         margin-left: 42px;
     }
+   .product {
+    margin: 44px 170px;
+   }
 }
 
 @media (max-width: 1199.98px) {
     .navbar{
         margin: 0 14px;
+    }
+    .product {
+        margin: 44px 100px;
     }
     .cate {
         margin: 0 14px;
@@ -179,6 +226,9 @@ cate {
         width: 60%;
         margin-left: 12px;
     }
+    .product {
+        margin: 44px 120px;
+       }
  }
 @media(max-width: 992px) {
     .cate-header hr {
@@ -194,9 +244,9 @@ cate {
     .cate h3 {
         font-size: 20px;
     }
-    .load{
-        width: 30%;
-    }
+    .product {
+        margin: 44px 16px;
+       }
 }
 @media (max-width: 768px){	
     .cate-header hr {
@@ -222,6 +272,7 @@ cate {
     .load{
         width: 40%;
     }
+    
 }
 @media (max-width: 576px){
 	.cate-header hr {
