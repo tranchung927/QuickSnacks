@@ -31,8 +31,8 @@
                    <div class="cate-item col-sm-6 col-md-4 col-lg-3 col-xs-12">
                  <div class="card">
                    <img src="<?php echo $category[$s]["image"]?>" class="card-img-top" alt="">
-                   <div class="card-body p-lg-4">
-                       <a class="nav-link" href="index.php?controller=category&action=showCategory&id=<?php echo $category[$s]['id'] ?>"><?php echo $category[$s]["name"]?><i class="fa-solid fa-chevron-right mx-2"></i></a>
+                   <div class="card-body p-lg-2">
+                       <a class="nav-link" href="index.php?controller=category&action=showCategory&id=<?php echo $category[$s]['id'] ?>"><h5><?php echo $category[$s]["name"]?><i class="fa-solid fa-chevron-right mx-2"></i></h5></a>
                    </div>
                  </div>
                </div>
@@ -63,8 +63,8 @@
                            <h5><?php echo $productsLike[$s]["price"]?></h5>
                        </div>
                        <div class="card-text my-2 mx-2"><?php echo $productsLike[$s]["name"]?></div>       
-                       <div class="d-flex justify-content-center">
-                           <button type="button" class="btn btn-danger rounded-pill px-4 mt-4">Bắt đầu đặt hàng</button>       
+                       <div class="d-flex justify-content-center my-4">
+                           <button type="button" class="btn btn-danger rounded-pill px-4 mt-4 button">Bắt đầu đặt hàng</button>       
                        </div>
 <!--                        <div class="btn_button d-flex justify-content-between my-2">
                             <button type="button" class="btn btn-outline-dark rounded-pill px-md-2">Tuỳ chỉnh</button>
