@@ -37,6 +37,8 @@
 
 ul.header-menu {
     margin-left: 24px;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 ul.header-menu li{
@@ -65,6 +67,8 @@ ul.header-menu li a{
     color: #ffffff;
     margin-right: 12px;
     text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
     font-size: 16px;
     font-weight: 500;
 }
