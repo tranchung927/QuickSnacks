@@ -37,7 +37,7 @@ class UserController extends Controller
 
     $fname = $_POST['fname'];
     $lname = $_POST['lname'];
-    $phone = $_POST['phonenumber'];
+    $phone = $_POST['phone'];
     $emailsignup = $_POST['emailsignup'];
     $passsignup = $_POST['passsignup'];
 
@@ -63,8 +63,8 @@ class UserController extends Controller
       echo '{"code":3, "message":"Vui lòng nhập số điện thoại của bạn."}';
       return false;
     } else {
-      if (!preg_match("/^[a-zA-Z ]+/",$phone)) {
-        echo '{"code":3, "message":"số điện thoại không đúng định dạng."}';
+      if (!preg_match("/^[0-9]{10}/",$phone)) {
+        echo '{"code":3, "message":"Số điện thoại không đúng định dạng."}';
         return false;
       }
     }
@@ -86,8 +86,6 @@ class UserController extends Controller
         return false;
       }
     }
-
-
     return true;
   }
 }
