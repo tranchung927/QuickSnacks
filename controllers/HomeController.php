@@ -6,37 +6,6 @@ class HomeController extends Controller {
   }
 
   public function index() {
-    $data = array(
-      'name' => 'Chung',
-      'age' => 29
-    );
-    $products = array();
-
-    array_push($products, array(
-        'id' => 1,
-        'name' => 'Bánh ngô',
-        'description' => 'Đây là bánh ngô bà Tân vê lốc',
-        'price' => 18000.0,
-        'status' => 'active',
-        'calorie' => 300,
-        'estimate_time' => 20
-    ), array(
-        'id' => 2,
-        'name' => 'Bánh khoai',
-        'description' => 'Đây là bánh khoai bà Tân vê lốc',
-        'price' => 28000.0,
-        'status' => 'active',
-        'calorie' => 300,
-        'estimate_time' => 20
-    ), array(
-        'id' => 3,
-        'name' => 'Bánh sắn',
-        'description' => 'Đây là bánh sắn bà Tân vê lốc',
-        'price' => 58000.0,
-        'status' => 'active',
-        'calorie' => 300,
-        'estimate_time' => 20
-    ));
    
    $banner = array();
    array_push($banner,array('image'=>'./public/images/carousel_1.jpeg'),
@@ -70,8 +39,8 @@ class HomeController extends Controller {
     ),
     );
     
-   $productsLike = array();
-   array_push($productsLike,array(
+   $products = array();
+   array_push($products,array(
        'id'=>1,
        'name'=>'1 bánh trứng',
        'image'=>'./public/images/MON MOI 1.png',

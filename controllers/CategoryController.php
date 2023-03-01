@@ -61,7 +61,6 @@ class CategoryController extends Controller {
   }
   
   public function showCategory() {
-  
        $products = array();
    array_push($products,array(
        'id'=>1,
@@ -188,4 +187,35 @@ class CategoryController extends Controller {
       $data = array('cateTitle'=> $cateTitle,'products'=>$products,'category' =>$category);
       $this->render('showCategory',$data);
 }
+    public function product() {
+        $products = array();
+   array_push($products,array(
+       'id'=>1,
+       'name'=>'1 bánh trứng',
+       'image'=>'./public/images/MON MOI 1.png',
+       'price'=>'18000đ'
+    ),
+    array(
+       'id'=>2,
+       'name'=>'1 bánh trứng',
+       'image'=>'./public/images/MON MOI 1.png',
+        'price'=>'18000đ'
+    ),
+    array(
+       'id'=>3,
+       'name'=>'1 bánh trứng',
+       'image'=>'./public/images/MON MOI 1.png',
+        'price'=>'18000đ'
+    ),
+    array(
+       'id'=>4,
+       'name'=>'1 bánh trứng',
+       'image'=>'./public/images/MON MOI 1.png',
+        'price'=>'18000đ'
+    ),    
+    );
+    $data = array('products' => $products,);
+    $this->render('product',$data);
+    }
+
 }

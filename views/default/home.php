@@ -53,18 +53,18 @@
    </div>
    <div class="container-fluid">
        <div class="row">
-          <?php for($s=0;$s<count($productsLike);$s++){?>
+          <?php for($s=0;$s<count($products);$s++){?>
            <div class="cate-item col-sm-6 col-md-4 col-lg-3 col-xs-12 ">
                <div class="card">
-                   <img src="<?php echo $productsLike[$s]["image"]?>" class="card-img-top" alt="">
+                   <img src="<?php echo $products[$s]["image"]?>" class="card-img-top" alt="">
                    <div class="card-body p-lg-4">
                        <div class="card-title d-flex justify-content-between">
-                           <h5><?php echo $productsLike[$s]["name"]?></h5>
-                           <h5><?php echo $productsLike[$s]["price"]?></h5>
+                           <h5><?php echo $products[$s]["name"]?></h5>
+                           <h5><?php echo $products[$s]["price"]?></h5>
                        </div>
                        <div class="card-text my-2 mx-2"><?php echo $productsLike[$s]["name"]?></div>       
                        <div class="d-flex justify-content-center my-4">
-                           <button type="button" class="btn btn-danger rounded-pill px-4 mt-4 button">Bắt đầu đặt hàng</button>       
+                           <button type="button" class="btn btn-danger rounded-pill px-4 mt-4 button"><a class="nav-link text-decoration-none" href="index.php?controller=category&action=product&id=<?php echo $products[$s]['id'] ?>">Bắt đầu đặt hàng</a></button>       
                        </div>
 <!--                        <div class="btn_button d-flex justify-content-between my-2">
                             <button type="button" class="btn btn-outline-dark rounded-pill px-md-2">Tuỳ chỉnh</button>

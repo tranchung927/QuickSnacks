@@ -28,6 +28,7 @@
             <?php }?>
         </div>
     </div>
+    
      <div class="container-fluid load-content">
         <div class="row">
            <?php for($s=0;$s<count($products);$s++){?>
@@ -54,5 +55,9 @@
     </div>
     
 </div>
-
-<?php 
+<script>
+    var load = document.querySelector(".load");
+load.addEventListener("click",function() {
+    return document.querySelector(".load-content").style.display = 'flex';
+});
+</script>
