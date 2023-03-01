@@ -2,41 +2,6 @@
           class="text-center text-lg-start text-white"
           style="background-color: #1c2331"
           >
-    <!-- Section: Social media -->
-    <section
-             class="d-flex justify-content-between p-4"
-             style="background-color: #6351ce"
-             >
-      <!-- Left -->
-      <div class="me-5">
-        <span>Get connected with us on social networks:</span>
-      </div>
-      <!-- Left -->
-
-      <!-- Right -->
-      <div>
-        <a href="" class="text-white me-4">
-          <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="" class="text-white me-4">
-          <i class="fab fa-twitter"></i>
-        </a>
-        <a href="" class="text-white me-4">
-          <i class="fab fa-google"></i>
-        </a>
-        <a href="" class="text-white me-4">
-          <i class="fab fa-instagram"></i>
-        </a>
-        <a href="" class="text-white me-4">
-          <i class="fab fa-linkedin"></i>
-        </a>
-        <a href="" class="text-white me-4">
-          <i class="fab fa-github"></i>
-        </a>
-      </div>
-      <!-- Right -->
-    </section>
-    <!-- Section: Social media -->
 
     <!-- Section: Links  -->
     <section class="">
@@ -46,16 +11,14 @@
           <!-- Grid column -->
           <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
             <!-- Content -->
-            <h6 class="text-uppercase fw-bold">Company name</h6>
-            <hr
-                class="mb-4 mt-0 d-inline-block mx-auto"
-                style="width: 60px; background-color: #7c4dff; height: 2px"
-                />
-            <p>
-              Here you can use rows and columns to organize your footer
-              content. Lorem ipsum dolor sit amet, consectetur adipisicing
-              elit.
-            </p>
+            <h6 class="text-uppercase fw-bold">Danh mục món ăn</h6>
+            <ul>
+              <li><a href="#">Món mới</a></li>
+              <li><a href="#">Món mới</a></li>
+              <li><a href="#">Món mới</a></li>
+              <li><a href="#">Món mới</a></li>
+              <li><a href="#">Món mới</a></li>
+            </ul>
           </div>
           <!-- Grid column -->
 
@@ -130,10 +93,7 @@
          class="text-center p-3"
          style="background-color: rgba(0, 0, 0, 0.2)"
          >
-      © 2020 Copyright:
-      <a class="text-white" href="https://mdbootstrap.com/"
-         >MDBootstrap.com</a
-        >
+      <a class="text-white" href="https://mdbootstrap.com/">Copyright © 2023 QuickSnacks Vietnam</a>
     </div>
     <!-- Copyright -->
   </footer>
