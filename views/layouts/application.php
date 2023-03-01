@@ -14,6 +14,7 @@
     <!-- Put script after jquery -->
     <link rel="stylesheet" href="public/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="public/fontawesome/css/all.css">
+    <script src="public/jquery/jquery-latest.js"></script>
     <script type="text/javascript" src="public/bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="public/script/script.js"></script>
 
