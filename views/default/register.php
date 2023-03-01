@@ -11,21 +11,21 @@
         </div>   
         <div>
             <input class="input-under-line" id="txtPhoneNumber" type="text" placeholder="Số Điện Thoại *" name="phonenumber">
-            <p id="errPhone" class="error-message"></p>
+            <p id="errPhoneNumber" class="error-message"></p>
         </div>   
         <div>
             <input class="input-under-line" id="txtEmailSignup" type="text" placeholder="Địa chỉ email của bạn *" name="emailsignup">
-            <p id="errEmail" class="error-message"></p>
+            <p id="errEmailSignup" class="error-message"></p>
         </div>   
         <div>
             <input class="input-under-line" id="txtPassSignup" type="password" placeholder="Mật khẩu *" name="passsignup">
-            <p id="errPassword" class="error-message"></p>
+            <p id="errPasswordSignup" class="error-message"></p>
         </div>      
         <div class="check-policy">
             <div class="checker"><input type="checkbox" name="policy-check" id="check"></div> 
             <div class="policy"><p>Tôi đã đọc và đồng ý với <a href="https://kfcvietnam.com.vn/privacy-policy">Chính Sách Hoạt Động Của QuickSnacks</a></p></div>
         </div>
-        <button id="btnRegister">Tạo Tài Khoản</button>
+        <button id="btnRegister" class="button-primary">Tạo Tài Khoản</button>
         <div class="have-account">
             <div class="text">Bạn đã có tài khoản?</div>
             <div class="login"><a href="index.php?controller=home&action=signin">Đăng Nhập</a></div>

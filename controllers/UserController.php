@@ -72,7 +72,7 @@ class UserController extends Controller
       echo '{"code":4, "message":"Vui lòng nhập email của bạn."}';
       return false;
     } else {
-      if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+      if (!filter_var($emailsignup, FILTER_VALIDATE_EMAIL)) {
         echo '{"code":4, "message":"Email không đúng định dạng."}';
         return false;
       }

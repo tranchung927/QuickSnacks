@@ -9,23 +9,23 @@
     var lname = $('#txtLname').val();
     var emailsignup = $('#txtEmailSignup').val();
     var phone = $('#txtPhoneNumber').val();
-    var fname = $('#txtPassSignup').val();
+    var passsignup = $('#txtPassSignup').val();
     $('#errFname').html('')
     $('#errLname').html('')
-    $('#errPhone').html('')
-    $('#errEmail').html('')
-    $('#errPassword').html('')
+    $('#errPhoneNumber').html('')
+    $('#errEmailSignup').html('')
+    $('#errPasswordSignup').html('')
     $.ajax({
-      url: "index.php?controller=user&action=signup",
+      url: "index.php?controller=user&action=register",
       type: "post",
       dataType: "text",
       data: {
-        fname,lname,phonenumber,emailsignup,passsignup
+        fname,lname,phone,emailsignup,passsignup
       },
       success: function (result) {
         const obj = JSON.parse(result);
         if (obj.code == 0) {
-          window.location.replace("http://localhost/QuickSnacks/index.php");
+          window.location.replace("http://localhost/QuickSnacks/index.php?controller=home&action=signin");
         } else if(obj.code == 1) {
           console.log(obj.message.toString());
           $('#errFname').html(obj.message.toString());
@@ -50,7 +50,7 @@
     $('#errSignEmail').html('')
     $('#errSignPW').html('')
     $.ajax({
-      url: "index.php?controller=user&action=signin",
+      url: "index.php?controller=user&action=login",
       type: "post",
       dataType: "text",
       data: {

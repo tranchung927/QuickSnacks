@@ -101,6 +101,7 @@ ul.header-menu li a{
     width: 748px;
     margin: auto;
     padding-top: 80px;
+    height: 1100px;
 }
 
 .container-login form h1 {
@@ -222,30 +223,31 @@ ul.header-menu li a{
     height: 37px;
     border: 0px solid red;
     margin-top: 41.27px;
+    margin-left: 40px;
     display: flex;
 }
 .check-policy p{
     font-family: Roboto;
-    font-size: 200px;
-    margin-left: 20px;
+    font-size: 20px;
+    margin-left: 10px;
 }
 .check-policy #check{
-    width: 36px;
-    height: 36px;
-
+    width: 25px;
+    height: 25px;
 }
 .check-policy a{
     font-weight: 700;
+    font-size: 20px;
     border-bottom: 2px solid black;
     text-decoration: none;
     color: black;
 }
-.container-register button{
+.container-register .button-primary{
     width: 748px;
     height: 64px;
     background: #E73B3B;
     border-radius: 40px;
-    margin-top: 56px;
+    margin-top: 45px;
     font-size: 24px;
     font-weight: 700;
     color: white;
@@ -257,7 +259,8 @@ ul.header-menu li a{
     border: 0px solid red;
     margin-top: 42px;
     display: flex;
-    font-size: 24px;
+    font-size: 20px;
+    margin-left: 210px;
 }
 .have-account a{
     font-weight: 700;
