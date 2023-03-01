@@ -45,7 +45,7 @@ class UserController extends Controller
       echo '{"code":1, "message":"Vui lòng nhập họ của bạn."}';
       return false;
     } else {
-      if (!preg_match($fname,"/^[a-zA-Z ]?$/")) {
+      if (!preg_match("/^[a-zA-Z ]+/",$fname)) {
         echo '{"code":1, "message":"Họ không đúng định dạng."}';
         return false;
       }
@@ -54,7 +54,7 @@ class UserController extends Controller
       echo '{"code":2, "message":"Vui lòng nhập tên của bạn."}';
       return false;
     } else {
-      if (!preg_match($lname,"/^[a-zA-Z ]?$/")) {
+      if (!preg_match("/^[a-zA-Z ]+/",$lname)) {
         echo '{"code":2, "message":"Tên không đúng định dạng."}';
         return false;
       }
@@ -63,7 +63,7 @@ class UserController extends Controller
       echo '{"code":3, "message":"Vui lòng nhập số điện thoại của bạn."}';
       return false;
     } else {
-      if (!preg_match($phone,"/^[a-zA-Z ]?$/")) {
+      if (!preg_match("/^[a-zA-Z ]+/",$phone)) {
         echo '{"code":3, "message":"số điện thoại không đúng định dạng."}';
         return false;
       }
@@ -72,7 +72,7 @@ class UserController extends Controller
       echo '{"code":4, "message":"Vui lòng nhập email của bạn."}';
       return false;
     } else {
-      if (!filter_var($emailsignup, FILTER_VALIDATE_EMAIL)) {
+      if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         echo '{"code":4, "message":"Email không đúng định dạng."}';
         return false;
       }
@@ -81,7 +81,7 @@ class UserController extends Controller
       echo '{"code":5, "message":"Vui lòng nhập mật khẩu của bạn."}';
       return false;
     } else {
-      if (!preg_match($passsignup,"/^[a-zA-Z0-9]{8}$/")) {
+      if (!preg_match("/^[a-zA-Z0-9]{8}/",$passsignup)) {
         echo '{"code":5, "message":"Vui lòng nhập mật khẩu gồm chữ và số."}';
         return false;
       }
