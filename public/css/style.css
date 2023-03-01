@@ -8,7 +8,7 @@
     position: fixed;
     top: 0;
     display: flex;
-    flex-direction: row;
+    direction: row;
     align-items: center;
     background-color: white;
     z-index: 1000;
@@ -97,6 +97,11 @@ ul.header-menu li a{
     margin: auto;
     padding-top: 80px;
 }
+.container-register{
+    width: 748px;
+    margin: auto;
+    padding-top: 80px;
+}
 
 .container-login form h1 {
     text-align: center;
@@ -167,7 +172,7 @@ ul.header-menu li a{
     font-family: Roboto-Bold;
     font-size: 20px;
 }
-/* .forgot-password{
+ .forgot-password{
     width: 748px;
     margin-top: 48px;
     display: flex;
@@ -184,13 +189,6 @@ ul.header-menu li a{
     border: 0px solid green;
     margin-top: 53px;
 }
-
-
-.line{
-    width: 748px;
-    height: 30px;
-    border-bottom: 1px solid rgb(88, 88, 88);
-}
 .input-login{
     border: 0px;
     width: 100%;
@@ -205,45 +203,20 @@ ul.header-menu li a{
     color: black;
     font-weight: 600;
 }
-.container-register{
-    width: 100%;
-    height: 1200px;
-    border: 0px solid red;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.container-login form #txtFname {
+    margin-top: 48px;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 20px;
+    color: black;
 }
 .container-register h1{
-    font-size: 38px;
-    font-family: Roboto;
-    font-weight: 700;
     margin-top: 80px;
+    text-align: center;
+    font-family: Roboto-Bold;
+    font-size: 28px;
 }
-.form-register{
-    width: 748px;
-    height: 525px;
-    display: flex;
-    flex-direction: column;
-    border: 0px solid red;
-    margin-top: 111px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-.form-register .input{
-    height: 73px;
-    width: 748px;
-    height: 73px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-}
-.input-register{
-    border: 0px;
-    width: 100%;
-    box-shadow: none;
-    font-size: 24px;
-}
+
 .check-policy{
     width: 781px;
     height: 37px;
@@ -252,7 +225,8 @@ ul.header-menu li a{
     display: flex;
 }
 .check-policy p{
-    font-size: 24px;
+    font-family: Roboto;
+    font-size: 200px;
     margin-left: 20px;
 }
 .check-policy #check{
@@ -291,7 +265,7 @@ ul.header-menu li a{
     text-decoration: none;
     color: black;
     margin-left: 5px;
-} */
+} 
 @font-face {
   font-family: Roboto;
   src: url(../fonts/Roboto-Regular.ttf);
