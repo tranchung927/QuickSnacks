@@ -1,99 +1,71 @@
-<footer
-          class="text-center text-lg-start text-white"
-          style="background-color: #1c2331"
-          >
+<footer id="footer" class="text-center text-lg-start">
 
-    <!-- Section: Links  -->
-    <section class="">
-      <div class="container text-center text-md-start mt-5">
-        <!-- Grid row -->
-        <div class="row mt-3">
-          <!-- Grid column -->
-          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-            <!-- Content -->
-            <h6 class="text-uppercase fw-bold">Danh mục món ăn</h6>
-            <ul>
-              <li><a href="#">Món mới</a></li>
-              <li><a href="#">Món mới</a></li>
-              <li><a href="#">Món mới</a></li>
-              <li><a href="#">Món mới</a></li>
-              <li><a href="#">Món mới</a></li>
-            </ul>
-          </div>
-          <!-- Grid column -->
-
-          <!-- Grid column -->
-          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-            <!-- Links -->
-            <h6 class="text-uppercase fw-bold">Products</h6>
-            <hr
-                class="mb-4 mt-0 d-inline-block mx-auto"
-                style="width: 60px; background-color: #7c4dff; height: 2px"
-                />
-            <p>
-              <a href="#!" class="text-white">MDBootstrap</a>
-            </p>
-            <p>
-              <a href="#!" class="text-white">MDWordPress</a>
-            </p>
-            <p>
-              <a href="#!" class="text-white">BrandFlow</a>
-            </p>
-            <p>
-              <a href="#!" class="text-white">Bootstrap Angular</a>
-            </p>
-          </div>
-          <!-- Grid column -->
-
-          <!-- Grid column -->
-          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-            <!-- Links -->
-            <h6 class="text-uppercase fw-bold">Useful links</h6>
-            <hr
-                class="mb-4 mt-0 d-inline-block mx-auto"
-                style="width: 60px; background-color: #7c4dff; height: 2px"
-                />
-            <p>
-              <a href="#!" class="text-white">Your Account</a>
-            </p>
-            <p>
-              <a href="#!" class="text-white">Become an Affiliate</a>
-            </p>
-            <p>
-              <a href="#!" class="text-white">Shipping Rates</a>
-            </p>
-            <p>
-              <a href="#!" class="text-white">Help</a>
-            </p>
-          </div>
-          <!-- Grid column -->
-
-          <!-- Grid column -->
-          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-            <!-- Links -->
-            <h6 class="text-uppercase fw-bold">Contact</h6>
-            <hr
-                class="mb-4 mt-0 d-inline-block mx-auto"
-                style="width: 60px; background-color: #7c4dff; height: 2px"
-                />
-            <p><i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
-            <p><i class="fas fa-envelope mr-3"></i> info@example.com</p>
-            <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
-            <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
-          </div>
-          <!-- Grid column -->
+  <!-- Section: Links  -->
+  <section class="">
+    <div class="container text-center text-md-start pt-4">
+      <!-- Grid row -->
+      <div class="row">
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto">
+          <!-- Links -->
+          <h6 class="footer-menu-title">Danh mục món ăn</h6>
+          <ul class="footer-menu">
+            <li><a href="#!" class="footer-menu-item">Món mới</a></li>
+            <?php
+            require_once("vendor/Model.php");
+            require_once("models/CategoryModel.php");
+            $md = new CategoryModel;
+            $data = $md->getAll();
+            for ($i = 0; $i < count($data); $i++) {
+            ?>
+              <li><a href="#!" class="footer-menu-item"><?php echo $data[$i]['name'] ?></a></li>
+            <?php } ?>
+          </ul>
         </div>
-        <!-- Grid row -->
-      </div>
-    </section>
-    <!-- Section: Links  -->
+        <!-- Grid column -->
 
-    <!-- Copyright -->
-    <div
-         class="text-center p-3"
-         style="background-color: rgba(0, 0, 0, 0.2)"
-         >
-      <a class="text-white" href="https://mdbootstrap.com/">Copyright © 2023 QuickSnacks Vietnam</a>
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto">
+          <!-- Links -->
+          <h6 class="footer-menu-title">Về QuickSnacks</h6>
+          <ul class="footer-menu">
+            <li><a href="#!" class="footer-menu-item">Tin khuyến mãi</a></li>
+            <li><a href="#!" class="footer-menu-item">Tin tức QuickSnacks</a></li>
+            <li><a href="#!" class="footer-menu-item">Tuyển dụng</a></li>
+          </ul>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0">
+          <!-- Links -->
+          <h6 class="footer-menu-title">Liên hệ</h6>
+          <ul class="footer-menu">
+            <li><a href="#!" class="footer-menu-item"><i class="fas fa-home mr-3"></i> 285 Đội Cấn, Ba Đình, Hà Nội</a></li>
+            <li><a href="#!" class="footer-menu-item"><i class="fas fa-envelope mr-3"></i> quicksnacks@gmail.com</a></li>
+            <li><a href="#!" class="footer-menu-item"><i class="fas fa-phone mr-3"></i> + 01 234 567 88</a></li>
+            <li><a href="#!" class="footer-menu-item"><i class="fas fa-print mr-3"></i> + 01 234 567 89</a></li>
+          </ul>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0">
+          <!-- Links -->
+          <h6 class="footer-menu-title">Download App</h6>
+          <p><a href="#!"><img class="mobile-app" src="public/images/logo_appstore.png" alt="appstore" /></a></p>
+          <p><a href="#!"><img class="mobile-app" src="public/images/logo_playstore.png" alt="playstore" /></a></p>
+        </div>
+        <!-- Grid column -->
+      </div>
+      <!-- Grid row -->
     </div>
-    <!-- Copyright -->
-  </footer>
+  </section>
+  <!-- Section: Links  -->
+
+  <!-- Copyright -->
+  <div class="text-center p-5">
+    <a id="copyright" href="index.php">Copyright © 2023 QuickSnacks Vietnam</a>
+  </div>
+  <!-- Copyright -->
+</footer>
