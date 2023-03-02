@@ -68,4 +68,10 @@ class HomeController extends Controller {
     $data = array('products' => $products, 'category' => $category,'banner'=> $banner,'productsLike' => $productsLike);
     $this->render('home', $data);
   }
+  public function login() {
+      $this->render('viLogin');
+  }
+  public function logout() {
+      $this->render('viLogout');
+  }
 }

@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <?php include 'delivery_address_section.php'; ?>
 
 <div class="cate">
@@ -13,16 +16,33 @@
            <?php for($s=0;$s<count($products);$s++){?>
             <div class="cate-item col-sm-6 col-md-4 col-lg-3 col-xs-12 ">
                 <div class="card">
-                    <img src="<?php echo $products[$s]["image"]?>" class="card-img-top" alt="">
+               
+                                          <a class="nav-link" href="index.php?controller=category&action=product&id=<?php $products[$s]['id'] ?>"> <img src="<?php echo $products[$s]["image"]?>" class="card-img-top" alt=""></a>
+
                     <div class="card-body p-lg-4">
                         <div class="card-title d-flex justify-content-between">
                             <h5><?php echo $products[$s]["name"]?></h5>
                             <h5><?php echo $products[$s]["price"]?></h5>
                         </div>
                         <div class="card-text my-2 mx-2"><?php echo $products[$s]["name"]?></div>       
-                        <div class="d-flex justify-content-center">
-                            <button type="button" class="btn btn-danger rounded-pill px-4 my-4 button">Bắt đầu đặt hàng</button>       
-                        </div>                 
+                       
+<!--login logout-->
+                       <?php 
+                            if(isset($_SESSION['login']['username'])){
+                                echo "<div class='btn_button d-flex justify-content-between my-3 pb-4'>
+                                                    <button type='button' class='btn btn-outline-dark rounded-pill px-md-2 btn_product'>Tuỳ chỉnh</button>
+                                                    <button type='button' class='btn btn-danger rounded-pill px-md-2 btn_product'><a class='nav-link text-decoration-none' href='index.php?controller=category&action=product&id=<?php echo $products[$s]['id'] ?>Thêm</a></button>       
+                                               </div>";
+                            }else {
+                                echo "<div class='d-flex justify-content-center bp-4'>
+                                                   <button type='button' class='btn btn-danger rounded-pill px-4 mt-2 button my-4'>
+                                                        <a class='nav-link text-decoration-none' href='index.php?controller=category&action=product&id=<?php $products[$s]['id']?>
+                                                       Bắt đầu đặt hàng</a>
+                                                       </button>       
+                                               </div>";
+                            }
+                        ?>       
+                        
                     </div>
                 </div>
             </div>

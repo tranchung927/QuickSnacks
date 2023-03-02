@@ -171,6 +171,9 @@ ul.header-menu li a{
 .card-body:hover a {
     text-decoration: underline;
 }
+btn_product {
+    width: 45% !important;
+}
 /* media query */
 @media (max-width: 1399.98px) {
     .cate {
