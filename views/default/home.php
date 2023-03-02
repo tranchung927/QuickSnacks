@@ -5,7 +5,7 @@ session_start();
 
 <!--carousel -->
    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
+       <div class="carousel-inner" style="height: 500px;">
       <?php for($s=0;$s<count($banner);$s++) { ?>
           <div class="carousel-item active" data-bs-interval="10000">
               <img src="<?php echo $banner[$s]["image"] ?> " class="d-block w-100" alt="...">
@@ -77,9 +77,9 @@ session_start();
                        <?php 
                             if(isset($_SESSION['login']['username'])){
                                echo "<div class='btn_button d-flex justify-content-between my-3 pb-4'>
-                                                    <button type='button' class='btn btn-outline-dark rounded-pill px-md-2 btn_product mw-45'>Tuỳ chỉnh</button>
-                                                    <button type='button' class='btn btn-danger rounded-pill px-md-2 btn_product'><a class='nav-link text-decoration-none' href='index.php?controller=category&action=product&id=<?php echo $products[$s]['id'] ?>Thêm</a></button>       
-                                               </div>";
+                                       <button type='button' class='btn  btn-outline-dark rounded-pill px-md-2 btn_product' style='width:45%'><a class='nav-link text-decoration-none' href='index.php?controller=category&action=product&id=<?php echo $products[$s]['id']?>Tuỳ chỉnh</a></button> 
+                                                     <button type='button' class='btn btn-danger rounded-pill px-md-2 btn_product' style='width:45%'>Thêm</button>
+                                   </div>";
                             }else {
                                  echo "<div class='d-flex justify-content-center bp-4'>
                                                    <button type='button' class='btn btn-danger rounded-pill px-4 mt-2 button my-4'>
