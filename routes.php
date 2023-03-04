@@ -3,7 +3,8 @@ $controllers = array(
     'error' => ['notFound'],
     'home'  => ['index','login','logout'],
     'cities' => ['index', 'showCity'],
-    'category' => ['index','showCategory','product'],
+    'category' => ['index','category_detail','product'],
+    'orders' => ['index']
 ); // Các controllers trong hệ thống và các action có thể gọi ra từ controller đó.
 
 // Nếu các tham số nhận được từ URL không hợp lệ (không thuộc list controller và action có thể gọi

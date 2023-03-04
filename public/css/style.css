@@ -92,10 +92,11 @@ ul.header-menu li a{
 .cate-header {
     align-items: center !important;
 }
-.cate-header h3 {
-    margin: 0 !important;
-    font-weight: 700;
+.category-title {
+    margin: 0;
     text-transform: uppercase;
+    font-family: Roboto-Bold;
+    
 }
 .cate-header hr {
     border: 2px solid rgb(62,44,100);
@@ -110,17 +111,7 @@ ul.header-menu li a{
     margin-bottom: 24px;
    
 }
-.card-body {
-    padding:3px 10px !important;
-    
-}
-.card-body>p {
-     margin: 0 !important;
-     font-size: 16px;
-     font-weight: 700 !important;
-     text-transform: capitalize;
-}
-.card {
+.product_card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .like hr{
@@ -148,7 +139,7 @@ ul.header-menu li a{
     font-size: 34px;
 }
 .plus {
-    color: #dc3545;
+    color: #E73B3B;
     font-size: 34px;
 }
 
@@ -163,17 +154,56 @@ ul.header-menu li a{
 .product {
     margin: 44px 300px;
 }
-.button {
-    width: 100%;
-    height: 42px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
 .card-body:hover a {
     text-decoration: underline;
 }
-btn_product {
-    width: 45% !important;
+.product_name {
+    font-family: Roboto-Medium;
 }
+.btn_feature {
+    font-family: Roboto;
+}
+
+.product_view {
+     font-family: Roboto-Italic;
+     color: #707070;
+}
+.orderProduct {
+    display: flex;
+    justify-items: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    align-items: center;
+}
+.product_suggest {
+    position: relative;
+}
+.product_suggest_info {
+   position: absolute;
+    left: 23px;
+    bottom: 12px;
+    color: #fff;
+    font-size:14px
+    
+}
+.product_suggest_info h5 {
+    margin: 0;
+}
+.img_product_suggest {
+    opacity: 0.95;
+}
+.product_suggest_btn {
+    position: absolute;
+    right: 23px;
+    top: 12px;
+    color: #000;
+    font-size: 24px
+}
+.box_receipt {
+    padding: 30px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
 /* media query */
 @media (max-width: 1399.98px) {
     .cate {
