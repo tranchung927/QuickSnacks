@@ -28,6 +28,7 @@
     <div id="main_body">
       <?= @$content ?>
     </div>
+    <?php include "footer.php"; ?>
   </body>
 
   </html>

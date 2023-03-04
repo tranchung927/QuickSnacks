@@ -10,8 +10,6 @@ class UserController extends Controller
 
   function login()
   {
-    require_once 'vendor/Model.php';
-
     $email = $_POST['email'];
     $password = $_POST['password'];
 
@@ -29,32 +27,46 @@ class UserController extends Controller
       echo '{"code":2, "message":"Vui lòng nhập mật khẩu của bạn."}';
       return false;
     }
+    require_once 'vendor/Model.php';
+    require_once 'models/AccountModel.php';
+    $md = new AccountModel;
+    $data = array();
+    $data = $md->getUserByEmail($email);
+    if (empty($data) || sha1($password) == $data['password']) {
+      echo '{"code":3, "message":"Sai tên tài khoản hoặc mật khẩu!"}';
+      return false;
+    }
+    $_SESSION['user'] = $data;
+    if (isset($_SESSION['cart'])) {
+
+    }
+    echo '{"code":0, "message":"Đăng nhập thành công"}';
     return true;
   }
 
-  function register(){
-    require_once 'vendor/Model.php';
-
-    $fname = $_POST['fname'];
-    $lname = $_POST['lname'];
+  function register()
+  {
+    $firstName = $_POST['first_name'];
+    $lastName = $_POST['last_name'];
     $phone = $_POST['phone'];
-    $emailsignup = $_POST['emailsignup'];
-    $passsignup = $_POST['passsignup'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $isCheck = $_POST['is_check'];
 
-    if (empty($fname)) {
+    if (empty($firstName)) {
       echo '{"code":1, "message":"Vui lòng nhập họ của bạn."}';
       return false;
     } else {
-      if (!preg_match("/^[a-zA-Z ]+/",$fname)) {
+      if (!preg_match("/^[a-zA-Z ]+/", $firstName)) {
         echo '{"code":1, "message":"Họ không đúng định dạng."}';
         return false;
       }
     }
-    if (empty($lname)) {
+    if (empty($lastName)) {
       echo '{"code":2, "message":"Vui lòng nhập tên của bạn."}';
       return false;
     } else {
-      if (!preg_match("/^[a-zA-Z ]+/",$lname)) {
+      if (!preg_match("/^[a-zA-Z ]+/", $lastName)) {
         echo '{"code":2, "message":"Tên không đúng định dạng."}';
         return false;
       }
@@ -63,12 +75,12 @@ class UserController extends Controller
       echo '{"code":3, "message":"Vui lòng nhập số điện thoại của bạn."}';
       return false;
     } else {
-      if (!preg_match("/^[0-9]{10}/",$phone)) {
+      if (!preg_match("/^[0-9]{10}/", $phone)) {
         echo '{"code":3, "message":"Số điện thoại không đúng định dạng."}';
         return false;
       }
     }
-    if (empty($emailsignup)) {
+    if (empty($email)) {
       echo '{"code":4, "message":"Vui lòng nhập email của bạn."}';
       return false;
     } else {
@@ -77,15 +89,35 @@ class UserController extends Controller
         return false;
       }
     }
-    if (empty($passsignup)) {
+    if (empty($password)) {
       echo '{"code":5, "message":"Vui lòng nhập mật khẩu của bạn."}';
       return false;
     } else {
-      if (!preg_match("/^[a-zA-Z0-9]{8}/",$passsignup)) {
-        echo '{"code":5, "message":"Vui lòng nhập mật khẩu gồm chữ và số."}';
+      if (!preg_match("/^[a-zA-Z0-9]{8}/", $password)) {
+        echo '{"code":5, "message":"Mật khẩu phải có 8 kí tự bao gồm chữ và số."}';
         return false;
       }
     }
-    return true;
+
+    if ($isCheck != "true") {
+      echo '{"code":6, "message":""}';
+      return false;
+    }
+
+    require_once 'vendor/Model.php';
+    require_once 'models/AccountModel.php';
+    $md = new AccountModel;
+    if ($md->getUserByEmail($email)) {
+      echo '{"code":4, "message":"Địa chỉ email đã tồn tại."}';
+			return false;
+    }
+    if($md->addUser($firstName, $lastName, $email, $phone, $password)){ 
+      $_SESSION['user'] = $md->getUserByEmail($email);
+      echo '{"code":0, "message":"Đăng kí thành công."}';
+      return true;
+    } else {
+      echo '{"code":7, "message":"Đã có lỗi trong quá trình tạo tài khoản, vui lòng thử lại sau."}';
+      return false;
+    }
   }
 }

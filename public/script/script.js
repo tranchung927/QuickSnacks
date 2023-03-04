@@ -2,53 +2,64 @@
 
   $('#btnLogin').click(login)
   $('#btnRegister').click(register)
-  
+
   function register(e) {
     e.preventDefault();
-    var fname = $('#txtFname').val();
-    var lname = $('#txtLname').val();
-    var emailsignup = $('#txtEmailSignup').val();
-    var phone = $('#txtPhoneNumber').val();
-    var passsignup = $('#txtPassSignup').val();
-    $('#errFname').html('')
-    $('#errLname').html('')
-    $('#errPhoneNumber').html('')
-    $('#errEmailSignup').html('')
-    $('#errPasswordSignup').html('')
+    var first_name = $('#txtFistNameRegister').val();
+    var last_name = $('#txtLastNameRegister').val();
+    var email = $('#txtEmailRegister').val();
+    var phone = $('#txtPhoneNumberRegister').val();
+    var password = $('#txtPasswordRegister').val();
+    var is_check = $('#cbPolicyRegister').is(":checked");
+    $('#errFistNameRegister').html('');
+    $('#errLastNameRegister').html('');
+    $('#errPhoneNumberRegiste').html('');
+    $('#errEmailRegister').html('');
+    $('#errPasswordRegister').html('');
     $.ajax({
       url: "index.php?controller=user&action=register",
       type: "post",
       dataType: "text",
       data: {
-        fname,lname,phone,emailsignup,passsignup
+        first_name, last_name, phone, email, password, is_check
       },
       success: function (result) {
         const obj = JSON.parse(result);
-        if (obj.code == 0) {
-          window.location.replace("http://localhost/QuickSnacks/index.php?controller=home&action=signin");
-        } else if(obj.code == 1) {
-          console.log(obj.message.toString());
-          $('#errFname').html(obj.message.toString());
-        } else if(obj.code == 2){
-          $('#errLname').html(obj.message.toString());
-        }  else if(obj.code == 3){
-          $('#errPhoneNumber').html(obj.message.toString());
-        } else if(obj.code == 4){
-          $('#errEmailSignup').html(obj.message.toString());
-        } else if(obj.code == 5){
-          $('#errPassSignup').html(obj.message.toString());
+        switch (obj.code) {
+          case 0:
+            window.location.replace("http://localhost/QuickSnacks/index.php");
+            break;
+          case 1:
+            $('#errFistNameRegister').html(obj.message.toString());
+            break;
+          case 2:
+            $('#errLastNameRegister').html(obj.message.toString());
+            break;
+          case 3:
+            $('#errPhoneNumberRegiste').html(obj.message.toString());
+            break;
+          case 4:
+            $('#errEmailRegister').html(obj.message.toString());
+            break;
+          case 5:
+            $('#errPasswordRegister').html(obj.message.toString());
+            break;
+          case 6:
+            break;
+          default:
+            alert(obj.message.toString());
+            break;
         }
       }
-  });
-};
-
+    });
+  };
 
   function login(e) {
     e.preventDefault();
     var email = $('#txtEmail').val();
     var password = $('#txtPassword').val();
-    $('#errSignEmail').html('')
-    $('#errSignPW').html('')
+    $('#errSignEmail').html('');
+    $('#errSignPW').html('');
     $.ajax({
       url: "index.php?controller=user&action=login",
       type: "post",
@@ -58,13 +69,19 @@
       },
       success: function (result) {
         const obj = JSON.parse(result);
-        if (obj.code == 0) {
-          window.location.replace("http://localhost/QuickSnacks/index.php");
-        } else if(obj.code == 1) {
-          console.log(obj.message.toString());
-          $('#errSignEmail').html(obj.message.toString());
-        } else {
-          $('#errSignPW').html(obj.message.toString());
+        switch (obj.code) {
+          case 0:
+            window.location.replace("http://localhost/QuickSnacks/index.php");
+            break;
+          case 1:
+            $('#errSignEmail').html(obj.message.toString());
+            break;
+          case 2:
+            $('#errSignPW').html(obj.message.toString());
+            break;
+          default:
+            alert(obj.message.toString());
+            break;
         }
       }
     });
