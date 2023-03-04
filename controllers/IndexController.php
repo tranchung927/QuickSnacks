@@ -1,20 +1,19 @@
 <?php
 
-class HomeController extends Controller {
+class IndexController extends Controller {
 
     function __construct() {
         $this->folder = 'default';
     }
 
-    public function index() {
-
-        $banner = array();
-        array_push($banner, array('image' => './public/images/carousel_1.jpeg'),
+     function index() {
+        $banners = array();
+        array_push($banners, array('image' => './public/images/carousel_1.jpeg'),
                 array('image' => './public/images/carousel-2.jpeg'),
                 array('image' => './public/images/carousel-3.jpeg'));
 
-        $category = array();
-        array_push($category, array(
+        $categories = array();
+        array_push($categories, array(
             'id' => 1,
             'name' => 'Món mới',
             'image' => './public/images/MON MOI.jpeg'
@@ -67,10 +66,9 @@ class HomeController extends Controller {
                 ),
         );
         $data = array('products' => $products,
-            'category' => $category,
-            'banner' => $banner,
-            'productsLike' => $productsLike,
-            'isLogin' => true);
+            'categories' => $categories,
+            'banners' => $banners,
+            'isLogin' => isset($_SESSION['cart']));
         $this->render('home', $data);
     }
 

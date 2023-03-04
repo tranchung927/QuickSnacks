@@ -9,8 +9,8 @@
                     <div class="orderProduct  mb-4 rounded-4 p-4 flex-column flex-md-row">
                         <img src="<?php echo $orders[$i]['image'] ?>" class="card-img-top" style="width: 30%;">
                         <div class="orderDes mx-4 flex-grow-1">
-                            <h5 class="product_name"><?php echo $orders[$i]['name'] ?></h5>
-                            <a href="#" class="product_view text-decoration-none">View Details</a>
+                            <h5 class="product-name"><?php echo $orders[$i]['name'] ?></h5>
+                            <a href="#" class="product-element text-decoration-none">View Details</a>
                             <div class="feature mt-3">
                                 <a href="#" class="text-dark me-2 btn_feature">Edit</a>
                                 <a href="#" class="text-dark btn_feature">Remove</a>
@@ -34,8 +34,8 @@
                         <div class="product_suggest col-md-3 col-sm-12 mb-2 mb-md-0 mx-2">
                             <img src="<?php echo $products[$i]['image'] ?>" class="card-img-top rounded-2 img_product_suggest">
                             <div class="product_suggest_info">
-                                <h5 class="product_name"><?php echo $products[$i]['name'] ?></h5>
-                                <p class="product_name"><?php echo $products[$i]['price'] ?></p>
+                                <h5 class="product-name"><?php echo $products[$i]['name'] ?></h5>
+                                <p class="product-name"><?php echo $products[$i]['price'] ?></p>
                             </div>
                             <button class="border border-0 product_suggest_btn">
                                 <i class="fa-solid fa-circle-plus plus"></i></button>
@@ -58,8 +58,8 @@
                             <p class="btn_feature">10000đ</p>
                         </div>
                         <div class="d-flex justify-content-between">
-                            <h5 class="product_name">Tổng thanh toán<h5>
-                                    <h5 class="product_name">73000đ</h5>
+                            <h5 class="product-name">Tổng thanh toán<h5>
+                                    <h5 class="product-name">73000đ</h5>
                         </div>
                         <button type='button' class='btn btn-danger rounded-pill button-primary w-100 align-items-center d-flex justify-content-between py-2'>
                             <p class="m-0 ms-2 btn_feature">Thanh toán<p

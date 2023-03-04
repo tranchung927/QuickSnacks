@@ -2,10 +2,10 @@
 <?php include 'delivery_address_section.php'; ?>
 
 <div class="cate">
-    <?php for ($i = 0; $i < count($cateTitle); $i++) { ?>
+    <?php for ($i = 0; $i < count($categories); $i++) { ?>
         <div class="container-fluid">
             <div class="cate-header d-flex my-4 like">
-                <h3 class="category-title"><?php echo $cateTitle[$i]['name'] ?><i class="fa-solid fa-chevron-right mx-2"></i></h3>
+                <h3 class="category-title"><?php echo $categories[$i]['name'] ?><i class="fa-solid fa-chevron-right mx-2"></i></h3>
                 <hr>
             </div>
         </div>
@@ -18,11 +18,11 @@
                             <div class="card-body px-lg-4">
                                 <div class="card-title d-flex justify-content-between ">
                                     <div class="cart-title-text flex-column"> 
-                                        <h5 class="product_name"><?php echo $products[$s]["name"] ?></h5>
-                                        <p class="product_view">1 banh trung</p>
+                                        <h5 class="product-name"><?php echo $products[$s]["name"] ?></h5>
+                                        <p class="product-element">1 banh trung</p>
                                     </div>
                                     <div class="cart-title-text"> 
-                                        <h5 class="product_name"><?php echo $products[$s]["price"] ?></h5>
+                                        <h5 class="product-name"><?php echo $products[$s]["price"] ?></h5>
                                     </div>
                                 </div>
                                 <?php if ($isLogin) { ?>

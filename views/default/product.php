@@ -3,8 +3,8 @@
     <?php for($i=0;$i<count($products);$i++) { ?>
     <img src="./public/images/MON MOI 1.png" class="">
     <div class="product_content d-flex flex-column my-4">
-        <h3 class=" text-md-center product_name"><?php echo $products[$i]['name'] ?></h3>
-        <p class="text-md-center product_view">1 bánh trứng</p>
+        <h3 class=" text-md-center product-name"><?php echo $products[$i]['name'] ?></h3>
+        <p class="text-md-center product-element">1 bánh trứng</p>
         <div class="quantity d-flex justify-content-center align-items-center my-4">
             <button class="border border-0 bg-body"><i class="fa-solid fa-circle-minus minus" onclick="min()"></i></button>
             <span class="mx-4 btn_feature" id="quantity">1</span>
