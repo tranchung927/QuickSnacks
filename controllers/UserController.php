@@ -38,7 +38,6 @@ class UserController extends Controller
     }
     $_SESSION['user'] = $data;
     if (isset($_SESSION['cart'])) {
-
     }
     echo '{"code":0, "message":"Đăng nhập thành công"}';
     return true;
@@ -109,9 +108,9 @@ class UserController extends Controller
     $md = new AccountModel;
     if ($md->getUserByEmail($email)) {
       echo '{"code":4, "message":"Địa chỉ email đã tồn tại."}';
-			return false;
+      return false;
     }
-    if($md->addUser($firstName, $lastName, $email, $phone, $password)){ 
+    if ($md->addUser($firstName, $lastName, $email, $phone, $password)) {
       $_SESSION['user'] = $md->getUserByEmail($email);
       echo '{"code":0, "message":"Đăng kí thành công."}';
       return true;

@@ -3,6 +3,32 @@
     padding: 0
 }
 
+@font-face {
+    font-family: Roboto;
+    src: url(../fonts/Roboto-Regular.ttf);
+}
+  
+@font-face {
+    font-family: Roboto-Bold;
+    src: url(../fonts/Roboto-Bold.ttf);
+}
+
+@font-face {
+    font-family: Roboto-Italic;
+    src: url(../fonts/Roboto-Italic.ttf);
+}
+
+@font-face {
+    font-family: Roboto-Black;
+    src: url(../fonts/Roboto-Black.ttf);
+}
+
+
+@font-face {
+    font-family: Roboto-Medium;
+    src: url(../fonts/Roboto-Medium.ttf);
+}
+
 .nav-link-item {
     display: block;
     padding-right: 16px;
@@ -72,13 +98,84 @@
 .button-primary.active {
     opacity: 0.9;
 }
+.cate-header {
+    align-items: center !important;
+}
+.category-title {
+    margin: 0;
+    text-transform: uppercase;
+    font-family: Roboto-Bold;
+    
+}
+
+
+.minus:hover {
+    color: #333;
+}
+.plus:hover {
+    color: #d40d0d;
+}
+.minus {
+    color: #ccc;
+    font-size: 34px;
+}
+.plus {
+    color: #E73B3B;
+    font-size: 34px;
+}
+
+.product-name {
+    font-family: Roboto-Medium;
+}
+.btn_feature {
+    font-family: Roboto;
+}
+
+.product-element {
+     font-family: Roboto-Italic;
+     color: #707070;
+}
+.orderProduct {
+    display: flex;
+    justify-items: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    align-items: center;
+}
+.product_suggest {
+    position: relative;
+}
+.product_suggest_info {
+   position: absolute;
+    left: 23px;
+    bottom: 12px;
+    color: #fff;
+    font-size:14px
+    
+}
+.product_suggest_info h5 {
+    margin: 0;
+}
+.img_product_suggest {
+    opacity: 0.95;
+}
+.product_suggest_btn {
+    position: absolute;
+    right: 23px;
+    top: 12px;
+    color: #000;
+    font-size: 24px
+}
+.box_receipt {
+    padding: 30px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
 
 .txtLinkNoneDeco {
     transition: none;
     color: black;
     text-decoration: none;
 }
-
 .txtLinkNoneDeco:hover,
 .txtLinkNoneDeco:active,
 .txtLinkNoneDeco:focus,
@@ -91,7 +188,7 @@
 }
 
 .a-primary:link,
-.a-primary :visited,
+.a-primary:visited,
 .a-primary:hover,
 .a-primary:active {
     text-decoration: none;
@@ -199,29 +296,42 @@ ul.footer-menu {
     font-size: 16px;
 }
 
+@media (max-width: 1200px) {
 
-@font-face {
-    font-family: Roboto;
-    src: url(../fonts/Roboto-Regular.ttf);
 }
-
-@font-face {
-    font-family: Roboto-Bold;
-    src: url(../fonts/Roboto-Bold.ttf);
+/* FOR PHONE */
+@media (max-width: 767px){
+	#headerSlide{height: 250px;}
+	#headerSlide img{
+		height: 250px;
+		margin: auto;
+	}
 }
-
-@font-face {
-    font-family: Roboto-Italic;
-    src: url(../fonts/Roboto-Italic.ttf);
+/* FOR TABLET */
+@media (min-width: 768px) {
+	.modal-dialog{width: 660px!important}
+	#headerSlide{height: 350px;}
+	#headerSlide img{
+		height: 350px;
+		margin: auto;
+	}
 }
-
-@font-face {
-    font-family: Roboto-Black;
-    src: url(../fonts/Roboto-Black.ttf);
+@media (max-width: 1199px){
+    
 }
-
-
-@font-face {
-    font-family: Roboto-Medium;
-    src: url(../fonts/Roboto-Medium.ttf);
+/* FOR Ipad pro */
+@media (min-width: 992px) {
+	#headerSlide{height: 400px;}
+	#headerSlide img{
+		height: 400px;
+		margin: auto;
+	}
+}
+/* FOR LAPTOP $ LARGER SCREEN */
+@media screen and (min-width: 1200px) {
+	#headerSlide{height: 400px;}
+	#headerSlide img{
+		height: 400px;
+		margin: auto;
+	}
 }

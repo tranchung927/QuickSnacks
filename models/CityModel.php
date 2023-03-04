@@ -13,3 +13,4 @@ class CityModel extends Model {
         return $r = $this->selectOne('*', 'city', "id=".$id);
   }
 }
+
