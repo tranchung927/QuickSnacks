@@ -6,7 +6,7 @@
       <!-- Grid row -->
       <div class="row">
         <!-- Grid column -->
-        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto">
+        <div class="col-md-3 col-lg-3 col-xl-3 mx-auto">
           <!-- Links -->
           <h6 class="footer-menu-title">Danh mục món ăn</h6>
           <ul class="footer-menu">
@@ -25,7 +25,7 @@
         <!-- Grid column -->
 
         <!-- Grid column -->
-        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto">
+        <div class="col-md-3 col-lg-3 col-xl-3 mx-auto">
           <!-- Links -->
           <h6 class="footer-menu-title">Về QuickSnacks</h6>
           <ul class="footer-menu">
@@ -37,7 +37,7 @@
         <!-- Grid column -->
 
         <!-- Grid column -->
-        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0">
+        <div class="col-md-3 col-lg-3 col-xl-3 mx-auto">
           <!-- Links -->
           <h6 class="footer-menu-title">Liên hệ</h6>
           <ul class="footer-menu">
@@ -50,7 +50,7 @@
         <!-- Grid column -->
 
         <!-- Grid column -->
-        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0">
+        <div class="col-md-3 col-lg-3 col-xl-3 mx-auto">
           <!-- Links -->
           <h6 class="footer-menu-title">Download App</h6>
           <p><a href="#!"><img class="mobile-app" src="public/images/logo_appstore.png" alt="appstore" /></a></p>
