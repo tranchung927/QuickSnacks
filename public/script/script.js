@@ -87,3 +87,29 @@
     });
   }
 });
+
+function loadmore(start){
+  var id = -1
+  var sPageURL = window.location.search.substring(1);
+  var sURLVariables = sPageURL.split('&');
+  for (var i = 0; i < sURLVariables.length; i++) {
+      var sParameterName = sURLVariables[i].split('=');
+      if (sParameterName[0] == 'id') {
+          id = sParameterName[1];
+      }
+  }
+  var page = start+1;
+  var limit = 16;
+  $.ajax({
+    url : "index.php?controller=product&action=loadmore",
+    type : "get",
+    dataType:"text",
+    data : {
+      page, limit, id
+   },
+   success : function (result){
+    if(!result){alert("Đã hết sản phẩm để hiển thị!"); return 0;}
+    $('#category-content').append(result);
+  }
+});
+}

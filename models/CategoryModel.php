@@ -11,8 +11,17 @@ class CategoryModel extends Model
         return $r = $this->select('*', 'category');
     }
 
-    function find($id)
+    function getById($id)
     {
-        return $r = $this->selectOne('*', 'city', "id=" . $id);
+        $result = array();
+        $sql = "SELECT * FROM category WHERE id = '" . $id . "'";
+        if ($this->conn->query($sql)->rowCount() == 0) {
+            return false;
+        } else {
+            foreach ($this->conn->query($sql) as $row) {
+                $result = $row;
+            }
+            return $result;
+        }
     }
 }

@@ -2,8 +2,7 @@
 $controllers = array(
     'error' => ['notFound'],
     'index'  => ['index','signin', 'signup', 'signout'],
-    'cities' => ['index', 'showCity'],
-    'category' => ['index','detail'],
+    'product' => ['index','category', 'categories', 'loadmore'],
     'order' => ['index'],
     'user' => ['login', 'register']
 ); // Các controllers trong hệ thống và các action có thể gọi ra từ controller đó.

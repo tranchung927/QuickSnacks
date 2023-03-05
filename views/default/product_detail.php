@@ -1,4 +1,3 @@
-<?php include 'delivery_address_section.php'; ?>
 <div class="product cate d-md-flex text-center justify-content-md-around">
     <?php for($i=0;$i<count($products);$i++) { ?>
     <img src="./public/images/MON MOI 1.png" class="">

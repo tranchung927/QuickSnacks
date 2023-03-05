@@ -10,6 +10,10 @@ class IndexController extends Controller
 
     function index()
     {
+        require_once("vendor/Model.php");
+        require_once("models/CategoryModel.php");
+        require_once("models/ProductModel.php");
+
         $banners = array();
         array_push(
             $banners,
@@ -18,71 +22,26 @@ class IndexController extends Controller
             array('image' => './public/images/carousel-3.jpeg')
         );
 
-        $categories = array();
-        array_push(
+        $categories = (new CategoryModel)->getAll() ?: array();
+        $products = (new ProductModel)->getByCategoryId(2, 1, 4) ?: array();
+        array_unshift(
             $categories,
             array(
-                'id' => 1,
+                'id' => -1,
                 'name' => 'Món mới',
-                'image' => './public/images/MON MOI.jpeg'
-            ),
-            array(
-                'id' => 2,
-                'name' => 'Đồ ăn nhẹ',
-                'image' => './public/images/MON MOI.jpeg'
-            ),
-            array(
-                'id' => 3,
-                'name' => 'Sinh tố',
-                'image' => './public/images/MON MOI.jpeg'
-            ),
-            array(
-                'id' => 4,
-                'name' => 'Dành cho trẻ em',
-                'image' => './public/images/MON MOI.jpeg'
-            ),
-            array(
-                'id' => 5,
-                'name' => 'Tốt cho sức khoẻ',
-                'image' => './public/images/MON MOI.jpeg'
-            ),
-        );
-
-        $products = array();
-        array_push(
-            $products,
-            array(
-                'id' => 1,
-                'name' => '1 bánh trứng',
-                'image' => './public/images/MON MOI 1.png',
-                'price' => '18000đ'
-            ),
-            array(
-                'id' => 2,
-                'name' => '1 bánh trứng',
-                'image' => './public/images/MON MOI 1.png',
-                'price' => '18000đ'
-            ),
-            array(
-                'id' => 3,
-                'name' => '1 bánh trứng',
-                'image' => './public/images/MON MOI 1.png',
-                'price' => '18000đ'
-            ),
-            array(
-                'id' => 4,
-                'name' => '1 bánh trứng',
-                'image' => './public/images/MON MOI 1.png',
-                'price' => '18000đ'
-            ),
+                'image' => 'newfood.png'
+            )
         );
         $data = array(
             'products' => $products,
             'categories' => $categories,
+            'category' => array(
+                'name' => 'CÓ THỂ BẠN SẼ THÍCH MÓN NÀY',
+            ),
             'banners' => $banners,
-            'isLogin' => isset($_SESSION['cart'])
+            'isLogin' => isset($_SESSION['user'])
         );
-        $this->render('home', $data);
+        $this->render('index', $data);
     }
 
     function signin()

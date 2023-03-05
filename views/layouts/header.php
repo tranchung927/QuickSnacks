@@ -7,7 +7,7 @@
         <div class="collapse navbar-collapse" id="navbarToggler">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link-item nav-link-color-red" href="#">Thực đơn</a>
+                    <a class="nav-link-item nav-link-color-red" href="index.php?controller=product&action=categories">Thực đơn</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link-item" href="#">Khuyến mãi</a>
@@ -19,7 +19,7 @@
             <div>
 
             </div>
-            <a class="nav-link position-relative" href="#" style="margin-right: 16px;">
+            <a class="nav-link position-relative" href="#" style="margin-right:24px;">
                 <i class="fa-solid fa-cart-shopping navbar-right btn-lg"></i>
                 <span class="position-absolute top-0 start-10 translate-middle badge rounded-pill bg-danger">
                 <?php if (isset($_SESSION['cart'])) {
@@ -28,7 +28,7 @@
                     <span class="visually-hidden">unread messages</span>
                 </span>
             </a>
-            <a class="nav-link" href="index.php?controller=home&action=signin"><i class="fa-solid fa-user navbar-right btn-lg"></i></a>
+            <a class="nav-link" href="index.php?controller=index&action=signin"><i class="fa-solid fa-user navbar-right btn-lg"style="margin:16px 0px;"></i></a>
         </div>
     </div>
 </nav>
