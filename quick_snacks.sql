@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Feb 15, 2023 at 09:19 AM
+-- Generation Time: Mar 05, 2023 at 01:28 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `quick_snacks`
 --
+CREATE DATABASE IF NOT EXISTS `quick_snacks` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `quick_snacks`;
 
 -- --------------------------------------------------------
 
@@ -35,8 +37,17 @@ CREATE TABLE `account` (
   `phone` varchar(50) DEFAULT NULL,
   `avatar` varchar(255) DEFAULT NULL,
   `address_id` int(11) DEFAULT NULL,
-  `flag` int(11) DEFAULT NULL
+  `flag` int(11) DEFAULT NULL,
+  `username` varchar(255) DEFAULT NULL,
+  `password` varchar(1000) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `account`
+--
+
+INSERT INTO `account` (`id`, `first_name`, `last_name`, `email`, `phone`, `avatar`, `address_id`, `flag`, `username`, `password`) VALUES
+(2, 'Tran', 'Chung', 'a@gmail.com', '0987654321', NULL, NULL, NULL, NULL, 'b480c074d6b75947c02681f31c90c668c46bf6b8');
 
 -- --------------------------------------------------------
 
@@ -88,6 +99,16 @@ CREATE TABLE `category` (
   `flag` int(11) DEFAULT NULL,
   `image` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `category`
+--
+
+INSERT INTO `category` (`id`, `name`, `code`, `description`, `status`, `parent_id`, `created_date`, `modified_date`, `flag`, `image`) VALUES
+(1, 'Đồ ăn nhẹ', NULL, NULL, 'active', NULL, '2023-03-01 00:00:00', NULL, NULL, 'easy_on_stomach.jpg'),
+(2, 'Sinh tố', NULL, NULL, 'active', NULL, '2023-03-01 00:00:00', NULL, NULL, 'smoothies.jpg'),
+(3, 'Dành cho trẻ em', NULL, NULL, 'active', NULL, '2023-03-01 00:00:00', NULL, NULL, 'snacks_for_kids.jpg'),
+(4, 'Tốt cho sức khoẻ', NULL, NULL, 'active', NULL, '2023-03-01 00:00:00', NULL, NULL, 'healthy_snacks.jpg');
 
 -- --------------------------------------------------------
 
@@ -887,21 +908,6 @@ INSERT INTO `district` (`id`, `name`, `city_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `image`
---
-
-CREATE TABLE `image` (
-  `id` int(11) NOT NULL,
-  `path` varchar(255) DEFAULT NULL,
-  `description` varchar(1000) DEFAULT NULL,
-  `created_date` datetime DEFAULT NULL,
-  `modified_date` datetime DEFAULT NULL,
-  `flag` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `location`
 --
 
@@ -967,20 +973,24 @@ CREATE TABLE `product` (
   `category_id` int(11) DEFAULT NULL,
   `created_date` datetime DEFAULT NULL,
   `modified_date` datetime DEFAULT NULL,
-  `flag` int(11) DEFAULT NULL
+  `flag` int(11) DEFAULT NULL,
+  `element` varchar(1000) DEFAULT NULL,
+  `image` varchar(1000) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- --------------------------------------------------------
-
 --
--- Table structure for table `product_image`
+-- Dumping data for table `product`
 --
 
-CREATE TABLE `product_image` (
-  `id` int(11) NOT NULL,
-  `product_id` int(11) NOT NULL,
-  `image_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+INSERT INTO `product` (`id`, `name`, `description`, `price`, `status`, `calorie`, `estimate_time`, `category_id`, `created_date`, `modified_date`, `flag`, `element`, `image`) VALUES
+(1, 'Sinh tố bơ', 'Bơ tươi được lấy trực tiếp từ vườn sạch sẽ, không thuốc trừ sâu (Giá sản phẩm đã bao gồm cả ly)', 30000, 'active', 37, 10, 2, '2023-03-05 00:00:00', NULL, NULL, 'Bơ, sữa đặc, đá xay nhuyễn', 'sinhtobo.jpg'),
+(2, 'Sinh tố dâu', 'Dâu tươi được lấy trực tiếp từ vườn sạch sẽ, không thuốc trừ sâu (Giá sản phẩm đã bao gồm cả ly)', 40000, 'active', 40, 10, 2, '2023-03-05 00:00:00', NULL, NULL, 'Dâu, sữa đặc, đá xay nhuyễn', 'sinhtodau.jpg'),
+(3, 'Sinh tố cam', 'Cam tươi được lấy trực tiếp từ vườn sạch sẽ, không thuốc trừ sâu (Giá sản phẩm đã bao gồm cả ly)', 35000, 'active', 38, 10, 2, '2023-03-05 00:00:00', NULL, NULL, 'Cam, sữa đặc, đá xay nhuyễn', 'sinhtocam.jpg'),
+(4, 'Sinh tố dưa hấu', 'Dưa hấu tươi được lấy trực tiếp từ vườn sạch sẽ, không thuốc trừ sâu (Giá sản phẩm đã bao gồm cả ly)', 35000, 'active', 38, 10, 2, '2023-03-05 00:00:00', NULL, NULL, 'Dưa hấu, sữa đặc, đá xay nhuyễn', 'sinhtoduahau.jpg'),
+(5, 'Sinh tố chanh leo', 'Chanh leo tươi được lấy trực tiếp từ vườn sạch sẽ, không thuốc trừ sâu (Giá sản phẩm đã bao gồm cả ly)', 35000, 'active', 37, 10, 2, '2023-03-05 00:00:00', NULL, NULL, 'Chanh leo, sữa đặc, đá xay nhuyễn', 'sinhtochanhleo.jpg'),
+(6, 'Sinh tố chanh tuyết', 'Chanh tươi được lấy trực tiếp từ vườn sạch sẽ, không thuốc trừ sâu (Giá sản phẩm đã bao gồm cả ly)', 25000, 'active', 36, 10, 2, '2023-03-05 00:00:00', NULL, NULL, 'Chanh, sữa đặc, đá xay nhuyễn', 'sinhtochanhtuyet.jpg'),
+(7, 'Sinh tố kiwi', 'Kiwi tươi được lấy trực tiếp từ vườn sạch sẽ, không thuốc trừ sâu (Giá sản phẩm đã bao gồm cả ly)', 40000, 'active', 38, 10, 2, '2023-03-05 00:00:00', NULL, NULL, 'Kiwi, sữa đặc, đá xay nhuyễn', 'sinhtokiwi.jpg'),
+(8, 'Sinh tố xoài', 'Xoài tươi được lấy trực tiếp từ vườn sạch sẽ, không thuốc trừ sâu (Giá sản phẩm đã bao gồm cả ly)', 35000, 'active', 37, 10, 2, '2023-03-05 00:00:00', NULL, NULL, 'Xoài. sữa đặc, đá xay nhuyễn', 'sinhtoxoai.jpg');
 
 --
 -- Indexes for dumped tables
@@ -1027,12 +1037,6 @@ ALTER TABLE `district`
   ADD KEY `fk_city_district` (`city_id`);
 
 --
--- Indexes for table `image`
---
-ALTER TABLE `image`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `location`
 --
 ALTER TABLE `location`
@@ -1064,14 +1068,6 @@ ALTER TABLE `product`
   ADD KEY `fk_category_product` (`category_id`);
 
 --
--- Indexes for table `product_image`
---
-ALTER TABLE `product_image`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_product_product_image` (`product_id`),
-  ADD KEY `fk_image_product_image` (`image_id`);
-
---
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -1079,7 +1075,7 @@ ALTER TABLE `product_image`
 -- AUTO_INCREMENT for table `account`
 --
 ALTER TABLE `account`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `address`
@@ -1097,13 +1093,7 @@ ALTER TABLE `banner`
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `image`
---
-ALTER TABLE `image`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `location`
@@ -1127,13 +1117,7 @@ ALTER TABLE `order_item`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `product_image`
---
-ALTER TABLE `product_image`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Constraints for dumped tables
@@ -1184,13 +1168,6 @@ ALTER TABLE `order_item`
 --
 ALTER TABLE `product`
   ADD CONSTRAINT `fk_category_product` FOREIGN KEY (`category_id`) REFERENCES `category` (`id`);
-
---
--- Constraints for table `product_image`
---
-ALTER TABLE `product_image`
-  ADD CONSTRAINT `fk_image_product_image` FOREIGN KEY (`image_id`) REFERENCES `image` (`id`),
-  ADD CONSTRAINT `fk_product_product_image` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
