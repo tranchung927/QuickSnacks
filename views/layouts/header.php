@@ -19,9 +19,9 @@
             <div>
 
             </div>
-            <a class="nav-link position-relative" href="#" style="margin-right:24px;">
+            <a class="nav-link position-relative" href="index.php?controller=order&action=cart" style="margin-right:24px;">
                 <i class="fa-solid fa-cart-shopping navbar-right btn-lg"></i>
-                <span class="position-absolute top-0 start-10 translate-middle badge rounded-pill bg-danger">
+                <span id="cart_count" class="position-absolute top-0 start-10 translate-middle badge rounded-pill bg-danger">
                 <?php if (isset($_SESSION['cart'])) {
                         echo count($_SESSION['cart']);
                     } else echo "0"; ?>

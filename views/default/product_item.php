@@ -11,21 +11,17 @@
             </div>
             <h6 class="product-element"><?php echo $products[$pIdx]["element"]; ?></h6>
         </div>
-        <div class="product-action-container">
-            <?php if (isset($_SESSION['user'])) { ?>
-                <div class='d-flex gap-1 justify-content-between'>
-                    <a class='a-primary product-action' href="">
-                        <button class='button-border product-action'>Tuỳ chỉnh</button>
-                    </a>
-                    <a class='a-primary product-action' href="">
-                        <button class='button-primary product-action'>Thêm</button>
-                    </a>
-                </div>
-            <?php } else { ?>
-                <a class='a-primary product-action' href="">
-                    <button class='button-primary product-action'>Bắt đầu đặt hàng</button>
-                </a>
-            <?php } ?>
-        </div>
     </a>
+    <div class="product-action-container">
+        <?php if (isset($_SESSION['user'])) { ?>
+            <div class='d-flex gap-1 justify-content-between'>
+                <a class='a-primary product-action' href="">
+                    <button class='button-border product-action'>Tuỳ chỉnh</button>
+                </a>
+                <button class='button-primary product-action btnAddToCart' data-masp='<?php echo $products[$pIdx]["id"].",1" ?>'>Thêm</button>
+            </div>
+        <?php } else { ?>
+            <button class='button-primary product-action btnAddToCart' data-masp='<?php echo $products[$pIdx]["id"].",1" ?>'>Thêm</button>
+        <?php } ?>
+    </div>
 </div>

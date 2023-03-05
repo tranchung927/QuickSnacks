@@ -48,6 +48,7 @@ class IndexController extends Controller
     {
         $this->render('login');
     }
+
     function signup()
     {
         $this->render('register');
