@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Mar 05, 2023 at 01:28 PM
+-- Generation Time: Mar 06, 2023 at 02:13 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -990,7 +990,77 @@ INSERT INTO `product` (`id`, `name`, `description`, `price`, `status`, `calorie`
 (5, 'Sinh tố chanh leo', 'Chanh leo tươi được lấy trực tiếp từ vườn sạch sẽ, không thuốc trừ sâu (Giá sản phẩm đã bao gồm cả ly)', 35000, 'active', 37, 10, 2, '2023-03-05 00:00:00', NULL, NULL, 'Chanh leo, sữa đặc, đá xay nhuyễn', 'sinhtochanhleo.jpg'),
 (6, 'Sinh tố chanh tuyết', 'Chanh tươi được lấy trực tiếp từ vườn sạch sẽ, không thuốc trừ sâu (Giá sản phẩm đã bao gồm cả ly)', 25000, 'active', 36, 10, 2, '2023-03-05 00:00:00', NULL, NULL, 'Chanh, sữa đặc, đá xay nhuyễn', 'sinhtochanhtuyet.jpg'),
 (7, 'Sinh tố kiwi', 'Kiwi tươi được lấy trực tiếp từ vườn sạch sẽ, không thuốc trừ sâu (Giá sản phẩm đã bao gồm cả ly)', 40000, 'active', 38, 10, 2, '2023-03-05 00:00:00', NULL, NULL, 'Kiwi, sữa đặc, đá xay nhuyễn', 'sinhtokiwi.jpg'),
-(8, 'Sinh tố xoài', 'Xoài tươi được lấy trực tiếp từ vườn sạch sẽ, không thuốc trừ sâu (Giá sản phẩm đã bao gồm cả ly)', 35000, 'active', 37, 10, 2, '2023-03-05 00:00:00', NULL, NULL, 'Xoài. sữa đặc, đá xay nhuyễn', 'sinhtoxoai.jpg');
+(8, 'Sinh tố xoài', 'Xoài tươi được lấy trực tiếp từ vườn sạch sẽ, không thuốc trừ sâu (Giá sản phẩm đã bao gồm cả ly)', 35000, 'active', 37, 10, 2, '2023-03-05 00:00:00', NULL, NULL, 'Xoài. sữa đặc, đá xay nhuyễn', 'sinhtoxoai.jpg'),
+(9, 'Thạch zai zai', 'Là sản phẩm chất lượng với đạt chuẩn an toàn thực phẩm', 15000, 'active', 80, 5, 3, '2023-03-06 00:00:00', NULL, NULL, 'Sữa chua,hương liệu.', 'thạch zai zai.jpeg'),
+(10, 'Mít sấy 250g', 'Sản phẩm được đóng gói trong môi trường hiện đại, tốt cho sức khỏe', 70000, 'active', 200, 1, 3, '2023-03-06 00:00:00', NULL, NULL, 'Mít sấy khô, hương liệu', 'mitsay.jpg'),
+(11, 'Thạch sữa chua', 'Là thực phẩm tốt cho hệ tiêu hoá có nếp cẩm ngon calo thấp', 40000, 'active', 50, 15, 3, '2023-03-06 00:00:00', NULL, NULL, 'Nếp cẩm,sữa chua,xoài.', 'thạch sữa chua.jpeg'),
+(12, 'Thach vị hoa quả', 'Cung cấp hoa quả đa dạng cung cấp vitamin c', 100000, 'active', 200, 15, 3, '2023-03-06 00:00:00', NULL, NULL, 'Nho,táo ,cam,mít.', 'thachvitao.jpeg'),
+(13, 'Gạo lứt', 'Một sản phẩm tốt cho sức khoẻ và dành cho người ăn kiêng', 150000, 'active', 120, 13, 4, '2023-03-06 00:00:00', NULL, NULL, 'Gạo lứt, hương liệu', 'gaonut.jpeg'),
+(14, 'Khoai lang sấy 250g', 'Sản phẩm được đóng gói trong môi trường hiện đại, tốt cho sức khỏe', 60000, 'active', 200, 1, 3, '2023-03-06 00:00:00', NULL, NULL, 'Khoai lang sấy khô, hương liệu', 'khoailangsay.jpg'),
+(15, 'Kẹo mochi', 'Sản phẩm luôn dành được nhiều sự yêu thích từ trẻ nhỏ ', 25000, 'active', 200, 8, 3, '2023-03-06 00:00:00', NULL, NULL, 'lúa mạch ,sữa ,đường, bơ', 'kẹomochi.jpeg'),
+(16, 'Khoai môn sấy 250g', 'Sản phẩm được đóng gói trong môi trường hiện đại, tốt cho sức khỏe', 60000, 'active', 250, 1, 3, '2023-03-06 00:00:00', NULL, NULL, 'Khoai môn sấy khô, hương liệu', 'khoaimonsay.jpg'),
+(17, 'Chuối sấy 250g', 'Sản phẩm được đóng gói trong môi trường hiện đại, tốt cho sức khỏe', 65000, 'active', 200, 1, 3, '2023-03-06 00:00:00', NULL, NULL, 'Chuối sấy khô, hương liệu', 'chuoisay.jpg'),
+(18, 'Hoa quả sấy 250g', 'Sản phẩm được đóng gói trong môi trường hiện đại, tốt cho sức khỏe', 70000, 'active', 270, 1, 3, '2023-03-06 00:00:00', NULL, NULL, 'Các loại hoa quả sấy khô, hương liệu', 'hoaquasay.jpg'),
+(19, 'Thạch dưa lưới ', 'sảm phẩm đặc biệt được yêu thích vào mùa hè với dưa lưới đạt chuẩn vệ sinh an toàn thực phẩm', 50000, 'active', 130, 30, 3, '2023-03-06 00:00:00', NULL, NULL, 'dưa lưới sữa chua ', 'thachdualuoi.jpeg'),
+(20, 'Bánh ăn kiêng vị socola 200g', 'Một sản phẩm tốt cho sức khoẻ và dành cho người ăn kiêng', 70000, 'active', 100, 1, 3, '2023-03-06 00:00:00', NULL, NULL, 'Bột mì, hương liệu.', 'banhsocola.jpg'),
+(21, 'Bim bim cà chua', 'Sản phẩm luôn dành được nhiều sự yêu thích từ trẻ nhỏ ', 10000, 'active', 130, 5, 3, '2023-03-06 00:00:00', NULL, NULL, 'Bột mì, hương liệu.', 'bim bim cà chua.jpeg'),
+(22, 'Bim bim phô mát', 'Sản phẩm luôn dành được nhiều sự yêu thích từ trẻ nhỏ ', 15000, 'active', 125, 5, 3, '2023-03-06 00:00:00', NULL, NULL, 'bột mì, pho mat', 'bimbimphomat.png'),
+(23, 'Kẹo socola', 'Hàng nhập khẩu nhật bản sản phẩm luôn được trẻ em nhật yêu thich', 30000, 'active', 150, 5, 3, '2023-03-06 00:00:00', NULL, NULL, 'Socola, hương liệu', 'keosocola.jpeg'),
+(24, 'Ngũ cốc ăn kiêng 250g', 'Một sản phẩm tốt cho sức khoẻ và dành cho người ăn kiêng', 150000, 'active', 300, 1, 4, '2023-03-06 00:00:00', NULL, NULL, 'Các loại hạt, chất điều vị.', 'ngucocankieng.jpg'),
+(25, 'Mì trẻ em', 'Sản phẩm luôn dành được nhiều sự yêu thích từ trẻ nhỏ ', 12000, 'active', 150, 5, 3, '2023-03-06 00:00:00', NULL, NULL, 'Mì, trứng hương liệu', 'mitreem.webp'),
+(26, 'Bắp cải khô', 'Sản phẩm chay ngon giá tốt ,tốt. cho sức khoẻ', 40000, 'active', 50, 30, 4, '2023-03-06 00:00:00', NULL, NULL, 'Bắp cải, gia vị, đường', 'bapcaikho.jpeg'),
+(27, 'Cà tím chiên', 'Sản phẩm chay ngon giúp người mới bắt đầu ăn kiêng', 40000, 'active', 60, 30, 4, '2023-03-06 00:00:00', NULL, NULL, 'Cà tím , gia vị, dầu lạc', 'catimlanbotchienchay.jpeg'),
+(28, 'Cà tím luộc', 'Sản phẩm chay ngon giá tốt ,tốt. cho sức khoẻ', 20000, 'active', 30, 15, 4, '2023-03-06 00:00:00', NULL, NULL, 'Cà tím , gia vị', 'catimluoctuongchay.jpeg'),
+(29, 'Cơm cháy', 'Sản phẩm chay ngon giá tốt ,tốt. cho sức khoẻ', 60000, 'active', 300, 15, 4, '2023-03-06 00:00:00', NULL, NULL, 'Gạo,dầu lạc', 'comchay.jpeg'),
+(30, 'Giò chay', 'Sản phẩm chay ngon giá tốt ,tốt. cho sức khoẻ,hương vị như giò thật', 200000, 'active', 60, 12, 4, '2023-03-06 00:00:00', NULL, NULL, 'Bột sắn,hương liệu,bột gạo', 'gio.jpeg'),
+(31, 'Nem chay', 'Sản phẩm chay ngon giá tốt ,tốt. cho sức khoẻ,hương vị như giò thật', 80000, 'active', 60, 12, 4, '2023-03-06 00:00:00', NULL, NULL, 'Miến, nấm,hương liệu', 'giochay.jpeg'),
+(32, 'Heo hầm chay', 'Sản phẩm chay ngon giá tốt ,tốt. cho sức khoẻ,hương vị như giò thật', 50000, 'active', 80, 12, 4, '2023-03-06 00:00:00', NULL, NULL, 'Hương liệu,bột sắn,đường', 'heohamchay.jpeg'),
+(33, 'Nấm rơm chiên ', 'Sản phẩm chay ngon giá tốt ,tốt. cho sức khoẻ,hương vị như giò thật', 40000, 'active', 90, 15, 4, '2023-03-06 00:00:00', NULL, NULL, 'Nấm,bột mì ,dầu lạc', 'namronchien.jpg'),
+(34, 'Sữa tươi nguyên chất', 'Sữa bò nguyên chất đạt tiêu chuẩn an toàn vệ sinh thực phẩm', 100000, 'active', 100, 12, 4, '2023-03-06 00:00:00', NULL, NULL, 'Sữa bò', 'suatuoi.jpeg'),
+(35, 'Sa lat trộn', 'Cung cấp đầy đủ vitamin c thiết yếu , rau trồng trong nha kính khép kín', 70000, 'active', 50, 5, 4, '2023-03-06 00:00:00', NULL, NULL, 'Rau tươi,cà chua ,sốt', 'salattron.webp'),
+(36, 'Bánh bao nhân thịt', 'Bánh ngon chất lượng đảm bảo phù hợp với người không thích chiên xào', 30000, 'active', 50, 20, 1, '2023-03-06 00:00:00', NULL, NULL, 'Bột gạo, thịt lợn, miến', 'banhbaonhanthit.jpeg'),
+(37, 'Bánh bao chay', 'Bánh ngon chất lượng đảm bảo phù hợp với người không thích chiên xào', 20000, 'active', 40, 15, 1, '2023-03-06 00:00:00', NULL, NULL, 'Bột gạo ,hương liệu', 'banhbaochay.jpeg'),
+(38, 'Bánh bao nhân ngọt', 'Bánh ngon chất lượng đảm bảo phù hợp với người không thích chiên xào', 25000, 'active', 45, 15, 1, '2023-03-06 00:00:00', NULL, NULL, 'Bột gạo,đường,trứng', 'banhbaonhanngot.jpeg'),
+(39, 'Bánh mì pate', 'Bánh ngon,pate lấy trực tiếp từ Hải Phòng', 30000, 'active', 60, 15, 1, '2023-03-06 00:00:00', NULL, NULL, 'Bánh mì,pate', 'banhmipate.jpeg'),
+(40, 'Bánh trứng', 'Sản phẩm bán chạy, trứng từ gà kiểm định cho trứng chất lượng tốt', 50000, 'active', 60, 20, 1, '2023-03-06 00:00:00', NULL, NULL, 'Bột mì,trứng,dầu lạc', 'banhtrung.jpeg'),
+(41, 'Bắp rang', 'Sản phẩm luôn dành được nhiều sự yêu thích từ trẻ nhỏ ', 40000, 'active', 200, 15, 1, '2023-03-06 00:00:00', NULL, NULL, 'Bắp, bơ, đường,dầu timh luyện', 'baprang.jpeg'),
+(42, 'Cá chiên', 'Dành cho người thích ăn cá đảm bảo ngon không tanh', 60000, 'active', 300, 30, 1, '2023-03-06 00:00:00', NULL, NULL, 'cá chép,rô phi', 'cachien.jpeg'),
+(43, 'Đùi gà chiên ', 'Đùi được lấy từ gà nông nghiệp an toàn và nhiều dinh dưỡng', 80000, 'active', 450, 30, 1, '2023-03-06 00:00:00', NULL, NULL, 'Đùi gà, bột chiên giòn, bột chiên xù, gia vị.', 'duiga.jpeg'),
+(44, 'Cánh gà chiên', 'Cánh được lấy từ gà nông nghiệp an toàn và nhiều dinh dưỡng', 60000, 'active', 400, 30, 1, '2023-03-06 00:00:00', NULL, NULL, 'Cánh gà, bột chiên giòn, bột chiên xù, gia vị.', 'canhgachien.jpg'),
+(45, 'Khoai tây chiên ', 'Sản phẩm luôn dành được nhiều sự yêu thích từ trẻ nhỏ ', 30000, 'active', 250, 15, 1, '2023-03-06 00:00:00', NULL, NULL, 'Khoai tây, dầu lạc', 'khoaitaychien.jpeg'),
+(46, 'Mực chiên ', 'Mực trứng nhập trực tiếp ở các vùng biển luôn tươi ngon', 80000, 'active', 200, 30, 1, '2023-03-06 00:00:00', NULL, NULL, 'Mực tươi , dầu lạc', 'mucchien.jpeg'),
+(47, 'Thịt xiên', 'Sản phẩm luôn dành được nhiều sự yêu thích từ trẻ nhỏ ', 50000, 'active', 250, 30, 1, '2023-03-06 00:00:00', NULL, NULL, 'Thịt lợn, gia vị', 'thitxien.webp'),
+(48, 'Xúc xích', 'Sản phẩm luôn dành được nhiều sự yêu thích từ trẻ nhỏ ', 40000, 'active', 300, 20, 1, '2023-03-06 00:00:00', NULL, NULL, 'Thịt hun khói, gia vị', 'xucxich.jpeg'),
+(49, 'Pizza phô mai', 'Nguyên liệu sạch, bánh được nướng giòn và đậm vị', 100000, 'active', 400, 30, 1, '2023-03-06 00:00:00', NULL, NULL, 'bột mì, phô mai, gia vị', 'pizzaphomai.jpg'),
+(50, 'Pizza ngô bò', 'Nguyên liệu sạch, bánh được nướng giòn và đậm vị', 150000, 'active', 300, 30, 1, '2023-03-06 00:00:00', NULL, NULL, 'Bột mì, thịt bò bằm, phô mai, ngô, gia vị.', 'xucxich.jpeg'),
+(51, 'Pizza nấm', 'Nguyên liệu sạch, bánh được nướng giòn và đậm vị', 150000, 'active', 250, 30, 1, '2023-03-06 00:00:00', NULL, NULL, 'Bột mì, nấm đông cô, phô mai, gia vị.', 'pizza.jpeg'),
+(52, 'Pizza gà', 'Nguyên liệu sạch, bánh được nướng giòn và đậm vị', 100000, 'active', 250, 30, 1, '2023-03-06 00:00:00', NULL, NULL, 'Bột mì, thịt gà, phô mai, gia vị.', 'pizzaga.jpg'),
+(53, 'Pizza xúc xích', 'Nguyên liệu sạch, bánh được nướng giòn và đậm vị', 100000, 'active', 400, 30, 1, '2023-03-06 00:00:00', NULL, NULL, 'Bột mì, xúc xích, phô mai, gia vị.', 'pizzaxucxich.jpg'),
+(54, 'Pizza phở', 'Nguyên liệu sạch, bánh được nướng giòn và đậm vị', 120000, 'active', 300, 30, 1, '2023-03-06 00:00:00', NULL, NULL, 'Bột mì, thịt bò, phô mai, gia vị.', 'pizzapho.jpg'),
+(55, 'Nước ép bí đao', 'Món nước bí đao này chính là trợ thủ đắc lực, rất tốt cho quá trình giảm cân mà bạn nên thử ngay đó!', 50000, 'active', 50, 20, 2, '2023-03-06 00:00:00', NULL, NULL, 'Bí đao ,đường', 'epbidao.jpeg'),
+(56, 'Ép bí đỏ', 'Bí đỏ thì cũng có thể chế biến thành những ly nước ép thơm ngon, bổ dưỡng nữa đấy!', 40000, 'active', 60, 20, 2, '2023-03-06 00:00:00', NULL, NULL, 'Bí đỏ, đường', 'epbido.jpeg'),
+(57, 'Ép cà chua', 'Nước ép là một thức uống rất được ưa chuộng bởi độ tươi mát, giải khát hiệu quả.', 30000, 'active', 40, 20, 2, '2023-03-06 00:00:00', NULL, NULL, 'Cà chua ,đường', 'epcachua.jpeg'),
+(58, 'Ép cà rốt', 'Ép cà rốt thanh mát để bù nước, bù khoáng chất và tăng cường sức đề kháng nhé!', 30000, 'active', 50, 20, 2, '2023-03-06 00:00:00', NULL, NULL, 'Cà rốt,đường,chanh', 'epcarot.jpeg'),
+(59, 'Ép cóc', 'Ép cóc vị chua nhẹ với nhiều vitamin C lợi ích cho sức khỏe rất phù hợp để giải khát ', 40000, 'active', 50, 20, 2, '2023-03-06 00:00:00', NULL, NULL, 'Cóc ,đường', 'epcoc.jpeg'),
+(60, 'Ép đào', 'Có nhiều vitamin vừa tốt cho làn da lại còn giúp bạn giải nhiệt cực đã', 50000, 'active', 50, 30, 2, '2023-03-06 00:00:00', NULL, NULL, 'Đào, đường ăn kiêng', 'epdao.jpeg'),
+(61, 'Ép dưa lưới', 'Có nhiều vitamin vừa tốt cho làn da lại còn giúp bạn giải nhiệt cực đã', 60000, 'active', 50, 20, 2, '2023-03-06 00:00:00', NULL, NULL, 'Dưa lưới,đường ăn kiêng', 'epdualuoi.jpeg'),
+(62, 'Ép lựu', 'Lựu nhập tươi ,cung cấp vitamin cực tốt cho sức khỏe và làn da.', 50000, 'active', 50, 20, 2, '2023-03-06 00:00:00', NULL, NULL, 'Lựu ,đường', 'epluu.jpeg'),
+(63, 'Ép mận', 'Mận nhập tươi ,cung cấp vitamin cực tốt cho sức khỏe và làn da.', 50000, 'active', 50, 20, 2, '2023-03-06 00:00:00', NULL, NULL, 'Mận đường', 'epman.jpeg'),
+(64, 'Ép quýt', 'Quýt nhập tươi ,cung cấp vitamin cực tốt cho sức khỏe và làn da.', 50000, 'active', 50, 20, 2, '2023-03-06 00:00:00', NULL, NULL, 'Quýt,mật ong', 'epquyt.jpeg'),
+(65, 'Bánh hạt tổng hợp', 'Các loại hạt sấy theo công nghệ nhập khẩu,giàu protein', 50000, 'active', 60, 14, 4, '2023-03-06 00:00:00', NULL, NULL, 'Óc chó,hạnh nhân', 'banhHat.jpeg'),
+(66, 'Cháo gà', 'Gà nuôi theo tiêu chuẩn sạch, ức gà giúp giảm cân', 30000, 'active', 50, 30, 4, '2023-03-06 00:00:00', NULL, NULL, 'Ức gà , gia vị', 'chaoGa.jpeg'),
+(67, 'Cháo yến mạch', 'Tốt cho người huyết áp cao lượng calo thấp', 50000, 'active', 50, 20, 4, '2023-03-06 00:00:00', NULL, NULL, 'Yến mạch, hương liệu', 'chaoYenMach.jpeg'),
+(68, 'Chè hạt sen', 'Tốt cho người hay mất ngủ , mát thích hợp vào mùa nóng', 50000, 'active', 80, 5, 4, '2023-03-06 00:00:00', NULL, NULL, 'Hạt sen, long nhãn', 'cheHatSen.jpeg'),
+(69, 'Đậu luộc', 'Ngon nhanh no hỗ chợ tốt cho người ăn kiêng', 50000, 'active', 69, 5, 4, '2023-03-06 00:00:00', NULL, NULL, 'Đậu,muối', 'dauLuoc.jpeg'),
+(70, 'Sữa chua hoa quả', 'Hoa quả sạch, sản phẩm được nhiều người yêu thích', 50000, 'active', 50, 15, 4, '2023-03-06 00:00:00', NULL, NULL, 'Sữa chua ,dâu tây,xoài', 'suaChuaHoaQua.jpeg'),
+(71, 'Súp gà', 'Gà đồi, nấm đông cô tốt cho người suy nhược', 80000, 'active', 140, 30, 4, '2023-03-06 00:00:00', NULL, NULL, 'Nấm ,ngô, gà tươi', 'supGa.jpeg'),
+(72, 'Bánh Akido', 'Sản xuất theo công nghệ Nhật Bản bánh ngon', 50000, 'active', 250, 5, 3, '2023-03-06 00:00:00', NULL, NULL, 'Bột mì,socola', 'banhAkido.jpeg'),
+(73, 'Bánh bông lan', 'Đủ các mẫu bánh bông lan, bánh mì tươi có nhân và ko nhân hot nhất thị trường .', 30000, 'active', 200, 20, 3, '2023-03-06 00:00:00', NULL, NULL, 'kem,trứng,bột mì', 'banhBonglan.jpeg'),
+(74, 'Bánh cam', ' Bánh được chế biến theo công thức truyền thống ,hương vị thơm ngon,đảm bảo vệ sinh an toàn thực phẩm,', 60000, 'active', 150, 15, 3, '2023-03-06 00:00:00', NULL, NULL, 'Bột mì ,vừng', 'banhCam.jpeg'),
+(75, 'Bánh chuối', 'Bánh ngon Bánh tươi, không chất bảo quản.', 30000, 'active', 200, 20, 3, '2023-03-06 00:00:00', NULL, NULL, 'Bột mì ,hương liệu', 'banhChuoi.jpeg'),
+(76, 'Bánh phô mai', 'Bánh ngon Bánh tươi, không chất bảo quản.', 30000, 'active', 120, 10, 3, '2023-03-06 00:00:00', NULL, NULL, 'Phô mai,bột mì', 'banhFlan.jpeg'),
+(77, 'Bánh Pía', 'Bánh ngon Bánh tươi, không chất bảo quản.', 50000, 'active', 150, 20, 3, '2023-03-06 00:00:00', NULL, NULL, 'Bột mì, hương liệu', 'banhPia.jpeg'),
+(78, 'Pudding phô mai', 'Món ăn mới lạ calo thấp', 80000, 'active', 120, 20, 3, '2023-03-06 00:00:00', NULL, NULL, 'Phô mai ,hoa quả', 'puddingPhomai.jpeg');
 
 --
 -- Indexes for dumped tables
@@ -1117,7 +1187,7 @@ ALTER TABLE `order_item`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
 
 --
 -- Constraints for dumped tables
