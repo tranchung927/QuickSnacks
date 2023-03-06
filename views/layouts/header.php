@@ -23,7 +23,11 @@
                 <i class="fa-solid fa-cart-shopping navbar-right btn-lg"></i>
                 <span id="cart_count" class="position-absolute top-0 start-10 translate-middle badge rounded-pill bg-danger">
                 <?php if (isset($_SESSION['cart'])) {
-                        echo count($_SESSION['cart']);
+                        $total = array_reduce($_SESSION['cart'], function($sum, $item) {
+                            $sum += $item['quantity'];
+                            return $sum;
+                        }, 0);
+                        echo $total;
                     } else echo "0"; ?>
                     <span class="visually-hidden">unread messages</span>
                 </span>

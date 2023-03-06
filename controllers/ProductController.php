@@ -12,10 +12,8 @@ class ProductController extends Controller
     {
         require_once 'vendor/Model.php';
         require_once 'models/ProductModel.php';
-        $data = array(
-            'product' => (new ProductModel)->getById($_GET['id'])
-        );
-        $this->render('product_detail', $data);
+        $pro = (new ProductModel)->getById($_POST['product_id']);
+        require_once 'views/default/product_detail.php';
     }
 
     function category()
@@ -54,8 +52,8 @@ class ProductController extends Controller
     function loadmore() {
         require_once 'vendor/Model.php';
         require_once 'models/ProductModel.php';
-        $products = (new ProductModel)->getByCategoryId($_GET['id'], 1, 8) ?: array();
-        // $products = (new ProductModel)->getByCategoryId($_GET['id'], $_GET['page'], $_GET['limit']) ?: array();
+        // $products = (new ProductModel)->getByCategoryId($_GET['id'], 1, 8) ?: array();
+        $products = (new ProductModel)->getByCategoryId($_GET['id'], $_GET['page'], $_GET['limit']) ?: array();
         if(empty($products)){return 0;};
         $data = array(
             'products' => $products,

@@ -28,6 +28,15 @@
     <div id="main_body">
       <?= @$content ?>
     </div>
+
+
+    <div class="modal fade" id="applicationModal" data-bs-backdrop="static" data-bs-remote="" aria-labelledby="applicationModalLabel" aria-hidden="true" style="display: none;">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content" id="applicationModalContent">
+        </div>
+      </div>
+    </div>
+
     <?php include "footer.php"; ?>
   </body>
 

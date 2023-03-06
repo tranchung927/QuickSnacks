@@ -4,11 +4,11 @@
             <h4 class="category-title my-4 cate">GIỎ HÀNG CỦA TÔI</h4>
             <div class="d-lg-flex justify-content-between cate">
                 <div class="col-lg-6 col-sm-12 col-md-10">
-                    <?php for ($i = 0; $i < count($orders); $i++) { ?>
+                    <?php for ($i = 0; $i < count($_SESSION['cart']); $i++) { ?>
                         <div class="orderProduct  mb-4 rounded-4 p-4 flex-column flex-md-row">
-                            <img src="<?php echo $orders[$i]['image'] ?>" class="card-img-top" style="width: 30%;">
+                            <img src="<?php echo $_SESSION['cart'][$i]['image'] ?>" class="card-img-top" style="width: 30%;">
                             <div class="orderDes mx-4 flex-grow-1">
-                                <h5 class="product-name"><?php echo $orders[$i]['name'] ?></h5>
+                                <h5 class="product-name"><?php echo $_SESSION['cart'][$i]['name'] ?></h5>
                                 <a href="#" class="product-element text-decoration-none">View Details</a>
                                 <div class="feature mt-3">
                                     <a href="#" class="text-dark me-2 btn_feature">Edit</a>
@@ -20,7 +20,7 @@
                                     <button class="border border-0 bg-body"><i class="fa-solid fa-circle-minus minus" onclick="min()"></i></button>
                                     <span class="mx-4 btn_feature" id="quantity">1</span>
                                     <button class="border border-0 bg-body"><i class="fa-solid fa-circle-plus plus" onclick="max()"></i></button>
-                                    <span class="mx-4 btn_feature"><?php echo $orders[$i]['price'] ?></span>
+                                    <span class="mx-4 btn_feature"><?php echo $_SESSION['cart'][$i]['price'] ?></span>
                                 </div>
                             </div>
                         </div>

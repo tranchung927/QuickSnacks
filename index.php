@@ -10,8 +10,8 @@ if (isset($_GET['controller'])) {
   $controller = 'index';
 }
 if (isset($_GET['action'])) {
-    $action = $_GET['action'];
+  $action = $_GET['action'];
 } else {
-    $action = 'index';
+  $action = 'index';
 }
 require_once('routes.php');

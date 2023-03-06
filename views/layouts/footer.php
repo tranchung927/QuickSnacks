@@ -10,7 +10,7 @@
           <!-- Links -->
           <h6 class="footer-menu-title">Danh mục món ăn</h6>
           <ul class="footer-menu">
-            <li><a href="#!" class="footer-menu-item">Món mới</a></li>
+            <li><a href="index.php?controller=product&action=category&id=-1" class="footer-menu-item">Món mới</a></li>
             <?php
             require_once("vendor/Model.php");
             require_once("models/CategoryModel.php");
@@ -18,7 +18,7 @@
             $data = $md->getAll();
             for ($i = 0; $i < count($data); $i++) {
             ?>
-              <li><a href="#!" class="footer-menu-item"><?php echo $data[$i]['name'] ?></a></li>
+              <li><a href='index.php?controller=product&action=category&id=<?php echo $data[$i]["id"]?>' class="footer-menu-item"><?php echo $data[$i]['name'] ?></a></li>
             <?php } ?>
           </ul>
         </div>
