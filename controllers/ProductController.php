@@ -52,7 +52,6 @@ class ProductController extends Controller
     function loadmore() {
         require_once 'vendor/Model.php';
         require_once 'models/ProductModel.php';
-        // $products = (new ProductModel)->getByCategoryId($_GET['id'], 1, 8) ?: array();
         $products = (new ProductModel)->getByCategoryId($_GET['id'], $_GET['page'], $_GET['limit']) ?: array();
         if(empty($products)){return 0;};
         $data = array(
