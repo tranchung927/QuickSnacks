@@ -169,6 +169,12 @@
     color: black
 }
 
+.txtMediumPrimary {
+    font-family: Roboto-Medium;
+    font-size: 20px;
+    color: black
+}
+
 .input-under-line {
     width: 100%;
     padding-top: 40px;
@@ -371,7 +377,7 @@ ul.footer-menu {
     }
 
     .cart-container {
-        padding: 100px 100px !important;
+        padding: 60px 100px !important;
     }
 
     .cart-summary {
@@ -425,6 +431,8 @@ ul.footer-menu {
 .product-img img {
     height: 100%;
     width: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
 .product-all {
@@ -450,6 +458,9 @@ ul.footer-menu {
 
 .product-detail-image img {
     width: 100%;
+    max-height: 500px;
+    object-fit: contain;
+    object-position: center;
 }
 
 .product-detail-name {

@@ -17,7 +17,7 @@ class OrderController extends Controller
         $count = $data[1];
         $product = (new ProductModel)->getById($productId);
         if (isset($_SESSION['cart'])) {
-            $position = array_search($productId, array_column($_SESSION['cart'], 'product_id'));
+            $position = array_search($productId, array_column($_SESSION['cart'], 'id'));
             if ($position !== false) {
                 $oldQuantity = $_SESSION['cart'][$position]['quantity'];
                 $_SESSION['cart'][$position]['quantity'] = $oldQuantity + $count;
@@ -43,6 +43,27 @@ class OrderController extends Controller
     {
         require_once 'vendor/Model.php';
         require_once 'models/ProductModel.php';
-        $this->render('cart');
+        $data = array(
+            "delivery_fee" => 30000
+        );
+        $this->render('cart', $data);
+    }
+
+    function updateCart() {
+        $quantity = $_POST['quantity'];
+        $index = $_POST['index'];
+        $_SESSION['cart'][$index]['quantity'] = $quantity;
+        $totalQuantity = 0;
+        $total = 0;
+        for ($i=0; $i < count($_SESSION['cart']); $i++) { 
+            $totalQuantity += $_SESSION['cart'][$i]['quantity'];
+            $total += ($_SESSION['cart'][$i]['price'] * $_SESSION['cart'][$i]['quantity']);
+        }
+        echo '{"subtotal":'.$total.',"total":'.($total+30000).',"total_quantity":'.$totalQuantity.',"delivery_charge":30000}';
+    }
+
+    function deleteItem() {
+        array_splice($_SESSION['cart'], array_search($_POST['product_id'], array_column($_SESSION['cart'], 'id')), 1);
+        return true;
     }
 }
