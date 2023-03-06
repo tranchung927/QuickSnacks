@@ -22,8 +22,8 @@
             <a class="nav-link position-relative" href="index.php?controller=order&action=cart" style="margin-right:24px;">
                 <i class="fa-solid fa-cart-shopping navbar-right btn-lg"></i>
                 <span id="cart_count" class="position-absolute top-0 start-10 translate-middle badge rounded-pill bg-danger">
-                <?php if (isset($_SESSION['cart'])) {
-                        $total = array_reduce($_SESSION['cart'], function($sum, $item) {
+                    <?php if (isset($_SESSION['cart'])) {
+                        $total = array_reduce($_SESSION['cart'], function ($sum, $item) {
                             $sum += $item['quantity'];
                             return $sum;
                         }, 0);
@@ -32,7 +32,13 @@
                     <span class="visually-hidden">unread messages</span>
                 </span>
             </a>
-            <a class="nav-link" href="index.php?controller=index&action=signin"><i class="fa-solid fa-user navbar-right btn-lg"style="margin:16px 0px;"></i></a>
+            <a class="nav-link" href='<?php if (empty($_SESSION["user"])) {
+                                            echo "index.php?controller=index&action=signin";
+                                        } else {
+                                            echo "index.php?controller=user";
+                                        } ?>'>
+                <i class="fa-solid fa-user navbar-right btn-lg" style="margin:16px 0px;"></i>
+            </a>
         </div>
     </div>
 </nav>

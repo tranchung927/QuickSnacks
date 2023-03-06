@@ -34,6 +34,20 @@ class AccountModel extends Model
 		}
 	}
 
+	function getUserById($id)
+	{
+		$result = array();
+		$sql = "SELECT * FROM account WHERE id = '" . $id . "'";
+		if ($this->conn->query($sql)->rowCount() == 0) {
+			return false;
+		} else {
+			foreach ($this->conn->query($sql) as $row) {
+				$result = $row;
+			}
+			return $result;
+		}
+	}
+
 	function addUser($firstName, $lastName, $email, $phone, $password)
 	{
 		$now = new DateTime('now', new DateTimeZone('ASIA/Ho_Chi_Minh'));
@@ -41,7 +55,17 @@ class AccountModel extends Model
 		return $this->insert(
 			'account',
 			array($firstName, $lastName, $email, $phone, sha1($password)),
-			array('first_name','last_name','email','phone','password')
+			array('first_name', 'last_name', 'email', 'phone', 'password')
+		);
+	}
+
+	function updateUser($id, $firstName, $lastName, $email, $phone)
+	{
+		return $this->update(
+			'account',
+			array('first_name', 'last_name', 'email', 'phone'),
+			array($firstName, $lastName, $email, $phone),
+			"id=" . $id
 		);
 	}
 }

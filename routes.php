@@ -4,7 +4,7 @@ $controllers = array(
     'index'  => ['index','signin', 'signup', 'signout'],
     'product' => ['index','category', 'categories', 'loadmore'],
     'order' => ['index', 'addToCart', 'cart', 'updateCart', 'deleteItem'],
-    'user' => ['login', 'register']
+    'user' => ['index', 'login', 'register', 'update', 'logout']
 ); // Các controllers trong hệ thống và các action có thể gọi ra từ controller đó.
 
 // Nếu các tham số nhận được từ URL không hợp lệ (không thuộc list controller và action có thể gọi

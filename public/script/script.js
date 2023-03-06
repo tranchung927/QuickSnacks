@@ -9,6 +9,8 @@
     var masp = $(this).data('masp');
     productDetail(masp);
   });
+  $('#btnUpdateInfo').click(updateAccount);
+  $('#btnLogout').click(logout);
 });
 
 function register(e) {
@@ -249,6 +251,57 @@ function cartDecrement(price, index) {
       $('#cartTotal').html(currencyFormat(obj.total));
       $('#cartCheckout').html(currencyFormat(obj.total));
       $('#cart_count').html(obj.total_quantity);
+    }
+  });
+}
+
+function updateAccount() {
+  var first_name = $('#txtFistNameInfo').val();
+  var last_name = $('#txtLastNameInfo').val();
+  var email = $('#txtEmailInfo').val();
+  var phone = $('#txtPhoneNumberInfo').val();
+  $('#errFistNameInfo').html('');
+  $('#errLastNameInfo').html('');
+  $('#errPhoneNumberInfo').html('');
+  $('#errEmailInfo').html('');
+  $.ajax({
+    url: "index.php?controller=user&action=update",
+    type: "post",
+    dataType: "text",
+    data: {
+      first_name, last_name, phone, email
+    },
+    success: function (result) {
+      const obj = JSON.parse(result);
+      switch (obj.code) {
+        case 0:
+          window.location.reload();
+          break;
+        case 1:
+          $('#errFistNameInfo').html(obj.message.toString());
+          break;
+        case 2:
+          $('#errLastNameInfo').html(obj.message.toString());
+          break;
+        case 3:
+          $('#errEmailInfo').html(obj.message.toString());
+          break;
+        default:
+          alert(obj.message.toString());
+          break;
+      }
+    }
+  });
+}
+
+function logout() {
+  $.ajax({
+    url: "index.php?controller=user&action=logout",
+    type: "post",
+    dataType: "text",
+    data: {},
+    success: function (result) {
+      window.location.replace("http://localhost/QuickSnacks/index.php");
     }
   });
 }
