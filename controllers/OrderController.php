@@ -43,10 +43,6 @@ class OrderController extends Controller
     {
         require_once 'vendor/Model.php';
         require_once 'models/ProductModel.php';
-        $products = (new ProductModel)->getByCategoryId(2, 1, 4) ?: array();
-        $data = array(
-            "products" => $products
-        );
-        $this->render('cart', $data);
+        $this->render('cart');
     }
 }
