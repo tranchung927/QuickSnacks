@@ -44,7 +44,13 @@
 
     </div>
 </div>
-
-<?php
-require 'views/default/products.php';
-?>
+<div class="container-fluid" style="padding-top:12px;">
+    <div class="product-all">
+    <h3 class='category-title'><span><?php echo $category["name"] ?? "" ?></span></h3>
+        <div class="product-container">
+            <?php for ($pIdx = 0; $pIdx < count($products ?? array()); $pIdx++) {
+                require "views/default/product_item.php";
+            } ?>
+        </div>
+    </div>
+</div>

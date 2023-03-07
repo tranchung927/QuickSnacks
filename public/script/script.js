@@ -98,7 +98,7 @@ function login(e) {
   });
 }
 
-function loadmore(start) {
+function loadmore() {
   var id = -1
   var sPageURL = window.location.search.substring(1);
   var sURLVariables = sPageURL.split('&');
@@ -108,8 +108,10 @@ function loadmore(start) {
       id = sParameterName[1];
     }
   }
+  var start = parseInt($('#pageTemp').text());
   var page = start + 1;
   var limit = 16;
+  $('#pageTemp').html(page);
   $.ajax({
     url: "index.php?controller=product&action=loadmore",
     type: "get",
@@ -163,7 +165,7 @@ function productDetail(product_id) {
 
   $.ajax({
     url: "index.php?controller=product",
-    type: "post",
+    type: "get",
     dataType: "text",
     data: {
       product_id

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Mar 06, 2023 at 02:13 PM
+-- Generation Time: Mar 07, 2023 at 03:48 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -47,7 +47,7 @@ CREATE TABLE `account` (
 --
 
 INSERT INTO `account` (`id`, `first_name`, `last_name`, `email`, `phone`, `avatar`, `address_id`, `flag`, `username`, `password`) VALUES
-(2, 'Tran', 'Chung', 'a@gmail.com', '0987654321', NULL, NULL, NULL, NULL, 'b480c074d6b75947c02681f31c90c668c46bf6b8');
+(2, 'Tran Van', 'Chung', 'a@gmail.com', '0987654321', NULL, 1, NULL, NULL, '76af7efae0d034d1e3335ed1b90f24b6cadf2bf1');
 
 -- --------------------------------------------------------
 
@@ -63,8 +63,18 @@ CREATE TABLE `address` (
   `city_id` int(11) DEFAULT NULL,
   `district_id` int(11) DEFAULT NULL,
   `address` varchar(255) DEFAULT NULL,
-  `flag` int(11) DEFAULT NULL
+  `flag` int(11) DEFAULT NULL,
+  `first_name` varchar(255) DEFAULT NULL,
+  `last_name` varchar(255) DEFAULT NULL,
+  `phone` varchar(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `address`
+--
+
+INSERT INTO `address` (`id`, `name`, `latitude`, `longitude`, `city_id`, `district_id`, `address`, `flag`, `first_name`, `last_name`, `phone`) VALUES
+(1, NULL, NULL, NULL, 1, 2, '286 Đội Cấn', NULL, 'Tran Van', 'Chung', '0987654321');
 
 -- --------------------------------------------------------
 
@@ -927,8 +937,6 @@ CREATE TABLE `location` (
 
 CREATE TABLE `order` (
   `id` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `code` varchar(255) NOT NULL,
   `status` varchar(50) NOT NULL,
   `note` varchar(1000) DEFAULT NULL,
   `account_id` int(11) DEFAULT NULL,
@@ -938,6 +946,17 @@ CREATE TABLE `order` (
   `modified_date` datetime DEFAULT NULL,
   `flag` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `order`
+--
+
+INSERT INTO `order` (`id`, `status`, `note`, `account_id`, `location_id`, `address_id`, `created_date`, `modified_date`, `flag`) VALUES
+(2, 'waiting', NULL, 2, NULL, 1, '2023-03-07 07:20:19', NULL, NULL),
+(3, 'waiting', NULL, 2, NULL, 1, '2023-03-07 07:26:28', NULL, NULL),
+(4, 'waiting', NULL, 2, NULL, 1, '2023-03-07 07:28:01', NULL, NULL),
+(5, 'waiting', NULL, 2, NULL, 1, '2023-03-07 07:34:38', NULL, NULL),
+(6, 'waiting', NULL, 2, NULL, 1, '2023-03-07 07:35:59', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -955,6 +974,17 @@ CREATE TABLE `order_item` (
   `created_date` datetime DEFAULT NULL,
   `modified_date` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `order_item`
+--
+
+INSERT INTO `order_item` (`id`, `product_id`, `order_id`, `quantity`, `orginal_price`, `price`, `created_date`, `modified_date`) VALUES
+(1, 56, 2, 1, 40000, 40000, '2023-03-07 07:20:19', NULL),
+(2, 57, 3, 1, 30000, 30000, '2023-03-07 07:26:28', NULL),
+(3, 57, 4, 1, 30000, 30000, '2023-03-07 07:28:01', NULL),
+(4, 58, 5, 1, 30000, 30000, '2023-03-07 07:34:38', NULL),
+(5, 56, 6, 1, 40000, 40000, '2023-03-07 07:35:59', NULL);
 
 -- --------------------------------------------------------
 
@@ -1151,7 +1181,7 @@ ALTER TABLE `account`
 -- AUTO_INCREMENT for table `address`
 --
 ALTER TABLE `address`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `banner`
@@ -1175,13 +1205,13 @@ ALTER TABLE `location`
 -- AUTO_INCREMENT for table `order`
 --
 ALTER TABLE `order`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `order_item`
 --
 ALTER TABLE `order_item`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `product`

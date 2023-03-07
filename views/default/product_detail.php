@@ -19,6 +19,12 @@
                         <span class="txtBoldPrimary">Lượng calo:</span>
                         <span class="txtPrimary"><?php echo $pro['calorie'] ?></span>
                     </div>
+                    <?php if (isset($pro['estimate_time']) && $pro['estimate_time'] > 0) { ?>
+                        <div>
+                            <span class="txtBoldPrimary">Thời gian làm:</span>
+                            <span class="txtPrimary"><?php echo $pro['estimate_time'] ?> phút</span>
+                        </div>
+                    <?php } ?>
                     <div>
                         <span class="txtBoldPrimary">Mô tả:</span>
                         <span class="txtPrimary"><?php echo $pro['description'] ?></span>

@@ -22,8 +22,8 @@ class IndexController extends Controller
             array('image' => './public/images/carousel-3.jpeg')
         );
 
-        $categories = (new CategoryModel)->getAll() ?: array();
-        $products = (new ProductModel)->getByCategoryId(2, 1, 4) ?: array();
+        $categories = (new CategoryModel)->getAll() ?? array();
+        $products = (new ProductModel)->getAll(1, 4) ?? array();
         array_unshift(
             $categories,
             array(

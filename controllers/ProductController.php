@@ -12,7 +12,7 @@ class ProductController extends Controller
     {
         require_once 'vendor/Model.php';
         require_once 'models/ProductModel.php';
-        $pro = (new ProductModel)->getById($_POST['product_id']);
+        $pro = (new ProductModel)->getById($_GET['product_id']);
         require_once 'views/default/product_detail.php';
     }
 
@@ -21,14 +21,24 @@ class ProductController extends Controller
         require_once 'vendor/Model.php';
         require_once 'models/ProductModel.php';
         require_once 'models/CategoryModel.php';
-        $category = (new CategoryModel)->getById($_GET['id']);
-        $products = (new ProductModel)->getByCategoryId($_GET['id'], 1, 16) ?: array();
-        $data = array(
-            'products' => $products,
-            'category' => $category,
-            'page' => 1
-        );
-        $this->render('category', $data, $category["name"]);
+        if ($_GET['id'] == '-1') {
+            $products = (new ProductModel)->getAll(1, 16) ?? array();
+            $data = array(
+                'products' => $products,
+                'category' => array(
+                    "name" => "Món mới"
+                )
+            );
+            $this->render('category', $data, "Món mới");
+        } else {
+            $category = (new CategoryModel)->getById($_GET['id']);
+            $products = (new ProductModel)->getByCategoryId($_GET['id'], 1, 16) ?? array();
+            $data = array(
+                'products' => $products,
+                'category' => $category
+            );
+            $this->render('category', $data, $category["name"]);
+        }
     }
 
     function categories()
@@ -38,26 +48,41 @@ class ProductController extends Controller
         require_once 'models/CategoryModel.php';
         $categories = (new CategoryModel)->getAll();
         $data = array();
-        for ($i=0; $i < count($categories); $i++) { 
-            $products = (new ProductModel)->getByCategoryId($categories[$i]['id'], 1, 4) ?: array();
-            array_push($data, array(
-                'products' => $products,
-                'category' => $categories[$i],
-                'more' => true
-            ));
+        for ($i = 0; $i < (count($categories) + 1); $i++) {
+            if ($i == 0) {
+                $products = (new ProductModel)->getAll(1, 4) ?? array();
+                array_push($data, array(
+                    'products' => $products,
+                    'category' => array(
+                        "id" => -1,
+                        "name" => "Món mới"
+                    )
+                ));
+            } else {
+                $products = (new ProductModel)->getByCategoryId($categories[$i - 1]['id'], 1, 4) ?? array();
+                array_push($data, array(
+                    'products' => $products,
+                    'category' => $categories[$i - 1]
+                ));
+            }
         }
         $this->render('categories', $data, 'Thực đơn');
     }
 
-    function loadmore() {
+    function loadmore()
+    {
         require_once 'vendor/Model.php';
         require_once 'models/ProductModel.php';
-        $products = (new ProductModel)->getByCategoryId($_GET['id'], $_GET['page'], $_GET['limit']) ?: array();
-        if(empty($products)){return 0;};
-        $data = array(
-            'products' => $products,
-            'page' => $_GET['page']
-        );
-        require 'views/default/products.php';
+        if ($_GET['id'] == '-1') {
+            $products = (new ProductModel)->getAll($_GET['page'], $_GET['limit']) ?? array();
+        } else {
+            $products = (new ProductModel)->getByCategoryId($_GET['id'], $_GET['page'], $_GET['limit']) ?? array();
+        }
+        if (empty($products)) {
+            return 0;
+        }
+        for ($pIdx = 0; $pIdx < count($products); $pIdx++) {
+            require "views/default/product_item.php";
+        }
     }
 }
