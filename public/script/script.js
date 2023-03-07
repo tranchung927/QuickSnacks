@@ -11,6 +11,7 @@
   });
   $('#btnUpdateInfo').click(updateAccount);
   $('#btnLogout').click(logout);
+  $('#btnCreateOrder').click(createOrder)
 });
 
 function register(e) {
@@ -302,6 +303,103 @@ function logout() {
     data: {},
     success: function (result) {
       window.location.replace("http://localhost/QuickSnacks/index.php");
+    }
+  });
+}
+
+function editAddress() {
+  $('#applicationModal').attr('data-bs-remote', 'index.php?controller=order&action=address');
+  $('#applicationModalContent').empty();
+  $.ajax({
+    url: "index.php?controller=order&action=address",
+    type: "post",
+    dataType: "text",
+    data: {},
+    success: function (result) {
+      if (result) {
+        $('#applicationModalContent').html(result);
+      } else {
+        window.location.replace("http://localhost/QuickSnacks/index.php?controller=index&action=signin");
+      }
+    }
+  });
+}
+
+function confirmAddress() {
+  var first_name = $('#txtAddressFistName').val();
+  var last_name = $('#txtAddressLastName').val();
+  var phone = $('#txtAddressPhoneNumber').val();
+  var address = $('#txtAddressAddress').val();
+  var city = $('#txtAddressCity').val();
+  var district = $('#txtAddressDistrict').val();
+  var address = $('#txtAddressAddress').val();
+  $('#errAddressLastName').html('');
+  $('#errAddressFistName').html('');
+  $('#errAddressPhoneNumber').html('');
+  $('#errAddressCity').html('');
+  $('#errAddressDistrict').html('');
+  $('#errAddressAddress').html('');
+  $.ajax({
+    url: "index.php?controller=user&action=updateAddress",
+    type: "post",
+    dataType: "text",
+    data: {
+      first_name, last_name, phone, city, district, address
+    },
+    success: function (result) {
+      const obj = JSON.parse(result);
+      switch (obj.code) {
+        case 0:
+          // var myModalEl = document.getElementById('staticBackdrop');
+          // var modal = bootstrap.Modal.getInstance(myModalEl)
+          // modal.hide();
+          alert("Cập nhật địa chỉ thành công!");
+          break;
+        case 1:
+          $('#errAddressFistName').html(obj.message.toString());
+          break;
+        case 2:
+          $('#errAddressLastName').html(obj.message.toString());
+          break;
+        case 3:
+          $('#errAddressPhoneNumber').html(obj.message.toString());
+          break;
+        case 4:
+          $('#errAddressCity').html(obj.message.toString());
+          break;
+        case 5:
+          $('#errAddressDistrict').html(obj.message.toString());
+          break;
+        case 6:
+          $('#errAddressAddress').html(obj.message.toString());
+          break;
+        default:
+          alert(obj.message.toString());
+          break;
+      }
+    }
+  });
+}
+
+function createOrder() {
+  $.ajax({
+    url: "index.php?controller=order&action=create",
+    type: "post",
+    dataType: "text",
+    data: {},
+    success: function (result) {
+      const obj = JSON.parse(result);
+      switch (obj.code) {
+        case 0:
+          window.location.replace("http://localhost/QuickSnacks/index.php?controller=order&action=complete");
+          break;
+        case 1:
+          window.location.replace("http://localhost/QuickSnacks/index.php?controller=index&action=signin");
+          break;
+        default:
+          alert(obj.message.toString());
+          break;
+      }
     }
   });
 }

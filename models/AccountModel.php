@@ -48,7 +48,7 @@ class AccountModel extends Model
 		}
 	}
 
-	function addUser($firstName, $lastName, $email, $phone, $password)
+	function createUser($firstName, $lastName, $email, $phone, $password)
 	{
 		$now = new DateTime('now', new DateTimeZone('ASIA/Ho_Chi_Minh'));
 		$now = $now->format('Y-m-d H:i:s');
@@ -65,6 +65,16 @@ class AccountModel extends Model
 			'account',
 			array('first_name', 'last_name', 'email', 'phone'),
 			array($firstName, $lastName, $email, $phone),
+			"id=" . $id
+		);
+	}
+
+	function updateAddress($id, $addressId)
+	{
+		return $this->update(
+			'account',
+			array('address_id'),
+			array($addressId),
 			"id=" . $id
 		);
 	}
