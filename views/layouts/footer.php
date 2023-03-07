@@ -8,9 +8,9 @@
         <!-- Grid column -->
         <div class="col-md-3 col-lg-3 col-xl-3 mx-auto">
           <!-- Links -->
-          <h6 class="footer-menu-title">Danh mục món ăn</h6>
+          <h6 class="footer-menu-title">Our Food</h6>
           <ul class="footer-menu">
-            <li><a href="index.php?controller=product&action=category&id=-1" class="footer-menu-item">Món mới</a></li>
+            <li><a href="index.php?controller=product&action=category&id=-1" class="footer-menu-item">New Products</a></li>
             <?php
             require_once("vendor/Model.php");
             require_once("models/CategoryModel.php");
@@ -27,11 +27,11 @@
         <!-- Grid column -->
         <div class="col-md-3 col-lg-3 col-xl-3 mx-auto">
           <!-- Links -->
-          <h6 class="footer-menu-title">Về QuickSnacks</h6>
+          <h6 class="footer-menu-title">About QuickSnacks</h6>
           <ul class="footer-menu">
-            <li><a href="#!" class="footer-menu-item">Tin khuyến mãi</a></li>
-            <li><a href="#!" class="footer-menu-item">Tin tức QuickSnacks</a></li>
-            <li><a href="#!" class="footer-menu-item">Tuyển dụng</a></li>
+            <li><a href="#!" class="footer-menu-item">Promotion News</a></li>
+            <li><a href="#!" class="footer-menu-item">QuickSnacks NEWS</a></li>
+            <li><a href="#!" class="footer-menu-item">QuickSnacks Jobs </a></li>
           </ul>
         </div>
         <!-- Grid column -->
@@ -39,7 +39,7 @@
         <!-- Grid column -->
         <div class="col-md-3 col-lg-3 col-xl-3 mx-auto">
           <!-- Links -->
-          <h6 class="footer-menu-title">Liên hệ</h6>
+          <h6 class="footer-menu-title">Contact Us</h6>
           <ul class="footer-menu">
             <li><a href="#!" class="footer-menu-item"><i class="fas fa-home mr-3"></i> 285 Đội Cấn, Ba Đình, Hà Nội</a></li>
             <li><a href="#!" class="footer-menu-item"><i class="fas fa-envelope mr-3"></i> quicksnacks@gmail.com</a></li>

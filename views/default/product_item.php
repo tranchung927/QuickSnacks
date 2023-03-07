@@ -15,12 +15,12 @@
         <?php if (isset($_SESSION['user'])) { ?>
             <div class='d-flex gap-1 justify-content-between'>
                 <a class='a-primary product-action' href="">
-                    <button class='button-border product-action'>Tuỳ chỉnh</button>
+                    <button class='button-border product-action'>Customise</button>
                 </a>
-                <button class='button-primary product-action btnAddToCart' data-masp='<?php echo $products[$pIdx]["id"] . ",1" ?>'>Thêm</button>
+                <button class='button-primary product-action btnAddToCart' data-masp='<?php echo $products[$pIdx]["id"] . ",1" ?>'>Add</button>
             </div>
         <?php } else { ?>
-            <button class='button-primary product-action btnAddToCart' data-masp='<?php echo $products[$pIdx]["id"] . ",1" ?>'>Thêm</button>
+            <button class='button-primary product-action btnAddToCart' data-masp='<?php echo $products[$pIdx]["id"] . ",1" ?>'>Add</button>
         <?php } ?>
     </div>
 </div>

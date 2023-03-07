@@ -22,7 +22,7 @@
 <!-- category -->
 <div class="container-fluid">
     <div class="product-all">
-        <h3 class="category-title"><span>Danh mục món ăn</span></h3>
+        <h3 class="category-title"><span>BROWSE CATEGORIES</span></h3>
         <div class="product-container">
             <?php for ($i = 0; $i < count($categories); $i++) { ?>
                 <?php $category_detail = "index.php?controller=product&action=category&id=" . $categories[$i]['id']; ?>

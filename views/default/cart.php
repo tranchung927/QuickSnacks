@@ -1,8 +1,8 @@
 <div class="cart-container">
-    <h3 class="txtBoldPrimary" style="font-size:32px;margin-bottom:32px">GIỎ HÀNG CỦA TÔI</h3>
+    <h3 class="txtBoldPrimary" style="font-size:32px;margin-bottom:32px">MY BUCKET</h3>
     <?php if (empty($_SESSION['cart'])) { ?>
         <div class="d-flex flex-column justify-content-center align-items-center" style="min-height: 300px;margin: 0px auto;width: auto;max-width: 460px;">
-            <span>Bạn chưa có sản phẩm nào trong giỏ hàng...</span>
+            <span>YOUR BUCKET IS EMPTY. LET'S START AN ORDER!</span>
         </div>
 
     <?php } else { ?>
@@ -14,7 +14,7 @@
                             <img src="<?php echo "public/images/products/" . $_SESSION['cart'][$i]['image'] ?>">
                             <div style="margin-left:16px;">
                                 <h5 class="txtMediumPrimary"><?php echo $_SESSION['cart'][$i]['name'] ?></h5>
-                                <a class="txtMediumPrimary" onclick="deleteCart(<?php echo $_SESSION['cart'][$i]['id'] ?>)" style="font-size:16px;">Xoá</a>
+                                <a class="txtMediumPrimary" onclick="deleteCart(<?php echo $_SESSION['cart'][$i]['id'] ?>)" style="font-size:16px;">Remove</a>
                             </div>
                         </div>
                         <div class="d-flex justify-content-center align-items-center" style="gap:12px;margin-top:16px;">
@@ -38,10 +38,10 @@
                         return $sum;
                     }, 0);
                     ?>
-                    <h4 class="txtMediumPrimary" style="font-size:24px;"><?php echo count($_SESSION['cart']) ?> MÓN</h4>
+                    <h4 class="txtMediumPrimary" style="font-size:24px;"><?php echo count($_SESSION['cart']) ?> ITEM</h4>
                     <hr>
                     <div class="d-flex justify-content-between">
-                        <h4 class="txtMediumPrimary" style="font-size:24px;">Địa chỉ nhận</h4>
+                        <h4 class="txtMediumPrimary" style="font-size:24px;">Delivery Address</h4>
                         <a class="txtMediumPrimary" onclick='editAddress()' data-bs-toggle='modal' data-bs-target='#applicationModal'>
                             <?php echo empty($address) ? "Add" : "Edit"; ?>
                         </a>
@@ -54,19 +54,19 @@
                     <?php } ?>
                     <hr>
                     <div class="d-flex justify-content-between">
-                        <p class="txtPrimary" style="font-size:18px;">Tổng đơn hàng</p>
+                        <p class="txtPrimary" style="font-size:18px;">Subtotal</p>
                         <p class="txtPrimary" style="font-size:18px;" id="cartSubtotal"> <?php echo number_format($totalAmount, 0, ',', '.') ?>₫</p>
                     </div>
                     <div class="d-flex justify-content-between">
-                        <p class="txtPrimary" style="font-size:18px;">Phí giao hàng</p>
+                        <p class="txtPrimary" style="font-size:18px;">Delivery Charge</p>
                         <p class="txtPrimary" style="font-size:18px;" id="cartDeliveryCharge"><?php echo number_format($delivery_fee, 0, ',', '.') ?>₫</p>
                     </div>
                     <div class="d-flex justify-content-between">
-                        <h5 class="txtMediumPrimary">Tổng thanh toán</h5>
+                        <h5 class="txtMediumPrimary">Total</h5>
                         <h5 class="txtMediumPrimary" id="cartTotal"><?php echo number_format(($totalAmount + $delivery_fee), 0, ',', '.') ?>₫</h5>
                     </div>
                     <hr>
-                    <button class="button-primary w-100 txtBoldPrimary" style="padding:16px 20px;color:white" id="btnCreateOrder">Xác nhận</button>
+                    <button class="button-primary w-100 txtBoldPrimary" style="padding:16px 20px;color:white" id="btnCreateOrder">Confirm</button>
                 </div>
             </div>
         </div>

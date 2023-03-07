@@ -28,7 +28,7 @@ class IndexController extends Controller
             $categories,
             array(
                 'id' => -1,
-                'name' => 'Món mới',
+                'name' => 'New Products',
                 'image' => 'newfood.png'
             )
         );
@@ -36,7 +36,7 @@ class IndexController extends Controller
             'products' => $products,
             'categories' => $categories,
             'category' => array(
-                'name' => 'CÓ THỂ BẠN SẼ THÍCH MÓN NÀY',
+                'name' => 'WE THINK YOU’LL LOVE THESE',
             ),
             'banners' => $banners,
             'isLogin' => isset($_SESSION['user'])

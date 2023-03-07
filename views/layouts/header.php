@@ -7,13 +7,13 @@
         <div class="collapse navbar-collapse" id="navbarToggler">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link-item nav-link-color-red" href="index.php?controller=product&action=categories">Thực đơn</a>
+                    <a class="nav-link-item nav-link-color-red" href="index.php?controller=product&action=categories">Menu</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link-item" href="#">Khuyến mãi</a>
+                    <a class="nav-link-item" href="#">Promotion</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link-item" href="#">Giới thiệu</a>
+                    <a class="nav-link-item" href="#">About</a>
                 </li>
             </ul>
             <div>

@@ -120,7 +120,7 @@ function loadmore() {
       page, limit, id
     },
     success: function (result) {
-      if (!result) { alert("Đã hết sản phẩm để hiển thị!"); return 0; }
+      if (!result) { alert("No more products!"); return 0; }
       $('#category-content').append(result);
     }
   });
@@ -207,12 +207,12 @@ function decrement(index) {
 }
 
 function itemIncrement(price) {
-  var total = "Thêm vào giỏ (" + currencyFormat(price * increment()) + ")"
+  var total = "Add to Bucket (" + currencyFormat(price * increment()) + ")"
   $('#btnAddToCartDetail').html(total);
 }
 
 function itemDecrement(price) {
-  var total = "Thêm vào giỏ (" + currencyFormat(price * increment()) + ")"
+  var total = "Add to Bucket (" + currencyFormat(price * increment()) + ")"
   $('#btnAddToCartDetail').html(total);
 }
 
@@ -355,7 +355,7 @@ function confirmAddress() {
           // var myModalEl = document.getElementById('staticBackdrop');
           // var modal = bootstrap.Modal.getInstance(myModalEl)
           // modal.hide();
-          alert("Cập nhật địa chỉ thành công!");
+          alert("Update address successfully!");
           break;
         case 1:
           $('#errAddressFistName').html(obj.message.toString());

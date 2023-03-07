@@ -95,7 +95,7 @@ class OrderController extends Controller
             return false;
         }
         if (empty($_SESSION["user"]["address_id"])) {
-            echo '{"code":2, "message":"Vui lòng cập nhật địa chỉ nhận!"}';
+            echo '{"code":2, "message":"Please enter your delivery address."}';
             return false;
         }
         $md = new OrderModel;
@@ -104,7 +104,7 @@ class OrderController extends Controller
             echo '{"code":0, "message":""}';
             return true;
         }
-        echo '{"code":3, "message":"Đã có lỗi xảy ra, vui lòng thử lại sau."}';
+        echo '{"code":3, "message":"An error occurred, please try again later."}';
         return false;
     }
 

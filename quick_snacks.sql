@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Mar 07, 2023 at 03:48 AM
+-- Generation Time: Mar 07, 2023 at 05:18 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -115,10 +115,10 @@ CREATE TABLE `category` (
 --
 
 INSERT INTO `category` (`id`, `name`, `code`, `description`, `status`, `parent_id`, `created_date`, `modified_date`, `flag`, `image`) VALUES
-(1, 'Đồ ăn nhẹ', NULL, NULL, 'active', NULL, '2023-03-01 00:00:00', NULL, NULL, 'easy_on_stomach.jpg'),
-(2, 'Sinh tố', NULL, NULL, 'active', NULL, '2023-03-01 00:00:00', NULL, NULL, 'smoothies.jpg'),
-(3, 'Dành cho trẻ em', NULL, NULL, 'active', NULL, '2023-03-01 00:00:00', NULL, NULL, 'snacks_for_kids.jpg'),
-(4, 'Tốt cho sức khoẻ', NULL, NULL, 'active', NULL, '2023-03-01 00:00:00', NULL, NULL, 'healthy_snacks.jpg');
+(1, 'Easy on Stomach', NULL, NULL, 'active', NULL, '2023-03-01 00:00:00', NULL, NULL, 'easy_on_stomach.jpg'),
+(2, 'Smoothies', NULL, NULL, 'active', NULL, '2023-03-01 00:00:00', NULL, NULL, 'smoothies.jpg'),
+(3, 'Snacks for Kids', NULL, NULL, 'active', NULL, '2023-03-01 00:00:00', NULL, NULL, 'snacks_for_kids.jpg'),
+(4, 'Healthy Snacks', NULL, NULL, 'active', NULL, '2023-03-01 00:00:00', NULL, NULL, 'healthy_snacks.jpg');
 
 -- --------------------------------------------------------
 

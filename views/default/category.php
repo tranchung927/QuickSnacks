@@ -12,7 +12,7 @@
     <div class="row">
         <div class="col-sm-12">
             <span id="pageTemp" style="visibility: hidden;">1</span>
-            <button id="loadmoreBtn" onclick="loadmore()" class="button-primary" style="height:56px;width:200px">Tải thêm</button>
+            <button id="loadmoreBtn" onclick="loadmore()" class="button-primary" style="height:56px;width:200px">Load More</button>
         </div>
     </div>
 </div>

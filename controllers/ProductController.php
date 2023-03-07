@@ -26,10 +26,10 @@ class ProductController extends Controller
             $data = array(
                 'products' => $products,
                 'category' => array(
-                    "name" => "Món mới"
+                    "name" => "New Products"
                 )
             );
-            $this->render('category', $data, "Món mới");
+            $this->render('category', $data, "New Products");
         } else {
             $category = (new CategoryModel)->getById($_GET['id']);
             $products = (new ProductModel)->getByCategoryId($_GET['id'], 1, 16) ?? array();
@@ -55,7 +55,7 @@ class ProductController extends Controller
                     'products' => $products,
                     'category' => array(
                         "id" => -1,
-                        "name" => "Món mới"
+                        "name" => "New Products"
                     )
                 ));
             } else {

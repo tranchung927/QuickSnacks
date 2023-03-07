@@ -1,5 +1,5 @@
 <div class="modal-header">
-    <h5 class="modal-title product-detail-name" id="applicationModalLabel">Địa chỉ nhận</h5>
+    <h5 class="modal-title product-detail-name" id="applicationModalLabel">Delivery Address</h5>
     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 </div>
 
@@ -12,7 +12,7 @@
                         <div class="input-float-group">
                             <input id="txtAddressFistName" class="input-float" type="text" value='<?php echo $firstName ?? "" ?>' required>
                             <span class="bar-float"></span>
-                            <label class="label-float">Họ của người nhận *</label>
+                            <label class="label-float">First Name *</label>
                         </div>
                         <p id="errAddressFistName" class="error-message"></p>
                     </div>
@@ -20,7 +20,7 @@
                         <div class="input-float-group">
                             <input id="txtAddressLastName" class="input-float" type="text" value='<?php echo $lastName ?? "" ?>' required>
                             <span class="bar-float"></span>
-                            <label class="label-float">Tên của người nhận *</label>
+                            <label class="label-float">Last Name *</label>
                         </div>
                         <p id="errAddressLastName" class="error-message"></p>
                     </div>
@@ -28,7 +28,7 @@
                         <div class="input-float-group">
                             <input id="txtAddressPhoneNumber" class="input-float" type="text" value='<?php echo $phone ?? "" ?>' required>
                             <span class="bar-float"></span>
-                            <label class="label-float">Số điện thoại *</label>
+                            <label class="label-float">Phone Number *</label>
                         </div>
                         <p id="errAddressPhoneNumber" class="error-message"></p>
                     </div>
@@ -36,7 +36,7 @@
                         <div class="input-float-group">
                             <input id="txtAddressCity" class="input-float" type="text" value='<?php echo $cityName ?? "" ?>' required>
                             <span class="bar-float"></span>
-                            <label class="label-float">Tỉnh/Thành phố *</label>
+                            <label class="label-float">Province/City *</label>
                         </div>
                         <p id="errAddressCity" class="error-message"></p>
                     </div>
@@ -44,7 +44,7 @@
                         <div class="input-float-group">
                             <input id="txtAddressDistrict" class="input-float" type="text" value='<?php echo $districtName ?? "" ?>' list="district_data_list" required>
                             <span class="bar-float"></span>
-                            <label class="label-float">Quận/Huyện *</label>
+                            <label class="label-float">District *</label>
                             <datalist id="district_data_list">
                                 <?php for ($i = 0; $i < count($districts); $i++) { ?>
                                     <option><?php echo $districts[$i]["name"] ?></option>
@@ -57,7 +57,7 @@
                         <div class="input-float-group">
                             <input id="txtAddressAddress" class="input-float" type="text" value='<?php echo $fullAddress ?? "" ?>' required>
                             <span class="bar-float"></span>
-                            <label class="label-float">Tên đường, Toà nhà, Số nhà *</label>
+                            <label class="label-float">Street Name, Building, House Number *</label>
                         </div>
                         <p id="errAddressAddress" class="error-message"></p>
                     </div>
@@ -72,5 +72,5 @@
 
 <div class="modal-footer">
     <button type="button" class="button-border" data-bs-dismiss="modal" style="padding:12px 32px;">Close</button>
-    <button id="btnAddToCartDetail" class='button-primary' style="padding:12px 32px;margin-left:8px;" onclick="confirmAddress()">Xác nhận</button>
+    <button id="btnAddToCartDetail" class='button-primary' style="padding:12px 32px;margin-left:8px;" onclick="confirmAddress()">Confirm</button>
 </div>

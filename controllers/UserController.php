@@ -19,17 +19,17 @@ class UserController extends Controller
     $password = $_POST['password'];
 
     if (empty($email)) {
-      echo '{"code":1, "message":"Vui lòng nhập địa chỉ email của bạn."}';
+      echo '{"code":1, "message":"Please enter your email address."}';
       return false;
     } else {
       if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        echo '{"code":1, "message":"Địa chỉ email không đúng định dạng."}';
+        echo '{"code":1, "message":"Please enter valid phone email."}';
         return false;
       }
     }
 
     if (empty($password)) {
-      echo '{"code":2, "message":"Vui lòng nhập mật khẩu của bạn."}';
+      echo '{"code":2, "message":"Please enter your password."}';
       return false;
     }
     require_once 'vendor/Model.php';
@@ -42,7 +42,7 @@ class UserController extends Controller
       echo '{"code":0, "message":"Đăng nhập thành công"}';
       return true;
     }
-    echo '{"code":3, "message":"Sai tên tài khoản hoặc mật khẩu!"}';
+    echo '{"code":3, "message":"Wrong username or password."}';
     return false;
   }
 
@@ -56,47 +56,47 @@ class UserController extends Controller
     $isCheck = $_POST['is_check'];
 
     if (empty($firstName)) {
-      echo '{"code":1, "message":"Vui lòng nhập họ của bạn."}';
+      echo '{"code":1, "message":"Please enter your first name."}';
       return false;
     } else {
       if (!preg_match("/^[a-zA-Z ]+/", $firstName)) {
-        echo '{"code":1, "message":"Họ không đúng định dạng."}';
+        echo '{"code":1, "message":"Your first name is not in the correct format."}';
         return false;
       }
     }
     if (empty($lastName)) {
-      echo '{"code":2, "message":"Vui lòng nhập tên của bạn."}';
+      echo '{"code":2, "message":"Please enter your last name."}';
       return false;
     } else {
       if (!preg_match("/^[a-zA-Z ]+/", $lastName)) {
-        echo '{"code":2, "message":"Tên không đúng định dạng."}';
+        echo '{"code":2, "message":"Your last name is not in the correct format."}';
         return false;
       }
     }
     if (empty($phone)) {
-      echo '{"code":3, "message":"Vui lòng nhập số điện thoại của bạn."}';
+      echo '{"code":3, "message":"Please enter your phone number."}';
       return false;
     } else {
       if (!preg_match("/^[0-9]{10}/", $phone)) {
-        echo '{"code":3, "message":"Số điện thoại không đúng định dạng."}';
+        echo '{"code":3, "message":"Please enter valid phone number."}';
         return false;
       }
     }
     if (empty($email)) {
-      echo '{"code":4, "message":"Vui lòng nhập email của bạn."}';
+      echo '{"code":4, "message":"Please enter your email address."}';
       return false;
     } else {
       if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        echo '{"code":4, "message":"Email không đúng định dạng."}';
+        echo '{"code":4, "message":"Please enter valid phone email."}';
         return false;
       }
     }
     if (empty($password)) {
-      echo '{"code":5, "message":"Vui lòng nhập mật khẩu của bạn."}';
+      echo '{"code":5, "message":"Please enter your password."}';
       return false;
     } else {
       if (!preg_match("/^[a-zA-Z0-9]{8}/", $password)) {
-        echo '{"code":5, "message":"Mật khẩu phải có 8 kí tự bao gồm chữ và số."}';
+        echo '{"code":5, "message":"Password must be 8 characters including letters and numbers."}';
         return false;
       }
     }
@@ -110,7 +110,7 @@ class UserController extends Controller
     require_once 'models/AccountModel.php';
     $md = new AccountModel;
     if ($md->getUserByEmail($email)) {
-      echo '{"code":4, "message":"Địa chỉ email đã tồn tại."}';
+      echo '{"code":4, "message":"Email address already exists."}';
       return false;
     }
     if ($md->createUser($firstName, $lastName, $email, $phone, $password)) {
@@ -118,7 +118,7 @@ class UserController extends Controller
       echo '{"code":0, "message":"Đăng kí thành công."}';
       return true;
     } else {
-      echo '{"code":7, "message":"Đã có lỗi trong quá trình tạo tài khoản, vui lòng thử lại sau."}';
+      echo '{"code":7, "message":"An error occurred during account creation, please try again later."}';
       return false;
     }
   }
@@ -131,38 +131,38 @@ class UserController extends Controller
     $email = $_POST['email'];
 
     if (empty($firstName)) {
-      echo '{"code":1, "message":"Vui lòng nhập họ của bạn."}';
+      echo '{"code":1, "message":"Please enter your first name."}';
       return false;
     } else {
       if (!preg_match("/^[a-zA-Z ]+/", $firstName)) {
-        echo '{"code":1, "message":"Họ không đúng định dạng."}';
+        echo '{"code":1, "message":"Your first name is not in the correct format."}';
         return false;
       }
     }
     if (empty($lastName)) {
-      echo '{"code":2, "message":"Vui lòng nhập tên của bạn."}';
+      echo '{"code":2, "message":"Please enter your last name."}';
       return false;
     } else {
       if (!preg_match("/^[a-zA-Z ]+/", $lastName)) {
-        echo '{"code":2, "message":"Tên không đúng định dạng."}';
+        echo '{"code":2, "message":"Your last name is not in the correct format."}';
         return false;
       }
     }
     if (empty($phone)) {
-      echo '{"code":3, "message":"Vui lòng nhập số điện thoại của bạn."}';
+      echo '{"code":3, "message":"Please enter your phone number."}';
       return false;
     } else {
       if (!preg_match("/^[0-9]{10}/", $phone)) {
-        echo '{"code":3, "message":"Số điện thoại không đúng định dạng."}';
+        echo '{"code":3, "message":"Please enter valid phone number."}';
         return false;
       }
     }
     if (empty($email)) {
-      echo '{"code":4, "message":"Vui lòng nhập email của bạn."}';
+      echo '{"code":4, "message":"Please enter your email address."}';
       return false;
     } else {
       if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        echo '{"code":4, "message":"Email không đúng định dạng."}';
+        echo '{"code":4, "message":"Please enter valid phone email."}';
         return false;
       }
     }
@@ -193,29 +193,29 @@ class UserController extends Controller
     $fullAddress = $_POST["address"];
 
     if (empty($firstName)) {
-      echo '{"code":1, "message":"Vui lòng nhập họ của bạn."}';
+      echo '{"code":1, "message":"Please enter your first name."}';
       return false;
     } else {
       if (!preg_match("/^[a-zA-Z ]+/", $firstName)) {
-        echo '{"code":1, "message":"Họ không đúng định dạng."}';
+        echo '{"code":1, "message":"Your first name is not in the correct format."}';
         return false;
       }
     }
     if (empty($lastName)) {
-      echo '{"code":2, "message":"Vui lòng nhập tên của bạn."}';
+      echo '{"code":2, "message":"Please enter your last name."}';
       return false;
     } else {
       if (!preg_match("/^[a-zA-Z ]+/", $lastName)) {
-        echo '{"code":2, "message":"Tên không đúng định dạng."}';
+        echo '{"code":2, "message":"Your last name is not in the correct format."}';
         return false;
       }
     }
     if (empty($phone)) {
-      echo '{"code":3, "message":"Vui lòng nhập số điện thoại của bạn."}';
+      echo '{"code":3, "message":"Please enter your phone number."}';
       return false;
     } else {
       if (!preg_match("/^[0-9]{10}/", $phone)) {
-        echo '{"code":3, "message":"Số điện thoại không đúng định dạng."}';
+        echo '{"code":3, "message":"Please enter valid phone number."}';
         return false;
       }
     }
@@ -229,16 +229,16 @@ class UserController extends Controller
     //   return false;
     // }
     if (empty($districtName)) {
-      echo '{"code":5, "message":"Vui lòng chọn Quận/Huyện."}';
+      echo '{"code":5, "message":"Please select your District."}';
       return false;
     }
     $district = (new DistrictModel)->getByNameAndCityId($districtName, 1);
     if (!$district) {
-      echo '{"code":5, "message":"Quận/Huyện không hợp lệ."}';
+      echo '{"code":5, "message":"Invalid District."}';
       return false;
     }
     if (empty($fullAddress)) {
-      echo '{"code":6, "message":"Vui lòng nhập địa chỉ."}';
+      echo '{"code":6, "message":"Please enter your address."}';
       return false;
     }
 

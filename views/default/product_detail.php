@@ -12,21 +12,21 @@
                         <img src='<?php echo "public/images/products/" . $pro["image"]; ?>'>
                     </div>
                     <div style="margin-top:16px;">
-                        <span class="txtBoldPrimary">Thành phần:</span>
+                        <span class="txtBoldPrimary">Constituents:</span>
                         <span class="txtPrimary"><?php echo $pro['element'] ?></span>
                     </div>
                     <div>
-                        <span class="txtBoldPrimary">Lượng calo:</span>
+                        <span class="txtBoldPrimary">Calories:</span>
                         <span class="txtPrimary"><?php echo $pro['calorie'] ?></span>
                     </div>
                     <?php if (isset($pro['estimate_time']) && $pro['estimate_time'] > 0) { ?>
                         <div>
-                            <span class="txtBoldPrimary">Thời gian làm:</span>
-                            <span class="txtPrimary"><?php echo $pro['estimate_time'] ?> phút</span>
+                            <span class="txtBoldPrimary">Estimated time:</span>
+                            <span class="txtPrimary"><?php echo $pro['estimate_time'] ?> minute</span>
                         </div>
                     <?php } ?>
                     <div>
-                        <span class="txtBoldPrimary">Mô tả:</span>
+                        <span class="txtBoldPrimary">Desc:</span>
                         <span class="txtPrimary"><?php echo $pro['description'] ?></span>
                     </div>
                     <div class="d-flex justify-content-center align-items-center" style="gap:12px;margin-top:16px;">
@@ -34,7 +34,7 @@
                         <span class="txtBoldPrimary" id="productQuantity">1</span>
                         <a onclick="itemIncrement(<?php echo $pro['price'] ?>)"><i id="btnIncrement" class="fa-solid fa-circle-plus" style="font-size:36px;"></i></a>
                         <button id="btnAddToCartDetail" class='button-primary' style="padding:12px 32px;margin-left:8px;" onclick="addToCartDetail(<?php echo $pro['id'] ?>)">
-                            Thêm vào giỏ (<?php echo number_format($pro['price'], 0, ',', '.') ?>₫)
+                            Add to Bucket (<?php echo number_format($pro['price'], 0, ',', '.') ?>₫)
                         </button>
                     </div>
                 </div>
