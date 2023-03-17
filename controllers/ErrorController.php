@@ -5,7 +5,7 @@ class ErrorController extends Controller {
     $this->folder = 'error';
   }
   
-  public function notFound() {
+  function notFound() {
       $this->render('404');
   }
 }

@@ -23,7 +23,7 @@ class IndexController extends Controller
         );
 
         $categories = (new CategoryModel)->getAll() ?? array();
-        $products = (new ProductModel)->getAll(1, 4) ?? array();
+        $products = (new ProductModel)->get(1, 4) ?? array();
         array_unshift(
             $categories,
             array(

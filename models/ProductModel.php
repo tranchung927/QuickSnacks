@@ -7,7 +7,11 @@
 class ProductModel extends Model
 {
     
-    function getAll($page, $limit, $sortColumn = "created_date", $sortOrder = "DESC")
+    function getAll() {
+        return $this->select("*", "`product`");
+    }
+
+    function get($page, $limit, $sortColumn = "created_date", $sortOrder = "DESC")
     {
         $sortOrder = strcasecmp($sortOrder, "DESC") == 0 ? "DESC" : "ASC";
 

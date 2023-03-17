@@ -1,8 +1,12 @@
 <div class="cart-container">
     <h3 class="txtBoldPrimary" style="font-size:32px;margin-bottom:32px">MY BUCKET</h3>
     <?php if (empty($_SESSION['cart'])) { ?>
-        <div class="d-flex flex-column justify-content-center align-items-center" style="min-height: 300px;margin: 0px auto;width: auto;max-width: 460px;">
-            <span>YOUR BUCKET IS EMPTY. LET'S START AN ORDER!</span>
+        <div class="d-flex justify-content-center align-items-center rounded" style="min-height:300px;margin:0px auto;width:auto;background-color:#F7FCF1">
+            <div class="d-flex flex-column" style="margin-right:100px;">
+                <span class="txtPrimary" style="font-size:24px;">YOUR BUCKET IS EMPTY.<br> LET'S START AN ORDER!</span>
+                <button class="button-primary txtBoldPrimary" style="padding:16px 20px;color:white;margin-top:24px;">Start order</button>
+            </div>
+            <img style="height:200px;width:154px;" src="public/images/ic_snack.svg">
         </div>
 
     <?php } else { ?>

@@ -22,7 +22,7 @@ class ProductController extends Controller
         require_once 'models/ProductModel.php';
         require_once 'models/CategoryModel.php';
         if ($_GET['id'] == '-1') {
-            $products = (new ProductModel)->getAll(1, 16) ?? array();
+            $products = (new ProductModel)->get(1, 16) ?? array();
             $data = array(
                 'products' => $products,
                 'category' => array(
@@ -50,7 +50,7 @@ class ProductController extends Controller
         $data = array();
         for ($i = 0; $i < (count($categories) + 1); $i++) {
             if ($i == 0) {
-                $products = (new ProductModel)->getAll(1, 4) ?? array();
+                $products = (new ProductModel)->get(1, 4) ?? array();
                 array_push($data, array(
                     'products' => $products,
                     'category' => array(
@@ -74,7 +74,7 @@ class ProductController extends Controller
         require_once 'vendor/Model.php';
         require_once 'models/ProductModel.php';
         if ($_GET['id'] == '-1') {
-            $products = (new ProductModel)->getAll($_GET['page'], $_GET['limit']) ?? array();
+            $products = (new ProductModel)->get($_GET['page'], $_GET['limit']) ?? array();
         } else {
             $products = (new ProductModel)->getByCategoryId($_GET['id'], $_GET['page'], $_GET['limit']) ?? array();
         }

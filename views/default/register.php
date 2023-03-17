@@ -30,7 +30,7 @@
                     <p style="font-family:Roboto;font-size:20px;color:black">I have read and accepted with<a style="font-family:Roboto-Bold;font-size:20px;color:black" href="#">Operation Policy of QuickSnacks</a></p>
                 </div>
                 <button id="btnRegister" class="button-primary" style="height:64px;margin-top:40px;font-family:Roboto-Bold;font-size:24px;">Create My Account</button>
-                <p class="text-center" style="font-family:Roboto;font-size:20px;color:black;margin:40px 0px;">Already have an account? <a style="font-family:Roboto-Bold;font-size:20px;color:black" href="index.php?controller=home&action=signin">Sign In</a></p>
+                <p class="text-center" style="font-family:Roboto;font-size:20px;color:black;margin:40px 0px;">Already have an account? <a style="font-family:Roboto-Bold;font-size:20px;color:black" href="index.php?controller=index&action=signin">Sign In</a></p>
             </form>
         </div>
     </div>

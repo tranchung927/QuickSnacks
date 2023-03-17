@@ -23,4 +23,38 @@ class OrderModel extends Model
         }
         return 0;
     }
+
+    function getAll()
+    {
+        $orders = $this->select(
+            '`order`.`id`, `order`.`status`, `address`.`first_name`, `address`.`last_name`, `district`.`name` AS district,`address`.`address`, `address`.`phone`, `order`.`created_date`',
+            '`order` INNER JOIN `address` ON `order`.`address_id` = `address`.`id` INNER JOIN `district` ON `address`.`district_id` = `district`.`id`',
+            null,
+            'ORDER BY created_date DESC'
+        );
+        for ($i = 0; $i < count($orders); $i++) {
+            $orders[$i]["items"] = $this->select(
+                '`order_item`.`id`, `product`.`name`, `product`.`image`,`order_item`.`quantity`, `order_item`.`price`',
+                '`order_item` INNER JOIN `product` ON `order_item`.`product_id` = `product`.`id`',
+                '`order_id`=' . $orders[$i]['id']
+            );
+        }
+        return $orders;
+    }
+
+    function updateStatusById($id, $status)
+    {
+        $now = (new DateTime('now', new DateTimeZone('ASIA/Ho_Chi_Minh')))->format('Y-m-d H:i:s');
+        return $this->update(
+            '`order`',
+            array('`status`', '`modified_date`'),
+            array($status, $now),
+            "id=" . $id
+        );
+    }
+
+    function deleteById($id)
+    {
+        return $this->delete('`order`', '`id`=' . $id);
+    }
 }

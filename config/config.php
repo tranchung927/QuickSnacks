@@ -8,3 +8,4 @@ DEFINE('DB_NAME','quick_snacks');
 
 DEFINE('CONTROLLER_DEFAULT','index');
 DEFINE('ACTION_DEFAULT','index');
+DEFINE('IMAGE_PATH', $_SERVER['DOCUMENT_ROOT'] . "/QuickSnacks/public/images/");

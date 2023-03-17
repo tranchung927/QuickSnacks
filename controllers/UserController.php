@@ -37,7 +37,7 @@ class UserController extends Controller
     $md = new AccountModel;
     $data = array();
     $data = $md->getUserByEmail($email);
-    if (isset($data) && sha1($password) == $data['password']) {
+    if ($data != false && sha1($password) == $data['password']) {
       $_SESSION['user'] = $data;
       echo '{"code":0, "message":"Đăng nhập thành công"}';
       return true;
