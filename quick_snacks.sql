@@ -51,7 +51,8 @@ CREATE TABLE `account` (
 INSERT INTO `account` (`id`, `first_name`, `last_name`, `email`, `phone`, `avatar`, `address_id`, `flag`, `username`, `password`, `role`, `created_date`) VALUES
 (2, 'Tran Van', 'Chung', 'a@gmail.com', '0987654321', NULL, 1, NULL, NULL, 'b80048afe2f9894cc3316805fd391798a3a99127', NULL, '2023-03-18 06:26:49'),
 (3, '', 'Đây là Admin', '', '', NULL, NULL, NULL, 'admin', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 1, '2023-01-16 06:27:04');
-
+-- a@gmail.com a@123456
+-- admin 123
 -- --------------------------------------------------------
 
 --
