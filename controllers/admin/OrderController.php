@@ -17,15 +17,16 @@ class OrderController extends AdminController
         $data = $md->getAll();
         $this->render('order', $data, 'GIAO DỊCH', 'admin');
     }
-    function action()
+
+    function updateState()
     {
         $this->valid();
-        $slt = $action = '';
+        $slt = $state = '';
         if (isset($_GET['selected'])) {
             $slt = $_GET['selected'];
         }
-        if (isset($_GET['action'])) {
-            $action = $_GET['action'];
+        if (isset($_GET['state'])) {
+            $state = $_GET['state'];
         }
         if ($slt == '') {
             echo "Bạn chưa chọn giao dịch!";
@@ -34,7 +35,7 @@ class OrderController extends AdminController
         require_once '../models/OrderModel.php';
         $md = new OrderModel;
         for ($i = 0; $i < count($slt); $i++) {
-            switch ($action) {
+            switch ($state) {
                 case 'shipped':
                     $md->updateStatusById($slt[$i], 'delivered');
                     break;

@@ -2,7 +2,7 @@
 $controllers = array(
     'error' => ['notFound'],
     'index'  => ['index','login', 'logout', 'dashboard'],
-    'order' => ['index', 'action'],
+    'order' => ['index', 'updateState'],
     'product' => ['index'],
     'analytics' => ['index'],
     'category' => ['index', 'action']

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Mar 17, 2023 at 11:53 PM
+-- Generation Time: Mar 18, 2023 at 12:30 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -40,18 +40,18 @@ CREATE TABLE `account` (
   `flag` int(11) DEFAULT NULL,
   `username` varchar(255) DEFAULT NULL,
   `password` varchar(1000) DEFAULT NULL,
-  `role` int(11) DEFAULT NULL
+  `role` int(11) DEFAULT NULL,
+  `created_date` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `account`
 --
 
-INSERT INTO `account` (`id`, `first_name`, `last_name`, `email`, `phone`, `avatar`, `address_id`, `flag`, `username`, `password`, `role`) VALUES
-(2, 'Tran Van', 'Chung', 'a@gmail.com', '0987654321', NULL, 1, NULL, NULL, 'b80048afe2f9894cc3316805fd391798a3a99127', NULL),
-(3, '', 'Đây là Admin', '', '', NULL, NULL, NULL, 'admin', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 1);
--- a@gmail.com a@123456
--- admin 123
+INSERT INTO `account` (`id`, `first_name`, `last_name`, `email`, `phone`, `avatar`, `address_id`, `flag`, `username`, `password`, `role`, `created_date`) VALUES
+(2, 'Tran Van', 'Chung', 'a@gmail.com', '0987654321', NULL, 1, NULL, NULL, 'b80048afe2f9894cc3316805fd391798a3a99127', NULL, '2023-03-18 06:26:49'),
+(3, '', 'Đây là Admin', '', '', NULL, NULL, NULL, 'admin', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 1, '2023-01-16 06:27:04');
+
 -- --------------------------------------------------------
 
 --
@@ -955,12 +955,11 @@ CREATE TABLE `order` (
 --
 
 INSERT INTO `order` (`id`, `status`, `note`, `account_id`, `location_id`, `address_id`, `created_date`, `modified_date`, `flag`) VALUES
-(2, 'waiting', NULL, 2, NULL, 1, '2023-03-07 07:20:19', NULL, NULL),
-(3, 'waiting', NULL, 2, NULL, 1, '2023-03-07 07:26:28', NULL, NULL),
-(4, 'waiting', NULL, 2, NULL, 1, '2023-03-07 07:28:01', NULL, NULL),
+(2, 'delivered', NULL, 2, NULL, 1, '2023-03-07 07:20:19', '2023-03-18 06:13:56', NULL),
+(4, 'cancel', NULL, 2, NULL, 1, '2023-03-07 07:28:01', '2023-03-18 06:13:47', NULL),
 (5, 'waiting', NULL, 2, NULL, 1, '2023-03-07 07:34:38', NULL, NULL),
 (6, 'waiting', NULL, 2, NULL, 1, '2023-03-07 07:35:59', NULL, NULL),
-(7, 'waiting', NULL, 2, NULL, 1, '2023-03-07 11:46:54', NULL, NULL);
+(7, 'delivered', NULL, 2, NULL, 1, '2023-03-07 11:46:54', '2023-03-18 06:13:44', NULL);
 
 -- --------------------------------------------------------
 
@@ -985,7 +984,6 @@ CREATE TABLE `order_item` (
 
 INSERT INTO `order_item` (`id`, `product_id`, `order_id`, `quantity`, `orginal_price`, `price`, `created_date`, `modified_date`) VALUES
 (1, 56, 2, 1, 40000, 40000, '2023-03-07 07:20:19', NULL),
-(2, 57, 3, 1, 30000, 30000, '2023-03-07 07:26:28', NULL),
 (3, 57, 4, 1, 30000, 30000, '2023-03-07 07:28:01', NULL),
 (4, 58, 5, 1, 30000, 30000, '2023-03-07 07:34:38', NULL),
 (5, 56, 6, 1, 40000, 40000, '2023-03-07 07:35:59', NULL),

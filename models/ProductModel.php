@@ -6,8 +6,9 @@
 
 class ProductModel extends Model
 {
-    
-    function getAll() {
+
+    function getAll()
+    {
         return $this->select("*", "`product`");
     }
 
@@ -79,5 +80,11 @@ class ProductModel extends Model
             }
             return $result;
         }
+    }
+
+    function getTotal()
+    {
+        $rs = $this->select('COUNT(`id`) AS `total`', '`product`');
+        return $rs[0]['total'];
     }
 }

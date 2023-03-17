@@ -78,4 +78,17 @@ class AccountModel extends Model
 			"id=" . $id
 		);
 	}
+
+	function getTotalToday()
+    {
+        $now = (new DateTime('now', new DateTimeZone('ASIA/Ho_Chi_Minh')))->format('Y-m-d');
+        $rs = $this->select('COUNT(`id`) AS `newaccount`','`account`',"DATE(`created_date`) = '".$now."'");
+        return $rs[0]['newaccount'];
+    }
+
+	function getTotal()
+    {
+        $rs = $this->select('COUNT(`id`) AS `total`', '`account`');
+        return $rs[0]['total'];
+    }
 }

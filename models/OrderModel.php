@@ -55,6 +55,16 @@ class OrderModel extends Model
 
     function deleteById($id)
     {
-        return $this->delete('`order`', '`id`=' . $id);
+        if ($this->delete('order_item', '`order_id`=' . $id)) {
+            return $this->delete('`order`', '`id`=' . $id);
+        }
+        return 0;
+    }
+
+    function getTotalToday()
+    {
+        $now = (new DateTime('now', new DateTimeZone('ASIA/Ho_Chi_Minh')))->format('Y-m-d');
+        $rs = $this->select('COUNT(`id`) AS `neworder`','`order`',"DATE(`created_date`) = '".$now."'");
+        return $rs[0]['neworder'];
     }
 }

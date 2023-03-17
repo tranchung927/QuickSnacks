@@ -107,16 +107,16 @@
       $('input:checkbox').not(this).prop('checked', this.checked);
     });
     $('#shippedBtn').click(function() {
-      action('shipped');
+      updateState('shipped');
     });
     $('#unshippedBtn').click(function() {
-      action('unshipped');
+      updateState('unshipped');
     });
     $('#cancelBtn').click(function() {
-      action('cancel');
+      updateState('cancel');
     });
     $('#delBtn').click(function() {
-      action('del');
+      updateState('del');
     });
   })
   $(function() {
@@ -131,7 +131,7 @@
     })
   })
 
-  function action(action) {
+  function updateState(state) {
     var selected = [];
     $('.cbgd').each(function() {
       if ($(this).is(":checked")) {
@@ -143,12 +143,12 @@
       return;
     }
     $.ajax({
-      url: 'index.php?controller=order&action=action',
+      url: 'index.php?controller=order&action=updateState',
       type: 'GET',
       dataType: 'text',
       data: {
         selected,
-        action
+        state
       },
       done: function(result) {},
       fail: function(result) {},

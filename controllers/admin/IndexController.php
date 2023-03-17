@@ -26,10 +26,10 @@ class IndexController extends AdminController
 		require_once '../models/AccountModel.php';
 		require_once '../models/ProductModel.php';
 		
-		$todayOrders = 20;
-        $todayMembers = 30;
-		$totalProducts = 1000;
-		$totalMembers = 1000;
+		$todayOrders = (new OrderModel)->getTotalToday() ?? 0;
+        $todayMembers = (new AccountModel)->getTotalToday() ?? 0;
+		$totalProducts = (new ProductModel)->getTotal() ?? 0;
+		$totalMembers = (new AccountModel)->getTotal() ?? 0;
         $data = array(
             'todayOrders' => $todayOrders,
             'todayMembers' => $todayMembers,
