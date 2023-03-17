@@ -34,6 +34,20 @@ class AccountModel extends Model
 		}
 	}
 
+	function getUserByPhone($phone)
+	{
+		$result = array();
+		$sql = "SELECT * FROM account WHERE phone = '" . $phone . "'";
+		if ($this->conn->query($sql)->rowCount() == 0) {
+			return false;
+		} else {
+			foreach ($this->conn->query($sql) as $row) {
+				$result = $row;
+			}
+			return $result;
+		}
+	}
+
 	function getUserById($id)
 	{
 		$result = array();
@@ -54,8 +68,8 @@ class AccountModel extends Model
 		$now = $now->format('Y-m-d H:i:s');
 		return $this->insert(
 			'account',
-			array($firstName, $lastName, $email, $phone, sha1($password)),
-			array('first_name', 'last_name', 'email', 'phone', 'password')
+			array($firstName, $lastName, $email, $phone, sha1($password), $now),
+			array('`first_name`', '`last_name`', '`email`', '`phone`', '`password`', '`created_date`')
 		);
 	}
 

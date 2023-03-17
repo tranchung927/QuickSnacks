@@ -113,6 +113,12 @@ class UserController extends Controller
       echo '{"code":4, "message":"Email address already exists."}';
       return false;
     }
+
+    if ($md->getUserByPhone($phone)) {
+      echo '{"code":3, "message":"Phone Number already exists."}';
+      return false;
+    }
+
     if ($md->createUser($firstName, $lastName, $email, $phone, $password)) {
       $_SESSION['user'] = $md->getUserByEmail($email);
       echo '{"code":0, "message":"Đăng kí thành công."}';
@@ -170,6 +176,17 @@ class UserController extends Controller
     require_once 'vendor/Model.php';
     require_once 'models/AccountModel.php';
     $md = new AccountModel;
+
+    if ($_SESSION["user"]["email"] != trim($email) && $md->getUserByEmail($email)) {
+      echo '{"code":4, "message":"Email address already exists."}';
+      return false;
+    }
+
+    if ($_SESSION["user"]["phone"] != trim($phone) && $md->getUserByPhone($phone)) {
+      echo '{"code":3, "message":"Phone Number already exists."}';
+      return false;
+    }
+
     $md->updateUser($_SESSION["user"]["id"], $firstName, $lastName, $email, $phone);
     $data = $md->getUserById($_SESSION["user"]["id"]);
     $_SESSION["user"] = $data;
@@ -261,6 +278,7 @@ class UserController extends Controller
     session_unset();
     session_destroy();
     unset($_SESSION['user']);
+    unset($_SESSION['admin']);
     return true;
   }
 }
