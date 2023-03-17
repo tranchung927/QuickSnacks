@@ -59,10 +59,11 @@
                     }
                     ?>
                   </td>
-                  <td><?php echo array_reduce($data[$i]["items"], function ($sum, $item) {
+                  <td><?php $total = array_reduce($data[$i]["items"], function ($sum, $item) {
                         $sum += ($item['quantity'] * $item['price']);
                         return $sum;
-                      }, 0); ?>&#8363;</td>
+                      }, 0);
+                      echo number_format($total, 0, ',', '.')?>&#8363;</td>
                 </tr>
               <?php } ?>
             </tbody>

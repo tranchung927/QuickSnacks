@@ -14,12 +14,13 @@ class OrderModel extends Model
         if ($this->exe_query($sql)) {
             $orderId = $this->getLastInsertID();
             for ($i = 0; $i < count($items); $i++) {
-                return $this->insert(
+                $this->insert(
                     'order_item',
                     array($items[$i]["id"], $orderId, $items[$i]["quantity"], $items[$i]["orginal_price"], $items[$i]["price"], $now),
                     array('product_id', 'order_id', 'quantity', 'orginal_price', 'price', 'created_date')
                 );
             }
+            return 1;
         }
         return 0;
     }

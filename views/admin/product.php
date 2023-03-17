@@ -35,7 +35,7 @@
                     <td><?php echo $i + 1 ?></td>
                     <td><?php echo $data[$i]['name'] ?></td>
                     <td><img style="width:50px" src="<?php echo "../public/images/products/" .$data[$i]['image'] ?>"></td>
-                    <td><?php echo $data[$i]['price'] ?>&#8363;</td>
+                    <td><?php echo number_format($data[$i]['price'], 0, ',', '.') ?>&#8363;</td>
                     <td><?php echo $data[$i]['created_date'] ?></td>
                   </tr>
                 <?php }
