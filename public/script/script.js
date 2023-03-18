@@ -212,7 +212,7 @@ function itemIncrement(price) {
 }
 
 function itemDecrement(price) {
-  var total = "Add to Bucket (" + currencyFormat(price * increment()) + ")"
+  var total = "Add to Bucket (" + currencyFormat(price * decrement()) + ")"
   $('#btnAddToCartDetail').html(total);
 }
 
