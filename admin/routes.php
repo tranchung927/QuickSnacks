@@ -3,7 +3,7 @@ $controllers = array(
     'error' => ['notFound'],
     'index'  => ['index','login', 'logout', 'dashboard'],
     'order' => ['index', 'updateState'],
-    'product' => ['index'],
+    'product' => ['index', 'add'],
     'analytics' => ['index'],
     'category' => ['index', 'action']
 ); // Các controllers trong hệ thống và các action có thể gọi ra từ controller đó.

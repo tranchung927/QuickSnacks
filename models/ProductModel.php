@@ -9,7 +9,7 @@ class ProductModel extends Model
 
     function getAll()
     {
-        return $this->select("*", "`product`");
+        return $this->select("*", "`product`", null,'ORDER BY created_date DESC');
     }
 
     function get($page, $limit, $sortColumn = "created_date", $sortOrder = "DESC")
@@ -86,5 +86,16 @@ class ProductModel extends Model
     {
         $rs = $this->select('COUNT(`id`) AS `total`', '`product`');
         return $rs[0]['total'];
+    }
+
+    function createProduct($name, $image, $price, $categoryId, $element, $calo, $desc)
+    {
+        $now = new DateTime('now', new DateTimeZone('ASIA/Ho_Chi_Minh'));
+        $now = $now->format('Y-m-d H:i:s');
+        return $this->insert(
+            'product',
+            array($name, $image, $price, $categoryId, $element, $calo, $desc ?? "", 'active', $now),
+            array('`name`', '`image`', '`price`', '`category_id`', '`element`', '`calorie`', '`description`', '`status`', '`created_date`')
+        );
     }
 }
